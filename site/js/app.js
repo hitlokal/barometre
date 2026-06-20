@@ -116,12 +116,9 @@ function yearUnlocked(y){
   return rank()>=3;                          // éditions intermédiaires : Business uniquement
 }
 function buildYearTabs(){
-  const years=Object.keys(DASH.years).sort();
   const tabs=document.getElementById('yearTabs');
-  tabs.innerHTML=years.map(y=>{
-    const locked=!yearUnlocked(y);
-    return `<button class="year-tab${locked?' locked':''}" data-y="${y}">${y}${locked?' <span class="yt-lock">🔒</span>':''}</button>`;
-  }).join('');
+  // On n'affiche publiquement que l'édition 2021
+  tabs.innerHTML=`<button class="year-tab active" data-y="${FREE_YEAR}">${FREE_YEAR}</button>`;
   tabs.querySelectorAll('.year-tab').forEach(b=>b.onclick=()=>selectYear(b.dataset.y));
   selectYear(FREE_YEAR);
 }
