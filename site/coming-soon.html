@@ -205,6 +205,9 @@ document.getElementById('waitForm').addEventListener('submit',e=>{
       subject:'Liste d\'attente — Baromètre Hit Lokal',from_name:'Liste d\'attente (Coming Soon)',
       type:'Liste d\'attente (Coming Soon)',email:email,profil:data.profile||'',
       pdf_demande:data.pdf?'oui':'non'})}).catch(()=>{});
+  // ajoute le contact dans Brevo (via le script serveur sécurisé)
+  fetch('/subscribe.php',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({email:email,profile:data.profile||'',source:'waitlist'})}).catch(()=>{});
   try{
     const L=JSON.parse(localStorage.getItem('hl_leads')||'[]');
     L.push({email, profile:data.profile||'', wantsPdf:!!data.pdf, source:'waitlist', ts:new Date().toISOString()});

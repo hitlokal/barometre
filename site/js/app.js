@@ -26,6 +26,11 @@ function sendMail(fields){
     body:JSON.stringify({access_key:WEB3FORMS_KEY,...fields})
   }).then(r=>r.json());
 }
+/* ajoute le contact dans Brevo via le script serveur sécurisé (clé API cachée côté serveur) */
+function addToBrevo(fields){
+  return fetch('/subscribe.php',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(fields)}).catch(()=>{});
+}
 
 Promise.all([
   fetch('data/dashboard.json').then(r=>r.json()),
@@ -627,6 +632,7 @@ function initAuth(){
       sendMail({subject:'Nouvelle inscription — Baromètre Hit Lokal',from_name:'Baromètre Hit Lokal',
         type:'Inscription',name:data.name||'(non renseigné)',email:data.email.trim(),
         profil:data.profile||'',formule:tier==='decouverte'?'Découverte (gratuit)':'Membre '+TIER_NAME[tier]}).catch(()=>{});
+      addToBrevo({email:data.email.trim(),name:data.name||'',profile:data.profile||'',source:'inscription'});
     }
     closeAuth();
     if(pendingTier){const t=pendingTier;pendingTier=null;toast(`Bienvenue ! Aperçu ${TIER_NAME[t]} activé (démo).`);}
@@ -696,6 +702,7 @@ document.getElementById('leadForm').addEventListener('submit',e=>{
     type:'Demande / Contact',name:data.name,email:data.email,organisation:data.org||'',
     profil:data.profile||'',offre:data.plan||'',message:data.message||''})
     .then(r=>{ if(!r||!r.success) throw new Error('fail');
+      addToBrevo({email:data.email,name:data.name||'',organisation:data.org||'',profile:data.profile||'',offre:data.plan||'',source:'contact'});
       note.className='form-note ok';
       note.textContent='Merci ! Votre demande a bien été envoyée — nous revenons vers vous sous 48h.';
       f.reset();
