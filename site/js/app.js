@@ -17,6 +17,16 @@ const fmtShort = n => {
 
 let DASH=null, CLIPS=[];
 
+/* ---------- ENVOI E-MAIL (Web3Forms → hitlokal@gmail.com) ---------- */
+const WEB3FORMS_KEY='0162156a-464e-4346-a63a-deb1fd25a0d8';
+function sendMail(fields){
+  return fetch('https://api.web3forms.com/submit',{
+    method:'POST',
+    headers:{'Content-Type':'application/json',Accept:'application/json'},
+    body:JSON.stringify({access_key:WEB3FORMS_KEY,...fields})
+  }).then(r=>r.json());
+}
+
 Promise.all([
   fetch('data/dashboard.json').then(r=>r.json()),
   fetch('data/clips.json').then(r=>r.json())
@@ -620,6 +630,11 @@ function initAuth(){
     saveMember({email:data.email.trim(),name:data.name||'',tier});
     recordLead({email:data.email.trim(),name:data.name||'',profile:data.profile||'',
       plan:tier==='decouverte'?'Membre Découverte (gratuit)':'Membre '+TIER_NAME[tier],source:'inscription'});
+    if((f.dataset.mode||'register')==='register'){
+      sendMail({subject:'Nouvelle inscription — Baromètre Hit Lokal',from_name:'Baromètre Hit Lokal',
+        type:'Inscription',name:data.name||'(non renseigné)',email:data.email.trim(),
+        profil:data.profile||'',formule:tier==='decouverte'?'Découverte (gratuit)':'Membre '+TIER_NAME[tier]}).catch(()=>{});
+    }
     closeAuth();
     if(pendingTier){const t=pendingTier;pendingTier=null;toast(`Bienvenue ! Aperçu ${TIER_NAME[t]} activé (démo).`);}
     else toast('Bienvenue ! Vos données sont débloquées.');
@@ -694,6 +709,8 @@ if(dlForm){
       leads.push({email,profile:data.profile,optin:!!data.optin,source:'telechargement-2021',plan:'PDF 2021 gratuit',ts:new Date().toISOString()});
       localStorage.setItem('hl_leads',JSON.stringify(leads));
     }catch(_){}
+    sendMail({subject:'Téléchargement PDF 2021 — Baromètre Hit Lokal',from_name:'Lead PDF 2021',
+      type:'Téléchargement PDF 2021',email:email,profil:data.profile||'',optin:data.optin?'oui':'non'}).catch(()=>{});
     note.className='form-note ok';
     note.textContent='Merci ! Votre téléchargement va démarrer dans un nouvel onglet.';
     window.open(DL_2021_URL,'_blank','noopener');
@@ -712,11 +729,15 @@ document.getElementById('leadForm').addEventListener('submit',e=>{
     leads.push({...data,ts:new Date().toISOString()});
     localStorage.setItem('hl_leads',JSON.stringify(leads));
   }catch(_){}
-  const subject=encodeURIComponent('Demande Baromètre Hit Lokal — '+(data.plan||''));
-  const body=encodeURIComponent(
-    `Nom : ${data.name}\nE-mail : ${data.email}\nOrganisation : ${data.org||'-'}\nProfil : ${data.profile}\nOffre : ${data.plan}\n\nBesoin :\n${data.message||'-'}`);
-  note.className='form-note ok';
-  note.textContent='Merci ! Votre client mail va s\'ouvrir pour finaliser l\'envoi.';
-  window.location.href=`mailto:contact@hit-lokal.com?subject=${subject}&body=${body}`;
-  f.reset();
+  note.className='form-note';note.textContent='Envoi en cours…';
+  sendMail({subject:'Demande Baromètre Hit Lokal — '+(data.plan||''),from_name:data.name||'Contact site',
+    type:'Demande / Contact',name:data.name,email:data.email,organisation:data.org||'',
+    profil:data.profile||'',offre:data.plan||'',message:data.message||''})
+    .then(r=>{ if(!r||!r.success) throw new Error('fail');
+      note.className='form-note ok';
+      note.textContent='Merci ! Votre demande a bien été envoyée — nous revenons vers vous sous 48h.';
+      f.reset();
+    })
+    .catch(()=>{ note.className='form-note err';
+      note.textContent='Échec de l\'envoi. Réessayez, ou écrivez-nous directement à hitlokal@gmail.com.'; });
 });
