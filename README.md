@@ -21,7 +21,7 @@ python3 serve.py
 |---|---|
 | **Accueil** | Chiffres clés + courbes d'évolution 2021→2025 (vues, clips) |
 | **Explorer** | Tableau de bord par année : vues/clips par style, rythme mensuel, distribution des vues, origines, **Top 20** des clips |
-| **Recherche** | Moteur sur **2 155 clips** (2022-2025) : filtres artiste, titre, style, origine, année + tri |
+| **Recherche** | Moteur sur **2 780 clips** (2021-2025) : filtres artiste, titre, style, origine, année + tri |
 | **Offre data** | 3 formules commerciales (Rapport · Dataset & licence · API) + indicateurs de confiance |
 | **Contact** | Formulaire de capture de leads (enregistré en `localStorage` + ouverture mail pré-rempli) |
 
