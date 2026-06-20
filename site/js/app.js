@@ -226,7 +226,7 @@ function topRow(t,i){
     <div class="top-rank ${isTop?'gold':''}">${i+1}</div>
     <div class="top-main"><b>${esc(t.artist||'—')} — ${esc(t.title||'')}</b>
       <span>${shortStyle(t.style)}${t.origin?' · '+t.origin:''}${t.snep==='OUI'?' · <span class="badge-snep">SNEP</span>':''}</span></div>
-    <div class="top-views">${fmtShort(t.views)}${t.spotify?`<small>${fmtShort(t.spotify)} Spotify</small>`:''}</div>
+    <div class="top-views">${fmtShort(t.views)}</div>
   </div>`;
 }
 
@@ -535,21 +535,18 @@ function paint(){
   const body=byId('resultsBody');
   const totalViews=filtered.reduce((a,c)=>a+(c.views||0),0);
   const r=rank();
-  const gate = r>=2 ? `<span class="gate-ok">● Accès ${TIER_NAME[curTier()]} — données complètes</span>`
-    : r>=1 ? `<span class="gate-mid">● Membre Découverte — <a href="#adhesion">passez Pro</a> pour les streams Spotify & scores</span>`
+  const gate = r>=1 ? `<span class="gate-ok">● ${TIER_NAME[curTier()]||'Membre'} — données complètes</span>`
     : `<span class="gate-lock">🔒 <a href="#" id="gateReg">Inscrivez-vous gratuitement</a> pour voir les vues exactes</span>`;
   byId('searchMeta').innerHTML=`<b>${fmt(filtered.length)}</b> clip(s) · ${fmt(totalViews)} vues cumulées &nbsp;·&nbsp; ${gate}`;
   const gr=byId('gateReg'); if(gr) gr.onclick=e=>{e.preventDefault();openAuth('register');};
   body.innerHTML=filtered.slice(0,shown).map(rowHtml).join('') ||
-    `<tr><td colspan="8" style="padding:30px;text-align:center;color:var(--faint)">Aucun résultat. Essayez un autre artiste ou style.</td></tr>`;
+    `<tr><td colspan="7" style="padding:30px;text-align:center;color:var(--faint)">Aucun résultat. Essayez un autre artiste ou style.</td></tr>`;
   byId('moreBtn').hidden = shown>=filtered.length;
 }
 function rowHtml(c){
   const r=rank();
   const vCell = r>=1 ? `<b>${fmt(c.views)}</b>`
     : `<span class="lock-cell" data-gate="decouverte"><b>${fmtShort(c.views)}</b> 🔒</span>`;
-  const spCell = r>=2 ? (c.spotify?fmt(c.spotify):'—')
-    : `<span class="lock-cell" data-gate="pro">🔒 <small>Pro</small></span>`;
   const certCell = c.snep==='OUI'?'<span class="badge-snep">SNEP</span>':'—';
   return `<tr>
     <td><span class="chip">${c.year}</span></td>
@@ -558,7 +555,6 @@ function rowHtml(c){
     <td class="num">${vCell}</td>
     <td>${shortStyle(c.style)}</td>
     <td>${c.origin?esc(c.origin):'—'}</td>
-    <td class="num">${spCell}</td>
     <td>${certCell}</td>
   </tr>`;
 }
