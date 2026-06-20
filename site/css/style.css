@@ -331,3 +331,48 @@ b{color:#fff;font-weight:700}
 /* Analyses : colonne année sélectionnée */
 .an-table th.colsel{color:var(--gold)}
 .an-table td.heat.colsel{box-shadow:inset 0 0 0 2px rgba(255,206,79,.6)}
+
+/* ===================================================================
+   ANIMATIONS  (activées seulement si .anim-ready sur <html>,
+   c.-à-d. si l'utilisateur n'a pas demandé « réduire les animations »)
+   =================================================================== */
+html{scroll-padding-top:84px}
+
+/* 1) Apparition au défilement */
+.anim-ready .reveal{
+  opacity:0;transform:translateY(26px);
+  transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);
+  will-change:opacity,transform;
+}
+.anim-ready .reveal.in{opacity:1;transform:none}
+
+/* 3) Entrée du Hero (cascade au chargement) */
+@keyframes hlFadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.anim-ready .hero .eyebrow,
+.anim-ready .hero h1,
+.anim-ready .hero .lead,
+.anim-ready .hero-cta{opacity:0;animation:hlFadeUp .8s cubic-bezier(.22,.61,.36,1) forwards}
+.anim-ready .hero .eyebrow{animation-delay:.05s}
+.anim-ready .hero h1{animation-delay:.18s}
+.anim-ready .hero .lead{animation-delay:.34s}
+.anim-ready .hero-cta{animation-delay:.50s}
+
+/* 4) Survol des cartes + lien de menu actif */
+.anim-ready .chart-card,
+.anim-ready .tier-card,
+.anim-ready .plan,
+.anim-ready .cert-badge{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.anim-ready .chart-card:hover{transform:translateY(-4px);box-shadow:0 32px 72px -26px rgba(0,0,0,.72);border-color:rgba(255,255,255,.16)}
+.anim-ready .tier-card:hover,
+.anim-ready .plan:hover,
+.anim-ready .cert-badge:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.18)}
+.anim-ready .plan-featured:hover,
+.anim-ready .tier-featured:hover{transform:translateY(-12px)}
+
+.nav-links a{position:relative}
+.nav-links a.active{color:#fff}
+.nav-links a.active::after{
+  content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;border-radius:2px;background:var(--grad)}
+
+@media(max-width:920px){.nav-links a.active::after{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
