@@ -110,7 +110,12 @@ function chartOpts(title,{y={},tooltip=null}={}){
 /* ---------- YEAR EXPLORER ---------- */
 const charts={};
 const FREE_YEAR='2021';
-function yearUnlocked(y){ return y===FREE_YEAR || rank()>=2; }   // 2021 libre, le reste = abonnés payants
+function currentYear(){ return Object.keys(DASH.years).sort().slice(-1)[0]; }  // dernière édition (ex: 2025)
+function yearUnlocked(y){
+  if(y===FREE_YEAR) return true;            // 2021 : accès libre
+  if(y===currentYear()) return rank()>=2;   // édition en cours : Pro ou Business
+  return rank()>=3;                          // éditions intermédiaires : Business uniquement
+}
 function buildYearTabs(){
   const years=Object.keys(DASH.years).sort();
   const tabs=document.getElementById('yearTabs');
@@ -122,12 +127,19 @@ function buildYearTabs(){
   selectYear(FREE_YEAR);
 }
 function renderLockedYear(panel,y){
+  const cur=currentYear(), isCur=(y===cur);
+  const planBtn=isCur?'pro':'business';
+  const planLabel=isCur?'Passer Pro · 200€':'Passer Business · 500€';
+  const tierTxt=isCur?'Pro ou Business':'Business';
+  const msg=isCur
+    ? `L'édition en cours (${y}) est incluse dès le forfait <b>Pro · 200€/an</b>. Le forfait <b>Business</b> ouvre toutes les éditions 2021→${cur} et le comparateur.`
+    : `Les éditions intermédiaires (entre 2021 et ${cur}) sont réservées au forfait <b>Business · 500€/an</b>, qui ouvre toutes les éditions et le comparateur.`;
   panel.innerHTML=`<div class="year-lock">
     <div class="lock-ic">🔒</div>
-    <h3>Édition ${y} réservée aux abonnés</h3>
-    <p>L'exploration détaillée des éditions 2022 à 2025 — styles, rythme de sortie, distribution des vues et top des clips — est incluse dans les forfaits payants. L'édition <b>2021</b> reste en accès libre.</p>
+    <h3>Édition ${y} réservée aux abonnés ${tierTxt}</h3>
+    <p>${msg} L'édition <b>2021</b> reste en accès libre.</p>
     <div class="lock-cta">
-      <button class="btn btn-primary" data-join="pro">Débloquer · Passer Pro</button>
+      <button class="btn btn-primary" data-join="${planBtn}">${planLabel}</button>
       <button class="btn btn-ghost" id="yearLockLogin">J'ai déjà un compte</button>
     </div></div>`;
   const lg=byId('yearLockLogin'); if(lg) lg.onclick=()=>openAuth('login');
@@ -287,10 +299,14 @@ function initCompare(){
     b.classList.add('active'); cmpState[key]=b.dataset.v; renderCompare();
   });
   wire('cmpDim','dim'); wire('cmpMeasure','measure');
+  const cl=byId('compareLockLogin'); if(cl) cl.onclick=()=>openAuth('login');
   renderCompare();
 }
 
 function renderCompare(){
+  const cmpLocked = rank()<3;                 // comparateur réservé au Business
+  const lockEl=byId('compareLock'); if(lockEl) lockEl.hidden=!cmpLocked;
+  const contentEl=byId('compareContent'); if(contentEl) contentEl.classList.toggle('an-blurred',cmpLocked);
   const years=Object.keys(DASH.years).sort();
   const def=CMP_DIMS[cmpState.dim], measure=cmpState.measure;
   const per={}, tagged={}, totals={};
@@ -589,7 +605,7 @@ let pendingTier=null;
 function getMember(){try{return JSON.parse(localStorage.getItem('hl_member')||'null')}catch(_){return null}}
 function curTier(){const m=getMember();return m?m.tier:'visiteur';}
 function rank(){return TIER_RANK[curTier()]||0;}
-function refreshGated(){if(filtered)paint();if(typeof renderAnalytics==='function')renderAnalytics();if(DASH&&document.getElementById('yearTabs'))buildYearTabs();}
+function refreshGated(){if(filtered)paint();if(typeof renderAnalytics==='function')renderAnalytics();if(DASH&&document.getElementById('yearTabs'))buildYearTabs();if(typeof renderCompare==='function'&&DASH)renderCompare();}
 function saveMember(m){localStorage.setItem('hl_member',JSON.stringify(m));updateAuthUI();refreshGated();}
 function logoutMember(){localStorage.removeItem('hl_member');updateAuthUI();refreshGated();toast('Vous êtes déconnecté.');}
 function recordLead(extra){try{const L=JSON.parse(localStorage.getItem('hl_leads')||'[]');L.push({...extra,ts:new Date().toISOString()});localStorage.setItem('hl_leads',JSON.stringify(L));}catch(_){}}

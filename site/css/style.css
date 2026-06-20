@@ -227,6 +227,7 @@ b{color:#fff;font-weight:700}
 .seg button{background:transparent;border:0;color:var(--muted);font:inherit;font-size:.88rem;font-weight:600;padding:8px 14px;border-radius:9px;cursor:pointer;transition:.15s}
 .seg button:hover{color:var(--ink)}
 .seg button.active{background:var(--grad);color:#0a0e1a}
+.compare-stage{position:relative}
 .compare-note{margin-top:16px;color:var(--muted);font-size:.95rem;background:rgba(138,107,255,.08);border:1px solid rgba(138,107,255,.22);border-radius:12px;padding:14px 18px}
 .compare-note b{color:var(--ink)}
 @media(max-width:600px){.seg button{padding:7px 10px;font-size:.82rem}}
