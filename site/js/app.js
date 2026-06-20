@@ -303,10 +303,11 @@ function initCompare(){
 }
 
 function renderCompare(){
-  const cmpLocked = rank()<3;                 // comparateur réservé au Business
-  const lockEl=byId('compareLock'); if(lockEl) lockEl.hidden=!cmpLocked;
-  const contentEl=byId('compareContent'); if(contentEl) contentEl.classList.toggle('an-blurred',cmpLocked);
-  const years=Object.keys(DASH.years).sort();
+  const isBusiness = rank()>=3;               // comparaison des 5 éditions = Business
+  const lockEl=byId('compareLock'); if(lockEl) lockEl.hidden=true;
+  const contentEl=byId('compareContent'); if(contentEl) contentEl.classList.remove('an-blurred');
+  let years=Object.keys(DASH.years).sort();
+  if(!isBusiness) years=years.filter(y=>y===FREE_YEAR);   // hors Business : édition 2021 seule
   const def=CMP_DIMS[cmpState.dim], measure=cmpState.measure;
   const per={}, tagged={}, totals={};
   years.forEach(y=>{per[y]={};tagged[y]=0;});
@@ -337,9 +338,11 @@ function renderCompare(){
   const measLabel={clips:'nombre de clips',views:'vues cumulées',pct:'part en %'}[measure];
   byId('cmpTitle').textContent=`${def.label} · ${measLabel} par édition`;
   const partial=(cmpState.dim==='genre'||cmpState.dim==='origins');
-  byId('cmpSub').textContent=partial&&measure!=='pct'
-    ? 'Donnée renseignée partiellement avant 2024 — privilégiez « Part en % » pour comparer.'
-    : 'Cliquez la légende pour isoler une catégorie.';
+  byId('cmpSub').textContent = !isBusiness
+    ? 'Édition 2021 — passez Business pour comparer les 5 éditions côte à côte.'
+    : (partial&&measure!=='pct'
+        ? 'Donnée renseignée partiellement avant 2024 — privilégiez « Part en % » pour comparer.'
+        : 'Cliquez la légende pour isoler une catégorie.');
 
   if(cmpChart) cmpChart.destroy();
   cmpChart=new Chart(byId('cCompare'),{type:'bar',data:{labels:years,datasets},
@@ -353,9 +356,11 @@ function renderCompare(){
         y:{stacked:true,grid:{color:GRID},ticks:{callback:measure==='views'?(v=>fmtShort(v)):(measure==='pct'?(v=>v+'%'):undefined)},
           title:{display:true,text:measLabel}}}}});
 
-  // lecture dynamique : plus gros mouvement entre 1ère et dernière édition documentée
+  // note / appel à l'action
   const docYears=years.filter(y=>tagged[y]>0);
-  if(docYears.length>=2 && cats.length){
+  if(!isBusiness){
+    byId('cmpNote').innerHTML=`🔒 La comparaison des <b>5 éditions (2021→2025)</b> est réservée au forfait <b>Business</b>. <a href="#adhesion" style="color:var(--gold);font-weight:600">Voir les forfaits →</a>`;
+  } else if(docYears.length>=2 && cats.length){
     const y0=docYears[0],y1=docYears[docYears.length-1];
     const share=(y,cat)=>tagged[y]?(per[y][cat]?.clips||0)/tagged[y]*100:0;
     let best=null;
