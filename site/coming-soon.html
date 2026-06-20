@@ -134,7 +134,7 @@ h1{font-family:'Sora';font-weight:800;font-size:clamp(2.4rem,7vw,4.2rem);line-he
         <label class="check"><input type="checkbox" name="pdf" checked> Recevoir l'édition 2021 (PDF, gratuit)</label>
       </div>
       <p class="note" id="note"></p>
-      <a class="dlbtn" id="dlbtn" href="#" target="_blank" rel="noopener">⬇ Télécharger le Baromètre 2021 (PDF)</a>
+      <a class="dlbtn" id="dlbtn" href="#" download="Barometre-Hit-Lokal-2021.pdf" rel="noopener">⬇ Télécharger le Baromètre 2021 (PDF)</a>
       <p class="proof">🔥 Déjà <b id="proofN">120</b> personnes sur la liste d'attente.</p>
     </form>
 
@@ -168,7 +168,7 @@ h1{font-family:'Sora';font-weight:800;font-size:clamp(2.4rem,7vw,4.2rem);line-he
 <script>
 /* ===== Compte à rebours (modifiez la date ci-dessous) ===== */
 const LAUNCH = new Date('2026-06-22T20:00:00');   // 👈 date de lancement (lundi 22 juin, 20h)
-const PDF_2021 = 'https://tr.ee/ZfEKC8fwpl';
+const PDF_2021 = 'barometre-hitlokal-2021.pdf';
 const pad = n => String(n).padStart(2,'0');
 function tick(){
   const diff = Math.max(0, LAUNCH - new Date());
