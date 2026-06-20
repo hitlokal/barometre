@@ -33,8 +33,9 @@ body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-h
   min-height:100vh;display:flex;flex-direction:column}
 /* header */
 .brand{display:flex;align-items:center;gap:13px}
-.brand-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--grad);
-  color:#0a0e1a;font-family:'Sora';font-weight:800;font-size:1rem;box-shadow:0 8px 22px -8px var(--coral)}
+.brand-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;
+  background:url(logo-mark.png) center/auto 56% no-repeat, var(--grad);
+  box-shadow:0 8px 22px -8px var(--coral);font-size:0}
 .brand-txt{font-family:'Sora';font-weight:700;font-size:1.1rem}
 .brand-txt b{font-weight:800}
 /* hero */
@@ -98,7 +99,7 @@ h1{font-family:'Sora';font-weight:800;font-size:clamp(2.4rem,7vw,4.2rem);line-he
 
 <div class="wrap">
   <header class="brand">
-    <span class="brand-mark">HL</span>
+    <span class="brand-mark" role="img" aria-label="Hit Lokal"></span>
     <span class="brand-txt">Baromètre <b>Hit Lokal</b></span>
   </header>
 
