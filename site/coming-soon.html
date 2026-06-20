@@ -135,7 +135,7 @@ h1{font-family:'Sora';font-weight:800;font-size:clamp(2.4rem,7vw,4.2rem);line-he
       </div>
       <p class="note" id="note"></p>
       <a class="dlbtn" id="dlbtn" href="#" target="_blank" rel="noopener">⬇ Télécharger le Baromètre 2021 (PDF)</a>
-      <p class="proof">🔥 Déjà <b id="proofN">327</b> personnes sur la liste d'attente.</p>
+      <p class="proof">🔥 Déjà <b id="proofN">120</b> personnes sur la liste d'attente.</p>
     </form>
 
     <div class="kpis">
@@ -167,7 +167,7 @@ h1{font-family:'Sora';font-weight:800;font-size:clamp(2.4rem,7vw,4.2rem);line-he
 
 <script>
 /* ===== Compte à rebours (modifiez la date ci-dessous) ===== */
-const LAUNCH = new Date('2026-09-01T10:00:00');   // 👈 date de lancement
+const LAUNCH = new Date('2026-06-22T20:00:00');   // 👈 date de lancement (lundi 22 juin, 20h)
 const PDF_2021 = 'https://tr.ee/ZfEKC8fwpl';
 const pad = n => String(n).padStart(2,'0');
 function tick(){
@@ -183,7 +183,7 @@ tick(); setInterval(tick,1000);
 
 /* ===== Liste d'attente ===== */
 const proofN = document.getElementById('proofN');
-const BASE = 327;
+const BASE = 120;
 try{ proofN.textContent = BASE + (JSON.parse(localStorage.getItem('hl_leads')||'[]').filter(l=>l.source==='waitlist').length); }catch(_){}
 
 document.getElementById('waitForm').addEventListener('submit',e=>{
