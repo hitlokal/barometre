@@ -29,7 +29,6 @@
       <a href="#analyses">Analyses<span class="nav-pro">Pro</span></a>
       <a href="#femmes">Femmes</a>
       <a href="#recherche">Recherche</a>
-      <a href="#certification">Certification</a>
       <a href="#offre">Offre data</a>
       <span class="nav-member" id="navMember"></span>
       <button class="nav-cta" id="navAuth">Connexion</button>
@@ -251,59 +250,12 @@
   </div>
 </section>
 
-<!-- CERTIFICATION HIT LOKAL -->
-<section class="section cert-sec" id="certification">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow eyebrow-cert">Le label de référence</span>
-      <h2>La Certification Hit Lokal</h2>
-      <p>La première certification de performance dédiée à la musique d'Outremer. Un score unique qui combine l'audience YouTube et l'écoute Spotify pour distinguer les véritables hits ultramarins.</p>
-    </div>
-
-    <div class="cert-formula">
-      <div class="cert-formula-box">
-        <span class="cf-part cf-yt">30%<small>Vues YouTube</small></span>
-        <span class="cf-op">+</span>
-        <span class="cf-part cf-sp">70%<small>Streams Spotify</small></span>
-        <span class="cf-op">=</span>
-        <span class="cf-part cf-score">Score HL<small>Indice de performance</small></span>
-      </div>
-    </div>
-
-    <div class="cert-tiers">
-      <div class="cert-badge tier-or"><div class="medal">🥇</div><h3>Or</h3><div class="thr">Score ≥ 1 M</div></div>
-      <div class="cert-badge tier-pl"><div class="medal">🏆</div><h3>Platine</h3><div class="thr">Score ≥ 3 M</div></div>
-      <div class="cert-badge tier-di"><div class="medal">💎</div><h3>Diamant</h3><div class="thr">Score ≥ 10 M</div></div>
-    </div>
-    <p class="cert-live" id="certLive"></p>
-
-    <div class="cert-grid">
-      <div class="card cert-calc">
-        <h3>Calculez votre certification</h3>
-        <p class="plan-sub">Estimez le palier d'un clip à partir de ses chiffres.</p>
-        <label>Vues YouTube<input type="number" id="calcYt" min="0" placeholder="ex : 2 000 000"></label>
-        <label>Streams Spotify<input type="number" id="calcSp" min="0" placeholder="ex : 1 500 000"></label>
-        <div class="calc-result" id="calcResult">
-          <div class="calc-score"><span id="calcScore">—</span><small>Score Hit Lokal</small></div>
-          <div class="calc-badge" id="calcBadge">Entrez vos chiffres</div>
-        </div>
-        <a href="#contact" class="btn btn-primary btn-full" data-plan="Certification Hit Lokal">Faire certifier mon clip</a>
-      </div>
-      <div class="card cert-top">
-        <h3>Derniers clips certifiés</h3>
-        <p class="plan-sub">Top des scores Hit Lokal (édition 2025).</p>
-        <div class="top-list" id="certTop"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ADHÉSION / MEMBRES -->
 <section class="section adhesion-sec" id="adhesion">
   <div class="wrap">
     <div class="sec-head">
       <h2>Accédez aux données</h2>
-      <p>Le détail des chiffres (vues exactes, streams Spotify, scores de certification, labels) est réservé aux membres. Créez un compte gratuit, montez en puissance quand vous voulez.</p>
+      <p>Le détail des chiffres (vues exactes, streams Spotify, labels) est réservé aux membres. Créez un compte gratuit, montez en puissance quand vous voulez.</p>
     </div>
     <div class="tiers">
       <div class="tier-card" data-tier="decouverte">
@@ -325,7 +277,6 @@
         <ul>
           <li>✔ Tout Découverte, plus :</li>
           <li>✔ <b>Streams Spotify</b> détaillés</li>
-          <li>✔ <b>Scores & paliers</b> de certification</li>
           <li>✔ Labels & certifications SNEP</li>
           <li class="off">✖ Export massif & API</li>
         </ul>
@@ -338,7 +289,6 @@
           <li>✔ Tout Pro, plus :</li>
           <li>✔ <b>Export CSV / Excel</b> complet</li>
           <li>✔ Accès <b>API</b> & flux hebdo</li>
-          <li>✔ Données de certification brutes</li>
           <li>✔ Support analyste dédié</li>
         </ul>
         <button class="btn btn-ghost btn-full" data-join="business">Passer Business · 50€</button>
@@ -493,7 +443,6 @@
           <option selected>Dataset & licence</option>
           <option>API & sur-mesure</option>
           <option>Étude Femmes & musique Outremer</option>
-          <option>Certification Hit Lokal</option>
           <option>Membre Pro (15€/mois)</option>
           <option>Membre Business (50€/mois)</option>
           <option>Je ne sais pas encore</option>
@@ -553,7 +502,7 @@
 <!-- TOAST -->
 <div class="toast" id="toast" hidden></div>
 
-<script src="js/app.js?v=13"></script>
+<script src="js/app.js?v=14"></script>
 <script src="js/anim.js?v=1"></script>
 </body>
 </html>

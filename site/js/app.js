@@ -38,7 +38,6 @@ Promise.all([
   initCompare();
   renderFemmes();
   initAuth();
-  renderCertification();
   initAnalytics();
   initSearch();
 }).catch(e=>{
@@ -551,9 +550,7 @@ function rowHtml(c){
     : `<span class="lock-cell" data-gate="decouverte"><b>${fmtShort(c.views)}</b> 🔒</span>`;
   const spCell = r>=2 ? (c.spotify?fmt(c.spotify):'—')
     : `<span class="lock-cell" data-gate="pro">🔒 <small>Pro</small></span>`;
-  const sc=certScore(c), pal=certTier(sc);
-  const certCell = pal ? `<span class="cert-chip c-${pal.toLowerCase()}">${pal}</span>`
-    : (c.snep==='OUI'?'<span class="badge-snep">SNEP</span>':'—');
+  const certCell = c.snep==='OUI'?'<span class="badge-snep">SNEP</span>':'—';
   return `<tr>
     <td><span class="chip">${c.year}</span></td>
     <td><b>${esc(c.artist||'—')}</b></td>
@@ -652,37 +649,6 @@ function toast(msg){
   const t=byId('toast'); if(!t)return;
   t.textContent=msg; t.hidden=false; t.classList.add('show');
   clearTimeout(toast._t); toast._t=setTimeout(()=>{t.classList.remove('show');setTimeout(()=>t.hidden=true,300);},3200);
-}
-
-/* ---------- CERTIFICATION HIT LOKAL ---------- */
-function certScore(c){ if(!c||!c.spotify) return null; return Math.round(0.30*(c.views||0)+0.70*c.spotify); }
-function certTier(s){ if(s==null)return null; if(s>=10e6)return 'Diamant'; if(s>=3e6)return 'Platine'; if(s>=1e6)return 'Or'; return null; }
-
-function renderCertification(){
-  const scored=CLIPS.map(c=>({c,s:certScore(c)})).filter(x=>x.s!=null);
-  const cnt={Or:0,Platine:0,Diamant:0};
-  scored.forEach(x=>{const t=certTier(x.s);if(t)cnt[t]++;});
-  const total=cnt.Or+cnt.Platine+cnt.Diamant;
-  const live=byId('certLive');
-  if(live) live.innerHTML=`🏆 <b>${total} clips déjà certifiés</b> (édition 2025) : <span class="c-or">${cnt.Or} Or</span> · <span class="c-platine">${cnt.Platine} Platine</span> · <span class="c-diamant">${cnt.Diamant} Diamant</span>.`;
-  const top=scored.sort((a,b)=>b.s-a.s).slice(0,6);
-  const el=byId('certTop');
-  if(el) el.innerHTML=top.map((x,i)=>{const t=certTier(x.s);
-    return `<div class="top-row">
-      <div class="top-rank ${i<3?'gold':''}">${i+1}</div>
-      <div class="top-main"><b>${esc(normArtist(x.c.artist))} — ${esc(x.c.title||'')}</b>
-        <span><span class="cert-chip c-${t.toLowerCase()}">${t}</span> · ${fmtShort(x.c.views)} YT · ${fmtShort(x.c.spotify)} Spotify</span></div>
-      <div class="top-views">${fmtShort(x.s)}<small>score HL</small></div>
-    </div>`;}).join('');
-  const yt=byId('calcYt'), sp=byId('calcSp');
-  if(yt&&sp){ const upd=()=>{
-      const v=(+yt.value||0), s=(+sp.value||0), sc=Math.round(0.30*v+0.70*s), t=certTier(sc);
-      byId('calcScore').textContent = (v||s)?fmtShort(sc):'—';
-      const b=byId('calcBadge');
-      if(!v&&!s){b.textContent='Entrez vos chiffres';b.className='calc-badge';}
-      else if(t){b.textContent='Certifié '+t;b.className='calc-badge has c-'+t.toLowerCase();}
-      else {b.textContent='Pas encore certifié';b.className='calc-badge none';}
-    }; yt.addEventListener('input',upd); sp.addEventListener('input',upd); }
 }
 
 /* ---------- NAV + FORM ---------- */
