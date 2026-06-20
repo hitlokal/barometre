@@ -472,16 +472,15 @@ function normArtist(a){
 const FEM_COLORS={femme:'#ff5d73',mixte:'#c084fc',homme:'#39a0ff'};
 
 function renderFemmes(){
-  const years=Object.keys(DASH.years).sort();          // 2021 → 2025
-  const per={}; years.forEach(y=>per[y]={femme:0,mixte:0,homme:0,tagged:0,total:0});
+  const Y=FREE_YEAR;                                    // édition 2021 uniquement
+  const clips2021=CLIPS.filter(c=>String(c.year)===Y);
+  let femme=0,mixte=0,homme=0,tagged=0;
   const viewsBy={femme:0,mixte:0,homme:0};
   const artists={};
-  CLIPS.forEach(c=>{
-    const y=String(c.year); if(!per[y]) per[y]={femme:0,mixte:0,homme:0,tagged:0,total:0};
-    per[y].total++;
+  clips2021.forEach(c=>{
     const g=genderCat(c.sex); if(!g) return;
-    per[y][g]++; per[y].tagged++;
-    if(['2024','2025'].includes(y)) viewsBy[g]+=(c.views||0);
+    tagged++; if(g==='femme')femme++; else if(g==='mixte')mixte++; else homme++;
+    viewsBy[g]+=(c.views||0);
     // Classement nominatif : femmes confirmées en lead (solo F + duos FF) uniquement
     if(g==='femme'){
       const k=normArtist(c.artist);
@@ -491,37 +490,21 @@ function renderFemmes(){
     }
   });
 
-  const documented=years.filter(y=>per[y].tagged>0);
-  const undoc=years.filter(y=>per[y].tagged===0);
-  // aggregate KPIs over documented years
-  let aFem=0,aMix=0,aTag=0; documented.forEach(y=>{aFem+=per[y].femme;aMix+=per[y].mixte;aTag+=per[y].tagged;});
-  const presence=aTag?Math.round((aFem+aMix)/aTag*100):0;
+  const presence=tagged?Math.round((femme+mixte)/tagged*100):0;
   const femViewsTot=viewsBy.femme+viewsBy.mixte;
   const nFemArtists=Object.keys(artists).length;
   const topArtists=Object.entries(artists).sort((a,b)=>b[1].views-a[1].views).slice(0,10);
-  const topClip=CLIPS.filter(c=>genderCat(c.sex)==='femme')
-                     .sort((a,b)=>(b.views||0)-(a.views||0))[0];
+  const topClip=clips2021.filter(c=>genderCat(c.sex)==='femme')
+                         .sort((a,b)=>(b.views||0)-(a.views||0))[0];
 
-  byId('femNote').innerHTML=`ℹ️ Indicateurs calculés sur les éditions documentées en genre (${documented.join(', ')}). `+
-    (undoc.length?`Les éditions ${undoc.join(', ')} ne disposent pas encore de cette donnée (« n/d »).`:'');
+  byId('femNote').innerHTML=`ℹ️ Indicateurs calculés sur l'édition <b>2021</b> (clips documentés en genre).`;
 
   byId('femKpis').innerHTML=[
-    kpiCard(presence+'%','de présence féminine','clips portés ou co-portés par des femmes'),
-    kpiCard(fmtShort(femViewsTot),'vues générées','femmes & collaborations (2024–2025)'),
-    kpiCard(fmt(nFemArtists),'artistes femmes','en lead, identifiées en base'),
+    kpiCard(presence+'%','de présence féminine','clips portés ou co-portés par des femmes (2021)'),
+    kpiCard(fmtShort(femViewsTot),'vues générées','femmes & collaborations (2021)'),
+    kpiCard(fmt(nFemArtists),'artistes femmes','en lead, identifiées (2021)'),
     kpiCard(topClip?esc(normArtist(topClip.artist)):'—','clip féminin n°1',topClip?fmtShort(topClip.views)+' vues':'')
   ].join('');
-
-  // per-year stacked bar (all years; undocumented = empty + n/d tick)
-  charts.femY=new Chart(byId('cFemYears'),{type:'bar',
-    data:{labels:years.map(y=>per[y].tagged?y:y+' (n/d)'),datasets:[
-      {label:'Femmes',data:years.map(y=>per[y].femme),backgroundColor:FEM_COLORS.femme,borderRadius:4,stack:'g'},
-      {label:'Mixte',data:years.map(y=>per[y].mixte),backgroundColor:FEM_COLORS.mixte,borderRadius:4,stack:'g'},
-      {label:'Hommes',data:years.map(y=>per[y].homme),backgroundColor:FEM_COLORS.homme,borderRadius:4,stack:'g'}]},
-    options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:true,labels:{boxWidth:12,padding:14}},
-        tooltip:{callbacks:{label:c=>{const t=per[years[c.dataIndex]].tagged;return ` ${c.dataset.label}: ${c.raw} clips${t?' ('+Math.round(c.raw/t*100)+'%)':''}`;}}}},
-      scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:GRID},title:{display:true,text:'Clips taggés'}}}}});
 
   charts.femV=new Chart(byId('cFemViews'),{type:'doughnut',
     data:{labels:['Femmes','Mixte','Hommes'],datasets:[{data:[viewsBy.femme,viewsBy.mixte,viewsBy.homme],
