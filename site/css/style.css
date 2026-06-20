@@ -125,9 +125,10 @@ b{color:#fff;font-weight:700}
 .video-close{position:absolute;top:14px;right:16px;background:rgba(0,0,0,.55);border:0;color:#fff;width:36px;height:36px;border-radius:50%;font-size:1rem;cursor:pointer;z-index:3}
 .video-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000}
 .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.video-cap{display:flex;align-items:center;gap:9px;padding:14px 18px;font-family:'Sora';font-weight:700;font-size:.98rem}
-.video-cap::before{content:"▶";color:var(--coral);font-size:.8rem}
-.video-cap::after{content:"· Baromètre Hit Lokal";color:var(--faint);font-weight:500;font-size:.82rem;font-family:'Inter'}
+.video-cap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 18px}
+.video-cap .video-title{font-family:'Sora';font-weight:700;font-size:.96rem}
+.video-cap .video-hl{color:var(--gold);font-weight:600;font-size:.85rem;white-space:nowrap}
+.video-cap .video-hl:hover{text-decoration:underline}
 
 /* SEARCH */
 .search-controls{display:grid;grid-template-columns:2fr 1fr 1.3fr 1.3fr 1.1fr;gap:12px;margin-bottom:14px}

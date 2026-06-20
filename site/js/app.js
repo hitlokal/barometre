@@ -33,7 +33,7 @@ function addToBrevo(fields){
 }
 
 Promise.all([
-  fetch('data/dashboard.json').then(r=>r.json()),
+  fetch('data/dashboard.json',{cache:'no-store'}).then(r=>r.json()),
   fetch('data/clips.json').then(r=>r.json())
 ]).then(([dash,clips])=>{
   DASH=dash; CLIPS=clips;
@@ -275,16 +275,17 @@ function ytId(u){
 function topCard(t,i){
   const id=ytId(t.youtube), cap=(t.artist||'—')+' — '+(t.title||'');
   const thumb=id?`background-image:url('https://img.youtube.com/vi/${id}/mqdefault.jpg')`:'';
-  return `<button type="button" class="clip-card${id?'':' no-yt'}" data-yt="${id}" data-cap="${esc(cap)}" data-q="${esc(cap)}">
+  return `<button type="button" class="clip-card${id?'':' no-yt'}" data-yt="${id}" data-hl="${esc(t.hl||'')}" data-cap="${esc(cap)}" data-q="${esc(cap)}">
     <span class="clip-thumb" style="${thumb}"><span class="clip-rank ${i<3?'gold':''}">${i+1}</span><span class="clip-play">▶</span></span>
     <span class="clip-info"><b>${esc(t.artist||'—')} — ${esc(t.title||'')}</b><span class="clip-meta">${shortStyle(t.style)}${t.origin?' · '+esc(t.origin):''}</span></span>
     <span class="clip-views">${fmtShort(t.views)}</span>
   </button>`;
 }
-function openVideo(id,caption){
+function openVideo(id,caption,hl){
   const m=byId('videoModal'); if(!m||!id) return;
   byId('videoFrame').innerHTML=`<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" title="${esc(caption)}" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
-  byId('videoCap').textContent=caption;
+  byId('videoCap').innerHTML=`<span class="video-title">▶ ${esc(caption)}</span>`+
+    (hl?`<a class="video-hl" href="${esc(hl)}" target="_blank" rel="noopener">Voir sur Hit Lokal →</a>`:'');
   m.hidden=false; document.body.style.overflow='hidden';
 }
 function closeVideo(){
@@ -294,8 +295,9 @@ function closeVideo(){
 document.addEventListener('click',e=>{
   const card=e.target.closest('.clip-card');
   if(card){
-    const id=card.dataset.yt;
-    if(id) openVideo(id,card.dataset.cap||'');
+    const id=card.dataset.yt, hl=card.dataset.hl;
+    if(id) openVideo(id,card.dataset.cap||'',hl);
+    else if(hl) window.open(hl,'_blank','noopener');
     else window.open('https://www.youtube.com/results?search_query='+encodeURIComponent(card.dataset.q||''),'_blank','noopener');
     return;
   }
