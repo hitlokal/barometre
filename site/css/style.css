@@ -100,6 +100,35 @@ b{color:#fff;font-weight:700}
 .top-views small{display:block;color:var(--teal);font-weight:600;font-size:.72rem}
 .chip{display:inline-block;font-size:.72rem;padding:2px 9px;border-radius:999px;background:rgba(255,255,255,.07);color:var(--muted);margin-right:4px}
 
+/* TOP CLIPS — grille compacte avec vignette + lecture */
+.top-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:760px){.top-grid{grid-template-columns:1fr}}
+.clip-card{display:flex;align-items:center;gap:12px;width:100%;text-align:left;cursor:pointer;
+  background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:8px;color:inherit;font:inherit;
+  transition:border-color .15s,transform .15s}
+.clip-card:hover{border-color:var(--violet);transform:translateY(-2px)}
+.clip-thumb{position:relative;flex:0 0 auto;width:104px;height:60px;border-radius:8px;background:#0a0e1a center/cover no-repeat;overflow:hidden;display:grid;place-items:center}
+.clip-rank{position:absolute;top:4px;left:6px;font-family:'Sora';font-weight:800;font-size:.82rem;color:#fff;text-shadow:0 1px 4px #000}
+.clip-rank.gold{color:var(--gold)}
+.clip-play{width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.5);color:#fff;display:grid;place-items:center;font-size:.72rem;padding-left:2px}
+.clip-card:hover .clip-play{background:var(--coral);color:#0a0e1a}
+.clip-card.no-yt .clip-thumb{background:linear-gradient(135deg,#1b2440,#0f1525)}
+.clip-info{flex:1;min-width:0}
+.clip-info b{display:block;font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.clip-meta{color:var(--faint);font-size:.78rem}
+.clip-views{font-family:'Sora';font-weight:700;font-size:.92rem;white-space:nowrap;color:var(--ink)}
+
+/* FENÊTRE VIDÉO (lightbox Hit Lokal) */
+.video-modal{position:fixed;inset:0;background:rgba(6,9,18,.86);backdrop-filter:blur(7px);display:grid;place-items:center;z-index:300;padding:20px}
+.video-modal[hidden]{display:none}
+.video-box{position:relative;width:100%;max-width:880px;background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 40px 100px -30px #000}
+.video-close{position:absolute;top:14px;right:16px;background:rgba(0,0,0,.55);border:0;color:#fff;width:36px;height:36px;border-radius:50%;font-size:1rem;cursor:pointer;z-index:3}
+.video-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-cap{display:flex;align-items:center;gap:9px;padding:14px 18px;font-family:'Sora';font-weight:700;font-size:.98rem}
+.video-cap::before{content:"▶";color:var(--coral);font-size:.8rem}
+.video-cap::after{content:"· Baromètre Hit Lokal";color:var(--faint);font-weight:500;font-size:.82rem;font-family:'Inter'}
+
 /* SEARCH */
 .search-controls{display:grid;grid-template-columns:2fr 1fr 1.3fr 1.3fr 1.1fr;gap:12px;margin-bottom:14px}
 .search-controls input,.search-controls select,.lead-form input,.lead-form select,.lead-form textarea{

@@ -173,8 +173,8 @@ function selectYear(y){
       <div class="card chart-card">${secondaryBlock(d)}</div>
       <div class="card chart-card full">
         <div class="chart-title">Top 20 des clips ${y}</div>
-        <div class="chart-sub">Classés par vues YouTube cumulées au 31/12</div>
-        <div class="top-list">${d.top.map((t,i)=>topRow(t,i)).join('')}</div>
+        <div class="chart-sub">Classés par vues YouTube · cliquez un clip pour le regarder</div>
+        <div class="top-grid">${d.top.map((t,i)=>topCard(t,i)).join('')}</div>
       </div>
     </div>`;
 
@@ -263,6 +263,45 @@ function topRow(t,i){
     <div class="top-views">${fmtShort(t.views)}</div>
   </div>`;
 }
+
+/* ---------- TOP CLIPS : cartes compactes + vignette + lecture vidéo ---------- */
+function ytId(u){
+  if(!u) return '';
+  const s=String(u).trim();
+  if(/^[\w-]{11}$/.test(s)) return s;                         // déjà un ID
+  const m=s.match(/(?:v=|youtu\.be\/|embed\/|shorts\/|live\/)([\w-]{11})/);
+  return m?m[1]:'';
+}
+function topCard(t,i){
+  const id=ytId(t.youtube), cap=(t.artist||'—')+' — '+(t.title||'');
+  const thumb=id?`background-image:url('https://img.youtube.com/vi/${id}/mqdefault.jpg')`:'';
+  return `<button type="button" class="clip-card${id?'':' no-yt'}" data-yt="${id}" data-cap="${esc(cap)}" data-q="${esc(cap)}">
+    <span class="clip-thumb" style="${thumb}"><span class="clip-rank ${i<3?'gold':''}">${i+1}</span><span class="clip-play">▶</span></span>
+    <span class="clip-info"><b>${esc(t.artist||'—')} — ${esc(t.title||'')}</b><span class="clip-meta">${shortStyle(t.style)}${t.origin?' · '+esc(t.origin):''}</span></span>
+    <span class="clip-views">${fmtShort(t.views)}</span>
+  </button>`;
+}
+function openVideo(id,caption){
+  const m=byId('videoModal'); if(!m||!id) return;
+  byId('videoFrame').innerHTML=`<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" title="${esc(caption)}" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
+  byId('videoCap').textContent=caption;
+  m.hidden=false; document.body.style.overflow='hidden';
+}
+function closeVideo(){
+  const m=byId('videoModal'); if(!m) return;
+  m.hidden=true; byId('videoFrame').innerHTML=''; document.body.style.overflow='';
+}
+document.addEventListener('click',e=>{
+  const card=e.target.closest('.clip-card');
+  if(card){
+    const id=card.dataset.yt;
+    if(id) openVideo(id,card.dataset.cap||'');
+    else window.open('https://www.youtube.com/results?search_query='+encodeURIComponent(card.dataset.q||''),'_blank','noopener');
+    return;
+  }
+  if(e.target.id==='videoModal'||e.target.closest('#videoClose')) closeVideo();
+});
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeVideo(); });
 
 function kpiCard(v,l,s){return `<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div>${s?`<div class="s">${s}</div>`:''}</div>`;}
 const byId=id=>document.getElementById(id);
