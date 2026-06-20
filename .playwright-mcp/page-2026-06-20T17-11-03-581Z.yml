@@ -1,0 +1,100 @@
+- generic [ref=e6]:
+  - banner [ref=e7]:
+    - img "Hit Lokal" [ref=e8]
+    - generic [ref=e9]: Baromètre Hit Lokal
+  - main [ref=e10]:
+    - generic [ref=e11]: Lancement imminent
+    - heading "La musique d'Outremer en chiffres." [level=1] [ref=e13]:
+      - text: La musique d'Outremer
+      - text: en chiffres.
+    - paragraph [ref=e14]: La plus grande base de données sur les artistes ultramarins — vues YouTube, styles, origines et performances de 2021 à 2025 — arrive très bientôt. Soyez les premiers informés.
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]: "02"
+        - generic [ref=e18]: Jours
+      - generic [ref=e19]:
+        - generic [ref=e20]: "00"
+        - generic [ref=e21]: Heures
+      - generic [ref=e22]:
+        - generic [ref=e23]: "48"
+        - generic [ref=e24]: Minutes
+      - generic [ref=e25]:
+        - generic [ref=e26]: "56"
+        - generic [ref=e27]: Secondes
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - textbox "vous@email.com" [ref=e30]
+        - button "Être prévenu·e 🔔" [ref=e31] [cursor=pointer]
+      - generic [ref=e32]:
+        - combobox [ref=e33]:
+          - option "Vous êtes… (optionnel)" [selected]
+          - option "Artiste / Management"
+          - option "Label / Maison de disques"
+          - option "Média / Presse"
+          - option "Plateforme / Distributeur"
+          - option "Institution / Collectivité"
+          - option "Marque / Annonceur"
+          - option "Public"
+        - generic [ref=e34]:
+          - checkbox "Recevoir l'édition 2021 (PDF, gratuit)" [checked] [ref=e35]
+          - text: Recevoir l'édition 2021 (PDF, gratuit)
+      - paragraph [ref=e36]
+      - paragraph [ref=e37]: 🔥 Déjà 122 personnes sur la liste d'attente.
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]: 413 M
+        - generic [ref=e41]: vues en 2025
+      - generic [ref=e42]:
+        - generic [ref=e43]: 2 780
+        - generic [ref=e44]: clips recensés
+      - generic [ref=e45]:
+        - generic [ref=e46]: "5"
+        - generic [ref=e47]: éditions (2021→25)
+      - generic [ref=e48]:
+        - generic [ref=e49]: 3 863
+        - generic [ref=e50]: artistes en base
+    - heading "Ce qui vous attend" [level=3] [ref=e51]
+    - generic [ref=e52]:
+      - generic [ref=e53]:
+        - generic [ref=e54]: 📊
+        - generic [ref=e55]:
+          - generic [ref=e56]: Explorer la data
+          - text: Tops, styles, origines et vues, année par année.
+      - generic [ref=e57]:
+        - generic [ref=e58]: ⚖️
+        - generic [ref=e59]:
+          - generic [ref=e60]: Comparer les éditions
+          - text: L'évolution de la scène ultramarine sur 5 ans.
+      - generic [ref=e61]:
+        - generic [ref=e62]: 🔎
+        - generic [ref=e63]:
+          - generic [ref=e64]: Recherche avancée
+          - text: 2 780 clips filtrables par artiste, style, origine et année.
+      - generic [ref=e65]:
+        - generic [ref=e66]: 👩‍🎤
+        - generic [ref=e67]:
+          - generic [ref=e68]: La place des femmes
+          - text: Un focus dédié à la visibilité des artistes femmes ultramarines.
+  - contentinfo [ref=e69]:
+    - generic [ref=e70]:
+      - link "Instagram" [ref=e71] [cursor=pointer]:
+        - /url: https://www.instagram.com/hitlokal/
+        - img [ref=e72]
+      - link "TikTok" [ref=e74] [cursor=pointer]:
+        - /url: https://www.tiktok.com/@hitlokal
+        - img [ref=e75]
+      - link "YouTube" [ref=e77] [cursor=pointer]:
+        - /url: https://www.youtube.com/user/HITLOKAL
+        - img [ref=e78]
+      - link "X (Twitter)" [ref=e80] [cursor=pointer]:
+        - /url: https://x.com/HitLokal
+        - img [ref=e81]
+      - link "Facebook" [ref=e83] [cursor=pointer]:
+        - /url: https://www.facebook.com/hitlokalawards/
+        - img [ref=e84]
+      - link "E-mail" [ref=e86] [cursor=pointer]:
+        - /url: mailto:hitlokal@gmail.com
+        - img [ref=e87]
+    - paragraph [ref=e90]:
+      - text: © Hit Lokal 2021–2026 · La référence data de la musique d'Outremer.
+      - text: Guadeloupe · Martinique · Guyane · Réunion · Mayotte
