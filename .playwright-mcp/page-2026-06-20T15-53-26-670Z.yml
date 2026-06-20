@@ -1,0 +1,1056 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "HL Baromètre Hit Lokal" [ref=e4] [cursor=pointer]:
+        - /url: "#accueil"
+        - generic [ref=e5]: HL
+        - generic [ref=e6]: Baromètre Hit Lokal
+      - navigation [ref=e7]:
+        - link "Accueil" [ref=e8] [cursor=pointer]:
+          - /url: "#accueil"
+        - link "Explorer" [ref=e9] [cursor=pointer]:
+          - /url: "#explorer"
+        - link "Comparer" [ref=e10] [cursor=pointer]:
+          - /url: "#comparer"
+        - link "AnalysesPro" [ref=e11] [cursor=pointer]:
+          - /url: "#analyses"
+        - link "Femmes" [ref=e12] [cursor=pointer]:
+          - /url: "#femmes"
+        - link "Recherche" [ref=e13] [cursor=pointer]:
+          - /url: "#recherche"
+        - link "Offre data" [ref=e14] [cursor=pointer]:
+          - /url: "#offre"
+        - generic [ref=e16]: ● hitlokal@gmail.com · Découverte
+        - button "Déconnexion" [ref=e17] [cursor=pointer]
+  - generic [ref=e20]:
+    - generic [ref=e21]: Édition 2021 → 2025 · La référence data
+    - heading "La musique d'Outremer en chiffres." [level=1] [ref=e22]:
+      - text: La musique d'Outremer
+      - text: en chiffres.
+    - paragraph [ref=e23]: Depuis 2021, le Baromètre Hit Lokal recense et analyse chaque clip d'artiste ultramarin diffusé sur YouTube — vues, styles, origines, streams Spotify et certifications. La plus grande base de données sur la musique de Guadeloupe, Martinique, Guyane, Réunion et Mayotte.
+    - generic [ref=e24]:
+      - link "Explorer les données" [ref=e25] [cursor=pointer]:
+        - /url: "#explorer"
+      - link "Licences & API pro" [ref=e26] [cursor=pointer]:
+        - /url: "#offre"
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - generic [ref=e29]: 0 M
+        - generic [ref=e30]: vues cumulées en 2025
+        - generic [ref=e31]: +61% vs 2024
+      - generic [ref=e32]:
+        - generic [ref=e33]: "0"
+        - generic [ref=e34]: clips recensés en 2025
+      - generic [ref=e35]:
+        - generic [ref=e36]: "0"
+        - generic [ref=e37]: clips suivis depuis 2021
+      - generic [ref=e38]:
+        - generic [ref=e39]: "0"
+        - generic [ref=e40]: éditions annuelles
+        - generic [ref=e41]: 2021 → 2025
+  - generic [ref=e44]:
+    - heading "5 ans de croissance" [level=2] [ref=e45]
+    - paragraph [ref=e46]: Vues cumulées et nombre de clips recensés par édition. En 2025, les clips ultramarins ont franchi les 413 millions de vues.
+  - generic [ref=e53]:
+    - generic [ref=e54]:
+      - heading "Explorer par année" [level=2] [ref=e55]
+      - paragraph [ref=e56]: Sélectionnez une édition pour visualiser la répartition par style, le rythme de sortie, la distribution des vues et le top des clips.
+    - generic [ref=e57]:
+      - button "2021" [ref=e58] [cursor=pointer]
+      - button "2022" [ref=e59] [cursor=pointer]
+      - button "2023" [ref=e60] [cursor=pointer]
+      - button "2024" [ref=e61] [cursor=pointer]
+      - button "2025" [ref=e62] [cursor=pointer]
+    - generic [ref=e63]:
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - generic [ref=e66]: 413 M
+          - generic [ref=e67]: vues cumulées
+        - generic [ref=e68]:
+          - generic [ref=e69]: "548"
+          - generic [ref=e70]: clips recensés
+        - generic [ref=e71]:
+          - generic [ref=e72]: "71"
+          - generic [ref=e73]: clips > 1 M de vues
+        - generic [ref=e74]:
+          - generic [ref=e75]: Dancehall
+          - generic [ref=e76]: style n°1
+          - generic [ref=e77]: 239 clips
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - generic [ref=e80]: Vues par style musical
+          - generic [ref=e81]: Total des vues cumulées par genre
+        - generic [ref=e84]:
+          - generic [ref=e85]: Répartition des clips par style
+          - generic [ref=e86]: 548 clips au total
+        - generic [ref=e89]:
+          - generic [ref=e90]: Rythme de sortie & vues par mois
+          - generic [ref=e91]: Nombre de clips et vues générées chaque mois
+        - generic [ref=e94]:
+          - generic [ref=e95]: Distribution des clips par paliers de vues
+          - generic [ref=e96]: De quelques milliers à plus de 10 millions
+        - generic [ref=e99]:
+          - generic [ref=e100]: Origine des artistes
+          - generic [ref=e101]: Répartition des clips par territoire
+        - generic [ref=e104]:
+          - generic [ref=e105]: Top 20 des clips 2025
+          - generic [ref=e106]: Classés par vues YouTube cumulées au 31/12
+          - generic [ref=e107]:
+            - generic [ref=e108]:
+              - generic [ref=e109]: "1"
+              - generic [ref=e110]:
+                - generic [ref=e111]: Anyme Feat. Shaydee's — Shamballa
+                - generic [ref=e112]: Dancehall · Martinique (972) · SNEP
+              - generic [ref=e113]:
+                - text: 20 M
+                - generic [ref=e114]: 54 M Spotify
+            - generic [ref=e115]:
+              - generic [ref=e116]: "2"
+              - generic [ref=e117]:
+                - generic [ref=e118]: Dj Kawest — Chambre 04 Feat Attachingboy
+                - generic [ref=e119]: Dancehall · 971 / 972 · SNEP
+              - generic [ref=e120]:
+                - text: 20 M
+                - generic [ref=e121]: 82 M Spotify
+            - generic [ref=e122]:
+              - generic [ref=e123]: "3"
+              - generic [ref=e124]:
+                - generic [ref=e125]: 1t1 Ft Théomaa — Bouwey
+                - generic [ref=e126]: Soca/Bouyon · Guadeloupe (971) · SNEP
+              - generic [ref=e127]:
+                - text: 17 M
+                - generic [ref=e128]: 16 M Spotify
+            - generic [ref=e129]:
+              - generic [ref=e130]: "4"
+              - generic [ref=e131]:
+                - generic [ref=e132]: Meryl feat. N'ken — Shatta Confessions
+                - generic [ref=e133]: Dancehall · Martinique (972) · SNEP
+              - generic [ref=e134]:
+                - text: 16 M
+                - generic [ref=e135]: 35 M Spotify
+            - generic [ref=e136]:
+              - generic [ref=e137]: "5"
+              - generic [ref=e138]:
+                - generic [ref=e139]: Skunk Ft. Tiitof & Leto — Mwen An Sa
+                - generic [ref=e140]: Dancehall · Martinique (972) · SNEP
+              - generic [ref=e141]:
+                - text: 15 M
+                - generic [ref=e142]: 21 M Spotify
+            - generic [ref=e143]:
+              - generic [ref=e144]: "6"
+              - generic [ref=e145]:
+                - generic [ref=e146]: Antonny Drew Ft. Vanessa DesirÉ — Se Ou Li Ye
+                - text: Zouk · Guadeloupe (971)
+              - generic [ref=e147]:
+                - text: 13 M
+                - generic [ref=e148]: 471 k Spotify
+            - generic [ref=e149]:
+              - generic [ref=e150]: "7"
+              - generic [ref=e151]:
+                - generic [ref=e152]: K-Rosif ft Bigda & Loeil — La piraterie
+                - text: Pop · Réunion (974)
+              - generic [ref=e153]:
+                - text: 9,9 M
+                - generic [ref=e154]: 17 M Spotify
+            - generic [ref=e155]:
+              - generic [ref=e156]: "8"
+              - generic [ref=e157]:
+                - generic [ref=e158]: Meryl feat. Kalipsxau — À Genoux
+                - text: Zouk · Martinique (972)
+              - generic [ref=e159]:
+                - text: 9,1 M
+                - generic [ref=e160]: 5,3 M Spotify
+            - generic [ref=e161]:
+              - generic [ref=e162]: "9"
+              - generic [ref=e163]:
+                - generic [ref=e164]: Dj Leska X Shannon — Capitaine
+                - text: Soca/Bouyon · Martinique (972)
+              - generic [ref=e165]:
+                - text: 8,6 M
+                - generic [ref=e166]: 12 M Spotify
+            - generic [ref=e167]:
+              - generic [ref=e168]: "10"
+              - generic [ref=e169]:
+                - generic [ref=e170]: — — Tks 2g Feat. Maureen- Paddle
+                - generic [ref=e171]: Dancehall · 971 / 972 · SNEP
+              - generic [ref=e172]:
+                - text: 8,5 M
+                - generic [ref=e173]: 33 M Spotify
+            - generic [ref=e174]:
+              - generic [ref=e175]: "11"
+              - generic [ref=e176]:
+                - generic [ref=e177]: Bamby x Himra — Gangsta
+                - text: Dancehall · Guyane (973)
+              - generic [ref=e178]:
+                - text: 7,3 M
+                - generic [ref=e179]: 3,1 M Spotify
+            - generic [ref=e180]:
+              - generic [ref=e181]: "12"
+              - generic [ref=e182]:
+                - generic [ref=e183]: — — Bamby X Kerchak – Pas Jalouse
+                - generic [ref=e184]: Rap/Hip-Hop · Guyane (973) · SNEP
+              - generic [ref=e185]:
+                - text: 6,9 M
+                - generic [ref=e186]: 22 M Spotify
+            - generic [ref=e187]:
+              - generic [ref=e188]: "13"
+              - generic [ref=e189]:
+                - generic [ref=e190]: Lrb — Bobo ft. Barth
+                - text: Dancehall · Réunion (974)
+              - generic [ref=e191]:
+                - text: 6,8 M
+                - generic [ref=e192]: 4,2 M Spotify
+            - generic [ref=e193]:
+              - generic [ref=e194]: "14"
+              - generic [ref=e195]:
+                - generic [ref=e196]: Josey Feat Fanny J — Faux Pas
+                - text: Zouk · Guyane (973)
+              - generic [ref=e197]:
+                - text: 6,7 M
+                - generic [ref=e198]: 1,5 M Spotify
+            - generic [ref=e199]:
+              - generic [ref=e200]: "15"
+              - generic [ref=e201]:
+                - generic [ref=e202]: Moliy, Kalash, Maureen, Silent Addy — Shake It To the max (
+                - text: Dancehall · Martinique (972)
+              - generic [ref=e203]:
+                - text: 6,3 M
+                - generic [ref=e204]: 12 M Spotify
+            - generic [ref=e205]:
+              - generic [ref=e206]: "16"
+              - generic [ref=e207]:
+                - generic [ref=e208]: Vj Awax X Tii Alexandre X Tipti X Gtnn X Mcbox — Boom Bo
+                - text: Dancehall · Réunion (974)
+              - generic [ref=e209]:
+                - text: 6,2 M
+                - generic [ref=e210]: 843 k Spotify
+            - generic [ref=e211]:
+              - generic [ref=e212]: "17"
+              - generic [ref=e213]:
+                - generic [ref=e214]: — — Kalipsxau — Trop Love
+                - text: Zouk · Réunion (974)
+              - generic [ref=e215]:
+                - text: 5,6 M
+                - generic [ref=e216]: 2,3 M Spotify
+            - generic [ref=e217]:
+              - generic [ref=e218]: "18"
+              - generic [ref=e219]:
+                - generic [ref=e220]: "Donovan Bts — Dan Ou Kote(mi Aime A Ou) Ft #tuks"
+                - text: Dancehall · Réunion (974)
+              - generic [ref=e221]:
+                - text: 4,8 M
+                - generic [ref=e222]: 348 k Spotify
+            - generic [ref=e223]:
+              - generic [ref=e224]: "19"
+              - generic [ref=e225]:
+                - generic [ref=e226]: Lejuh — Air Force 1
+                - text: Soca/Bouyon · Guadeloupe (971)
+              - generic [ref=e227]:
+                - text: 4,3 M
+                - generic [ref=e228]: 4,5 M Spotify
+            - generic [ref=e229]:
+              - generic [ref=e230]: "20"
+              - generic [ref=e231]:
+                - generic [ref=e232]: Meryl — Champagne Ké Fraises
+                - text: Zouk · Martinique (972)
+              - generic [ref=e233]:
+                - text: 4,3 M
+                - generic [ref=e234]: 2,9 M Spotify
+  - generic [ref=e236]:
+    - generic [ref=e237]:
+      - heading "Comparer les éditions" [level=2] [ref=e238]
+      - paragraph [ref=e239]: "Mesurez l'évolution de la musique d'Outremer d'une année sur l'autre. Choisissez une donnée et une mesure : le graphique recompose les 5 éditions côte à côte."
+    - generic [ref=e240]:
+      - generic [ref=e241]:
+        - generic [ref=e242]: Donnée
+        - generic [ref=e243]:
+          - button "Styles" [ref=e244] [cursor=pointer]
+          - button "Origines" [ref=e245] [cursor=pointer]
+          - button "Genre" [ref=e246] [cursor=pointer]
+          - button "Paliers de vues" [ref=e247] [cursor=pointer]
+      - generic [ref=e248]:
+        - generic [ref=e249]: Mesure
+        - generic [ref=e250]:
+          - button "Nombre de clips" [ref=e251] [cursor=pointer]
+          - button "Vues" [ref=e252] [cursor=pointer]
+          - button "Part en %" [ref=e253] [cursor=pointer]
+    - generic [ref=e254]:
+      - generic [ref=e255]: Styles musicaux · nombre de clips par édition
+      - generic [ref=e256]: Cliquez la légende pour isoler une catégorie.
+    - paragraph [ref=e259]: "📈 Lecture : la part de Rap/Hip-Hop passe de 59% (2021) à 25% (2025) des clips — en recul."
+  - generic [ref=e261]:
+    - generic [ref=e262]:
+      - generic [ref=e263]: Forfait Business · Données approfondies
+      - heading "Analyses avancées" [level=2] [ref=e264]
+      - paragraph [ref=e265]: "Croisez les performances en profondeur : moyenne de vues, médiane, volumes par style, par origine, par genre et par année. L'outil d'analyse réservé aux abonnés Business."
+    - generic [ref=e266]:
+      - generic:
+        - generic:
+          - generic:
+            - generic: Dimension
+            - generic:
+              - button "Styles"
+              - button "Origines"
+              - button "Genre"
+          - generic:
+            - generic: Mesure
+            - generic:
+              - button "Moyenne de vues"
+              - button "Médiane"
+              - button "Total vues"
+              - button "Nb de clips"
+          - generic:
+            - generic: Année
+            - generic:
+              - button "Toutes"
+              - button "2021"
+              - button "2022"
+              - button "2023"
+              - button "2024"
+              - button "2025"
+        - generic:
+          - generic:
+            - generic: 473 k
+            - generic: vues / clip (moyenne)
+            - generic: toutes éditions
+          - generic:
+            - generic: 119 k
+            - generic: vues / clip (médiane)
+            - generic: toutes éditions
+          - generic:
+            - generic: Compas
+            - generic: style le + performant
+            - generic: toutes éditions · ≥ 5 clips
+          - generic:
+            - generic: 2 780
+            - generic: clips analysés
+            - generic: toutes éditions
+        - generic:
+          - generic: Moyenne de vues par style
+          - generic: Toutes éditions confondues (2021–2025)
+        - generic:
+          - generic: Tableau croisé · moyenne de vues par année
+          - generic: Plus la cellule est intense, plus la valeur est élevée. Colonne « Toutes » = agrégat 2021–2025.
+          - generic:
+            - table:
+              - rowgroup:
+                - row "Style 2021 2022 2023 2024 2025 Toutes":
+                  - columnheader "Style"
+                  - columnheader "2021"
+                  - columnheader "2022"
+                  - columnheader "2023"
+                  - columnheader "2024"
+                  - columnheader "2025"
+                  - columnheader "Toutes"
+              - rowgroup:
+                - row "Rap/Hip-Hop 376 k 444 k 292 k 270 k 306 k 351 k":
+                  - rowheader "Rap/Hip-Hop"
+                  - cell "376 k"
+                  - cell "444 k"
+                  - cell "292 k"
+                  - cell "270 k"
+                  - cell "306 k"
+                  - cell "351 k"
+                - row "Dancehall 187 k 382 k 381 k 418 k 856 k 488 k":
+                  - rowheader "Dancehall"
+                  - cell "187 k"
+                  - cell "382 k"
+                  - cell "381 k"
+                  - cell "418 k"
+                  - cell "856 k"
+                  - cell "488 k"
+                - row "Zouk 761 k 866 k 667 k 647 k 1,2 M 814 k":
+                  - rowheader "Zouk"
+                  - cell "761 k"
+                  - cell "866 k"
+                  - cell "667 k"
+                  - cell "647 k"
+                  - cell "1,2 M"
+                  - cell "814 k"
+                - row "Soca/Bouyon 73 k 264 k 212 k 539 k 1,0 M 537 k":
+                  - rowheader "Soca/Bouyon"
+                  - cell "73 k"
+                  - cell "264 k"
+                  - cell "212 k"
+                  - cell "539 k"
+                  - cell "1,0 M"
+                  - cell "537 k"
+                - row "Pop 432 k 676 k 310 k 675 k 1,0 M 624 k":
+                  - rowheader "Pop"
+                  - cell "432 k"
+                  - cell "676 k"
+                  - cell "310 k"
+                  - cell "675 k"
+                  - cell "1,0 M"
+                  - cell "624 k"
+                - row "Reggae 71 k 182 k 227 k 159 k 440 k 196 k":
+                  - rowheader "Reggae"
+                  - cell "71 k"
+                  - cell "182 k"
+                  - cell "227 k"
+                  - cell "159 k"
+                  - cell "440 k"
+                  - cell "196 k"
+                - row "Traditionnel 127 k 557 k 287 k 815 k 380 k 492 k":
+                  - rowheader "Traditionnel"
+                  - cell "127 k"
+                  - cell "557 k"
+                  - cell "287 k"
+                  - cell "815 k"
+                  - cell "380 k"
+                  - cell "492 k"
+                - row "Soul 2 k 4 k 402 k 42 k 89 k 118 k":
+                  - rowheader "Soul"
+                  - cell "2 k"
+                  - cell "4 k"
+                  - cell "402 k"
+                  - cell "42 k"
+                  - cell "89 k"
+                  - cell "118 k"
+                - row "Compas 1,5 M n/d 22 k 3,9 M 1,6 M 2,1 M":
+                  - rowheader "Compas"
+                  - cell "1,5 M"
+                  - cell "n/d"
+                  - cell "22 k"
+                  - cell "3,9 M"
+                  - cell "1,6 M"
+                  - cell "2,1 M"
+          - paragraph
+      - generic [ref=e268]:
+        - generic [ref=e269]: 🔒
+        - heading "Réservé au forfait Business" [level=3] [ref=e270]
+        - paragraph [ref=e271]: Les analyses croisées (moyennes, médianes, volumes par style / origine / genre / année) sont incluses dans l'abonnement Business · 50€/mois.
+        - generic [ref=e272]:
+          - button "Passer Business · 50€" [ref=e273] [cursor=pointer]
+          - button "J'ai déjà un compte" [ref=e274] [cursor=pointer]
+  - generic [ref=e276]:
+    - generic [ref=e277]:
+      - generic [ref=e278]: Focus · Égalité
+      - heading "La place des femmes" [level=2] [ref=e279]
+      - paragraph [ref=e280]: Quelle visibilité pour les artistes femmes dans la musique d'Outremer ? Part des clips, vues générées et talents qui s'imposent — édition par édition.
+    - generic [ref=e281]: ℹ️ Indicateurs calculés sur les éditions documentées en genre (2021, 2022, 2023, 2024, 2025).
+    - generic [ref=e282]:
+      - generic [ref=e283]:
+        - generic [ref=e284]: 31%
+        - generic [ref=e285]: de présence féminine
+        - generic [ref=e286]: clips portés ou co-portés par des femmes
+      - generic [ref=e287]:
+        - generic [ref=e288]: 242 M
+        - generic [ref=e289]: vues générées
+        - generic [ref=e290]: femmes & collaborations (2024–2025)
+      - generic [ref=e291]:
+        - generic [ref=e292]: "83"
+        - generic [ref=e293]: artistes femmes
+        - generic [ref=e294]: en lead, identifiées en base
+      - generic [ref=e295]:
+        - generic [ref=e296]: Meryl
+        - generic [ref=e297]: clip féminin n°1
+        - generic [ref=e298]: 16 M vues
+    - generic [ref=e299]:
+      - generic [ref=e300]:
+        - generic [ref=e301]: Répartition des clips par genre, année par année
+        - generic [ref=e302]: Part des clips portés par des femmes, des hommes ou en collaboration mixte
+      - generic [ref=e305]:
+        - generic [ref=e306]: Vues générées par genre
+        - generic [ref=e307]: Sur les éditions documentées (2024–2025)
+      - generic [ref=e310]:
+        - generic [ref=e311]: Top artistes femmes
+        - generic [ref=e312]: Femmes en lead (solo & duos 100% féminins), par vues cumulées
+        - generic [ref=e313]:
+          - generic [ref=e314]:
+            - generic [ref=e315]: "1"
+            - generic [ref=e316]:
+              - generic [ref=e317]: Meryl
+              - text: 10 clip(s) avec présence féminine
+            - generic [ref=e318]: 41 M
+          - generic [ref=e319]:
+            - generic [ref=e320]: "2"
+            - generic [ref=e321]:
+              - generic [ref=e322]: Kalipsxau
+              - text: 9 clip(s) avec présence féminine
+            - generic [ref=e323]: 30 M
+          - generic [ref=e324]:
+            - generic [ref=e325]: "3"
+            - generic [ref=e326]:
+              - generic [ref=e327]: LycinaÏs Jean
+              - text: 2 clip(s) avec présence féminine
+            - generic [ref=e328]: 13 M
+          - generic [ref=e329]:
+            - generic [ref=e330]: "4"
+            - generic [ref=e331]:
+              - generic [ref=e332]: Dj Leska X Shannon
+              - text: 1 clip(s) avec présence féminine
+            - generic [ref=e333]: 8,6 M
+          - generic [ref=e334]:
+            - generic [ref=e335]: "5"
+            - generic [ref=e336]:
+              - generic [ref=e337]: Josey
+              - text: 1 clip(s) avec présence féminine
+            - generic [ref=e338]: 6,7 M
+          - generic [ref=e339]:
+            - generic [ref=e340]: "6"
+            - generic [ref=e341]:
+              - generic [ref=e342]: Kryssy
+              - text: 4 clip(s) avec présence féminine
+            - generic [ref=e343]: 6,1 M
+          - generic [ref=e344]:
+            - generic [ref=e345]: "7"
+            - generic [ref=e346]:
+              - generic [ref=e347]: Nesly
+              - text: 4 clip(s) avec présence féminine
+            - generic [ref=e348]: 6,1 M
+          - generic [ref=e349]:
+            - generic [ref=e350]: "8"
+            - generic [ref=e351]:
+              - generic [ref=e352]: Meryl & Dj Tutus
+              - text: 3 clip(s) avec présence féminine
+            - generic [ref=e353]: 5,8 M
+          - generic [ref=e354]:
+            - generic [ref=e355]: "9"
+            - generic [ref=e356]:
+              - generic [ref=e357]: Léa Churros X M
+              - text: 1 clip(s) avec présence féminine
+            - generic [ref=e358]: 5,3 M
+          - generic [ref=e359]:
+            - generic [ref=e360]: "10"
+            - generic [ref=e361]:
+              - generic [ref=e362]: Nesly x Fanny J
+              - text: 1 clip(s) avec présence féminine
+            - generic [ref=e363]: 5,1 M
+    - generic [ref=e364]:
+      - paragraph [ref=e365]: Vous travaillez sur l'égalité, la place des femmes ou la diversité dans les musiques ultramarines ?
+      - link "Découvrir l'étude dédiée" [ref=e366] [cursor=pointer]:
+        - /url: "#offre"
+  - generic [ref=e368]:
+    - generic [ref=e369]:
+      - heading "Rechercher un clip ou un artiste" [level=2] [ref=e370]
+      - paragraph [ref=e371]: Plus de 2 780 clips indexés (2021-2025). Filtrez par artiste, titre, style, origine, année.
+    - generic [ref=e372]:
+      - 'searchbox "Artiste, titre… (ex : Kalash, Meryl, Shamballa)" [ref=e373]'
+      - combobox [ref=e374]:
+        - option "Toutes années" [selected]
+        - option "2021"
+        - option "2022"
+        - option "2023"
+        - option "2024"
+        - option "2025"
+      - combobox [ref=e375]:
+        - option "Tous styles" [selected]
+        - option "Compas"
+        - option "Dancehall"
+        - option "POP"
+        - option "Pop"
+        - option "RAP"
+        - option "Rap/Hip-Hop"
+        - option "Reggae"
+        - option "Soca/Bouyon"
+        - option "Soul"
+        - option "Traditionnel"
+        - option "Zouk"
+      - combobox [ref=e376]:
+        - option "Toutes origines" [selected]
+        - option "971 / 972"
+        - option "976"
+        - option "Guadeloupe (971)"
+        - option "Guyane (973)"
+        - option "Martinique (972)"
+        - option "Mayotte (976)"
+        - option "Réunion (974)"
+      - combobox [ref=e377]:
+        - 'option "Trier : vues ↓" [selected]'
+        - 'option "Trier : date ↓"'
+        - 'option "Trier : artiste A→Z"'
+    - generic [ref=e378]:
+      - text: 2 780 clip(s) · 1 314 587 147 vues cumulées ·
+      - generic [ref=e379]:
+        - text: ● Membre Découverte —
+        - link "passez Pro" [ref=e380] [cursor=pointer]:
+          - /url: "#adhesion"
+        - text: pour les streams Spotify & scores
+    - table [ref=e382]:
+      - rowgroup [ref=e383]:
+        - row "Année Artiste Titre Vues YouTube Style Origine Spotify Certif." [ref=e384]:
+          - columnheader "Année" [ref=e385]
+          - columnheader "Artiste" [ref=e386]
+          - columnheader "Titre" [ref=e387]
+          - columnheader "Vues YouTube" [ref=e388]
+          - columnheader "Style" [ref=e389]
+          - columnheader "Origine" [ref=e390]
+          - columnheader "Spotify" [ref=e391]
+          - columnheader "Certif." [ref=e392]
+      - rowgroup [ref=e393]:
+        - row "2022 Kalash Tombolo 22 474 899 Rap/Hip-Hop — 🔒 Pro —" [ref=e394]:
+          - cell "2022" [ref=e395]:
+            - generic [ref=e396]: "2022"
+          - cell "Kalash" [ref=e397]
+          - cell "Tombolo" [ref=e398]
+          - cell "22 474 899" [ref=e399]
+          - cell "Rap/Hip-Hop" [ref=e400]
+          - cell "—" [ref=e401]
+          - cell "🔒 Pro" [ref=e402]:
+            - generic [ref=e403] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e404]
+        - row "2025 Anyme Feat. Shaydee's Shamballa 19 969 978 Dancehall Martinique (972) 🔒 Pro SNEP" [ref=e405]:
+          - cell "2025" [ref=e406]:
+            - generic [ref=e407]: "2025"
+          - cell "Anyme Feat. Shaydee's" [ref=e408]
+          - cell "Shamballa" [ref=e409]
+          - cell "19 969 978" [ref=e410]
+          - cell "Dancehall" [ref=e411]
+          - cell "Martinique (972)" [ref=e412]
+          - cell "🔒 Pro" [ref=e413]:
+            - generic [ref=e414] [cursor=pointer]: 🔒 Pro
+          - cell "SNEP" [ref=e415]
+        - row "2025 Dj Kawest Chambre 04 Feat Attachingboy 19 522 534 Dancehall 971 / 972 🔒 Pro SNEP" [ref=e416]:
+          - cell "2025" [ref=e417]:
+            - generic [ref=e418]: "2025"
+          - cell "Dj Kawest" [ref=e419]
+          - cell "Chambre 04 Feat Attachingboy" [ref=e420]
+          - cell "19 522 534" [ref=e421]
+          - cell "Dancehall" [ref=e422]
+          - cell "971 / 972" [ref=e423]
+          - cell "🔒 Pro" [ref=e424]:
+            - generic [ref=e425] [cursor=pointer]: 🔒 Pro
+          - cell "SNEP" [ref=e426]
+        - row "2021 Kalash feat. Gazo Tu le sais 17 665 790 Rap/Hip-Hop Martinique (972) 🔒 Pro —" [ref=e427]:
+          - cell "2021" [ref=e428]:
+            - generic [ref=e429]: "2021"
+          - cell "Kalash feat. Gazo" [ref=e430]
+          - cell "Tu le sais" [ref=e431]
+          - cell "17 665 790" [ref=e432]
+          - cell "Rap/Hip-Hop" [ref=e433]
+          - cell "Martinique (972)" [ref=e434]
+          - cell "🔒 Pro" [ref=e435]:
+            - generic [ref=e436] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e437]
+        - row "2025 1t1 Ft Théomaa Bouwey 17 380 253 Soca/Bouyon Guadeloupe (971) 🔒 Pro SNEP" [ref=e438]:
+          - cell "2025" [ref=e439]:
+            - generic [ref=e440]: "2025"
+          - cell "1t1 Ft Théomaa" [ref=e441]
+          - cell "Bouwey" [ref=e442]
+          - cell "17 380 253" [ref=e443]
+          - cell "Soca/Bouyon" [ref=e444]
+          - cell "Guadeloupe (971)" [ref=e445]
+          - cell "🔒 Pro" [ref=e446]:
+            - generic [ref=e447] [cursor=pointer]: 🔒 Pro
+          - cell "SNEP" [ref=e448]
+        - row "2025 Meryl feat. N'ken Shatta Confessions 15 753 587 Dancehall Martinique (972) 🔒 Pro SNEP" [ref=e449]:
+          - cell "2025" [ref=e450]:
+            - generic [ref=e451]: "2025"
+          - cell "Meryl feat. N'ken" [ref=e452]
+          - cell "Shatta Confessions" [ref=e453]
+          - cell "15 753 587" [ref=e454]
+          - cell "Dancehall" [ref=e455]
+          - cell "Martinique (972)" [ref=e456]
+          - cell "🔒 Pro" [ref=e457]:
+            - generic [ref=e458] [cursor=pointer]: 🔒 Pro
+          - cell "SNEP" [ref=e459]
+        - row "2025 Skunk Ft. Tiitof & Leto Mwen An Sa 15 496 304 Dancehall Martinique (972) 🔒 Pro SNEP" [ref=e460]:
+          - cell "2025" [ref=e461]:
+            - generic [ref=e462]: "2025"
+          - cell "Skunk Ft. Tiitof & Leto" [ref=e463]
+          - cell "Mwen An Sa" [ref=e464]
+          - cell "15 496 304" [ref=e465]
+          - cell "Dancehall" [ref=e466]
+          - cell "Martinique (972)" [ref=e467]
+          - cell "🔒 Pro" [ref=e468]:
+            - generic [ref=e469] [cursor=pointer]: 🔒 Pro
+          - cell "SNEP" [ref=e470]
+        - row "2025 Antonny Drew Ft. Vanessa DesirÉ Se Ou Li Ye 12 602 290 Zouk Guadeloupe (971) 🔒 Pro —" [ref=e471]:
+          - cell "2025" [ref=e472]:
+            - generic [ref=e473]: "2025"
+          - cell "Antonny Drew Ft. Vanessa DesirÉ" [ref=e474]
+          - cell "Se Ou Li Ye" [ref=e475]
+          - cell "12 602 290" [ref=e476]
+          - cell "Zouk" [ref=e477]
+          - cell "Guadeloupe (971)" [ref=e478]
+          - cell "🔒 Pro" [ref=e479]:
+            - generic [ref=e480] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e481]
+        - row "2024 LycinaÏs Jean fea Danje 10 825 487 Compas — 🔒 Pro —" [ref=e482]:
+          - cell "2024" [ref=e483]:
+            - generic [ref=e484]: "2024"
+          - cell "LycinaÏs Jean fea" [ref=e485]
+          - cell "Danje" [ref=e486]
+          - cell "10 825 487" [ref=e487]
+          - cell "Compas" [ref=e488]
+          - cell "—" [ref=e489]
+          - cell "🔒 Pro" [ref=e490]:
+            - generic [ref=e491] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e492]
+        - row "2021 Kalipsxau Corps à corps 10 604 591 Zouk Réunion (974) 🔒 Pro —" [ref=e493]:
+          - cell "2021" [ref=e494]:
+            - generic [ref=e495]: "2021"
+          - cell "Kalipsxau" [ref=e496]
+          - cell "Corps à corps" [ref=e497]
+          - cell "10 604 591" [ref=e498]
+          - cell "Zouk" [ref=e499]
+          - cell "Réunion (974)" [ref=e500]
+          - cell "🔒 Pro" [ref=e501]:
+            - generic [ref=e502] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e503]
+        - row "2022 Kalipsxau ft. Barth Dis moi je t'aime 10 551 131 Zouk — 🔒 Pro —" [ref=e504]:
+          - cell "2022" [ref=e505]:
+            - generic [ref=e506]: "2022"
+          - cell "Kalipsxau ft. Barth" [ref=e507]
+          - cell "Dis moi je t'aime" [ref=e508]
+          - cell "10 551 131" [ref=e509]
+          - cell "Zouk" [ref=e510]
+          - cell "—" [ref=e511]
+          - cell "🔒 Pro" [ref=e512]:
+            - generic [ref=e513] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e514]
+        - row "2025 K-Rosif ft Bigda & Loeil La piraterie 9 872 710 Pop Réunion (974) 🔒 Pro —" [ref=e515]:
+          - cell "2025" [ref=e516]:
+            - generic [ref=e517]: "2025"
+          - cell "K-Rosif ft Bigda & Loeil" [ref=e518]
+          - cell "La piraterie" [ref=e519]
+          - cell "9 872 710" [ref=e520]
+          - cell "Pop" [ref=e521]
+          - cell "Réunion (974)" [ref=e522]
+          - cell "🔒 Pro" [ref=e523]:
+            - generic [ref=e524] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e525]
+        - row "2024 Kalash So coman 9 657 382 Dancehall Martinique (972) 🔒 Pro —" [ref=e526]:
+          - cell "2024" [ref=e527]:
+            - generic [ref=e528]: "2024"
+          - cell "Kalash" [ref=e529]
+          - cell "So coman" [ref=e530]
+          - cell "9 657 382" [ref=e531]
+          - cell "Dancehall" [ref=e532]
+          - cell "Martinique (972)" [ref=e533]
+          - cell "🔒 Pro" [ref=e534]:
+            - generic [ref=e535] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e536]
+        - row "2023 Barth infini 9 465 967 Zouk Réunion (974) 🔒 Pro —" [ref=e537]:
+          - cell "2023" [ref=e538]:
+            - generic [ref=e539]: "2023"
+          - cell "Barth" [ref=e540]
+          - cell "infini" [ref=e541]
+          - cell "9 465 967" [ref=e542]
+          - cell "Zouk" [ref=e543]
+          - cell "Réunion (974)" [ref=e544]
+          - cell "🔒 Pro" [ref=e545]:
+            - generic [ref=e546] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e547]
+        - row "2025 Meryl feat. Kalipsxau À Genoux 9 135 755 Zouk Martinique (972) 🔒 Pro —" [ref=e548]:
+          - cell "2025" [ref=e549]:
+            - generic [ref=e550]: "2025"
+          - cell "Meryl feat. Kalipsxau" [ref=e551]
+          - cell "À Genoux" [ref=e552]
+          - cell "9 135 755" [ref=e553]
+          - cell "Zouk" [ref=e554]
+          - cell "Martinique (972)" [ref=e555]
+          - cell "🔒 Pro" [ref=e556]:
+            - generic [ref=e557] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e558]
+        - row "2022 Kalash feat Maureen Laptop 8 958 538 Dancehall — 🔒 Pro —" [ref=e559]:
+          - cell "2022" [ref=e560]:
+            - generic [ref=e561]: "2022"
+          - cell "Kalash feat Maureen" [ref=e562]
+          - cell "Laptop" [ref=e563]
+          - cell "8 958 538" [ref=e564]
+          - cell "Dancehall" [ref=e565]
+          - cell "—" [ref=e566]
+          - cell "🔒 Pro" [ref=e567]:
+            - generic [ref=e568] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e569]
+        - row "2025 Dj Leska X Shannon Capitaine 8 583 972 Soca/Bouyon Martinique (972) 🔒 Pro —" [ref=e570]:
+          - cell "2025" [ref=e571]:
+            - generic [ref=e572]: "2025"
+          - cell "Dj Leska X Shannon" [ref=e573]
+          - cell "Capitaine" [ref=e574]
+          - cell "8 583 972" [ref=e575]
+          - cell "Soca/Bouyon" [ref=e576]
+          - cell "Martinique (972)" [ref=e577]
+          - cell "🔒 Pro" [ref=e578]:
+            - generic [ref=e579] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e580]
+        - row "2025 — Tks 2g Feat. Maureen- Paddle 8 483 014 Dancehall 971 / 972 🔒 Pro SNEP" [ref=e581]:
+          - cell "2025" [ref=e582]:
+            - generic [ref=e583]: "2025"
+          - cell "—" [ref=e584]
+          - cell "Tks 2g Feat. Maureen- Paddle" [ref=e585]
+          - cell "8 483 014" [ref=e586]
+          - cell "Dancehall" [ref=e587]
+          - cell "971 / 972" [ref=e588]
+          - cell "🔒 Pro" [ref=e589]:
+            - generic [ref=e590] [cursor=pointer]: 🔒 Pro
+          - cell "SNEP" [ref=e591]
+        - row "2025 Bamby x Himra Gangsta 7 281 842 Dancehall Guyane (973) 🔒 Pro —" [ref=e592]:
+          - cell "2025" [ref=e593]:
+            - generic [ref=e594]: "2025"
+          - cell "Bamby x Himra" [ref=e595]
+          - cell "Gangsta" [ref=e596]
+          - cell "7 281 842" [ref=e597]
+          - cell "Dancehall" [ref=e598]
+          - cell "Guyane (973)" [ref=e599]
+          - cell "🔒 Pro" [ref=e600]:
+            - generic [ref=e601] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e602]
+        - row "2021 Were-vana Bombardé 6 993 514 Dancehall Guadeloupe (971) 🔒 Pro —" [ref=e603]:
+          - cell "2021" [ref=e604]:
+            - generic [ref=e605]: "2021"
+          - cell "Were-vana" [ref=e606]
+          - cell "Bombardé" [ref=e607]
+          - cell "6 993 514" [ref=e608]
+          - cell "Dancehall" [ref=e609]
+          - cell "Guadeloupe (971)" [ref=e610]
+          - cell "🔒 Pro" [ref=e611]:
+            - generic [ref=e612] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e613]
+        - row "2022 Kalash feat Prince Swanny Punani imperial 6 913 675 Dancehall — 🔒 Pro —" [ref=e614]:
+          - cell "2022" [ref=e615]:
+            - generic [ref=e616]: "2022"
+          - cell "Kalash feat Prince Swanny" [ref=e617]
+          - cell "Punani imperial" [ref=e618]
+          - cell "6 913 675" [ref=e619]
+          - cell "Dancehall" [ref=e620]
+          - cell "—" [ref=e621]
+          - cell "🔒 Pro" [ref=e622]:
+            - generic [ref=e623] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e624]
+        - row "2025 — Bamby X Kerchak – Pas Jalouse 6 902 502 Rap/Hip-Hop Guyane (973) 🔒 Pro SNEP" [ref=e625]:
+          - cell "2025" [ref=e626]:
+            - generic [ref=e627]: "2025"
+          - cell "—" [ref=e628]
+          - cell "Bamby X Kerchak – Pas Jalouse" [ref=e629]
+          - cell "6 902 502" [ref=e630]
+          - cell "Rap/Hip-Hop" [ref=e631]
+          - cell "Guyane (973)" [ref=e632]
+          - cell "🔒 Pro" [ref=e633]:
+            - generic [ref=e634] [cursor=pointer]: 🔒 Pro
+          - cell "SNEP" [ref=e635]
+        - row "2025 Lrb Bobo ft. Barth 6 754 013 Dancehall Réunion (974) 🔒 Pro —" [ref=e636]:
+          - cell "2025" [ref=e637]:
+            - generic [ref=e638]: "2025"
+          - cell "Lrb" [ref=e639]
+          - cell "Bobo ft. Barth" [ref=e640]
+          - cell "6 754 013" [ref=e641]
+          - cell "Dancehall" [ref=e642]
+          - cell "Réunion (974)" [ref=e643]
+          - cell "🔒 Pro" [ref=e644]:
+            - generic [ref=e645] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e646]
+        - row "2025 Josey Feat Fanny J Faux Pas 6 735 709 Zouk Guyane (973) 🔒 Pro —" [ref=e647]:
+          - cell "2025" [ref=e648]:
+            - generic [ref=e649]: "2025"
+          - cell "Josey Feat Fanny J" [ref=e650]
+          - cell "Faux Pas" [ref=e651]
+          - cell "6 735 709" [ref=e652]
+          - cell "Zouk" [ref=e653]
+          - cell "Guyane (973)" [ref=e654]
+          - cell "🔒 Pro" [ref=e655]:
+            - generic [ref=e656] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e657]
+        - row "2021 Kalipsxau Solo 6 496 803 Zouk Réunion (974) 🔒 Pro —" [ref=e658]:
+          - cell "2021" [ref=e659]:
+            - generic [ref=e660]: "2021"
+          - cell "Kalipsxau" [ref=e661]
+          - cell "Solo" [ref=e662]
+          - cell "6 496 803" [ref=e663]
+          - cell "Zouk" [ref=e664]
+          - cell "Réunion (974)" [ref=e665]
+          - cell "🔒 Pro" [ref=e666]:
+            - generic [ref=e667] [cursor=pointer]: 🔒 Pro
+          - cell "—" [ref=e668]
+    - button "Voir plus de résultats" [ref=e669] [cursor=pointer]
+    - paragraph [ref=e670]:
+      - text: 🔒 Les vues exactes au-delà du top 50, les streams Spotify détaillés, labels et historiques complets sont réservés aux licences.
+      - link "Voir l'offre →" [ref=e671] [cursor=pointer]:
+        - /url: "#offre"
+  - generic [ref=e673]:
+    - generic [ref=e674]:
+      - heading "Accédez aux données" [level=2] [ref=e675]
+      - paragraph [ref=e676]: Le détail des chiffres (vues exactes, streams Spotify, labels) est réservé aux membres. Créez un compte gratuit, montez en puissance quand vous voulez.
+    - generic [ref=e677]:
+      - generic [ref=e678]:
+        - generic [ref=e679]:
+          - heading "Découverte" [level=3] [ref=e680]
+          - generic [ref=e681]: Gratuit
+        - paragraph [ref=e682]: Pour explorer la donnée ultramarine.
+        - list [ref=e683]:
+          - listitem [ref=e684]: ✔ Vues YouTube exactes
+          - listitem [ref=e685]: ✔ Tops, styles, origines & comparateur
+          - listitem [ref=e686]: ✔ Recherche complète 2021–2025
+          - listitem [ref=e687]: ✖ Streams Spotify & scores
+          - listitem [ref=e688]: ✖ Export & API
+        - button "Créer mon compte gratuit" [ref=e689] [cursor=pointer]
+      - generic [ref=e690]:
+        - generic [ref=e691]: Le plus populaire
+        - generic [ref=e692]:
+          - heading "Pro" [level=3] [ref=e693]
+          - generic [ref=e694]: 15€/mois
+        - paragraph [ref=e695]: Pour les pros qui suivent le marché.
+        - list [ref=e696]:
+          - listitem [ref=e697]: "✔ Tout Découverte, plus :"
+          - listitem [ref=e698]: ✔ Streams Spotify détaillés
+          - listitem [ref=e699]: ✔ Labels & certifications SNEP
+          - listitem [ref=e700]: ✖ Export massif & API
+        - button "Passer Pro · 15€" [ref=e701] [cursor=pointer]
+      - generic [ref=e702]:
+        - generic [ref=e703]:
+          - heading "Business" [level=3] [ref=e704]
+          - generic [ref=e705]: 50€/mois
+        - paragraph [ref=e706]: Pour les labels, médias & institutions.
+        - list [ref=e707]:
+          - listitem [ref=e708]: "✔ Tout Pro, plus :"
+          - listitem [ref=e709]: ✔ Export CSV / Excel complet
+          - listitem [ref=e710]: ✔ Accès API & flux hebdo
+          - listitem [ref=e711]: ✔ Support analyste dédié
+        - button "Passer Business · 50€" [ref=e712] [cursor=pointer]
+    - paragraph [ref=e713]: 🔓 Inscription gratuite immédiate. Les niveaux Pro & Business sont activés en aperçu démo sur ce site (paiement réel à brancher en production).
+  - generic [ref=e716]:
+    - generic [ref=e717]:
+      - generic [ref=e718]: Gratuit · Édition fondatrice
+      - heading "Le Baromètre 2021 en PDF, offert" [level=2] [ref=e719]
+      - paragraph [ref=e720]: "Découvrez la toute première édition du Baromètre Hit Lokal : le panorama complet de la musique d'Outremer en 2021. Laissez votre e-mail, on vous l'envoie immédiatement."
+      - list [ref=e721]:
+        - listitem [ref=e722]: 📘 Rapport complet édition 2021
+        - listitem [ref=e723]: 📊 Tops clips, styles & origines
+        - listitem [ref=e724]: 🎁 100% gratuit, sans engagement
+    - generic [ref=e726]:
+      - generic [ref=e727]: PDF
+      - generic [ref=e728]:
+        - text: Votre e-mail
+        - textbox "Votre e-mail" [ref=e729]:
+          - /placeholder: vous@organisation.com
+      - generic [ref=e730]:
+        - text: Vous êtes
+        - combobox "Vous êtes" [ref=e731]:
+          - option "Label / Maison de disques" [selected]
+          - option "Média / Presse"
+          - option "Plateforme / Distributeur"
+          - option "Institution / Collectivité"
+          - option "Marque / Annonceur"
+          - option "Artiste / Management"
+          - option "Public"
+          - option "Autre"
+      - generic [ref=e732]:
+        - checkbox "J'accepte de recevoir les prochaines éditions et actualités du Baromètre." [ref=e733]
+        - text: J'accepte de recevoir les prochaines éditions et actualités du Baromètre.
+      - button "⬇ Télécharger le PDF 2021" [ref=e734] [cursor=pointer]
+      - paragraph [ref=e735]
+  - generic [ref=e737]:
+    - generic [ref=e738]:
+      - heading "Exploitez la data Hit Lokal" [level=2] [ref=e739]
+      - paragraph [ref=e740]: "Labels, médias, plateformes, institutions, marques : accédez aux données brutes, aux analyses sur-mesure et à notre suivi hebdomadaire des clips ultramarins."
+    - generic [ref=e741]:
+      - generic [ref=e742]:
+        - generic [ref=e743]:
+          - heading "Rapport annuel" [level=3] [ref=e744]
+          - generic [ref=e745]: À partir de 290€
+        - paragraph [ref=e746]: Le baromètre complet d'une édition, prêt à présenter.
+        - list [ref=e747]:
+          - listitem [ref=e748]: ✓ PDF premium (40+ pages d'analyses)
+          - listitem [ref=e749]: ✓ Tops clips, artistes & origines
+          - listitem [ref=e750]: ✓ Graphiques haute définition
+          - listitem [ref=e751]: ✓ Licence d'usage interne / presse
+        - link "Commander" [ref=e752] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e753]:
+        - generic [ref=e754]: Le plus demandé
+        - generic [ref=e755]:
+          - heading "Dataset & licence" [level=3] [ref=e756]
+          - generic [ref=e757]: Sur devis
+        - paragraph [ref=e758]: Les données brutes exploitables (CSV / Excel / JSON).
+        - list [ref=e759]:
+          - listitem [ref=e760]: ✓ Tous les clips 2021→2025 (vues, dates, styles)
+          - listitem [ref=e761]: ✓ Origines, genre, langue, durée
+          - listitem [ref=e762]: ✓ Streams Spotify & certifications SNEP
+          - listitem [ref=e763]: ✓ Mises à jour & droits de rediffusion
+        - link "Demander un devis" [ref=e764] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e765]:
+        - generic [ref=e766]:
+          - heading "API & sur-mesure" [level=3] [ref=e767]
+          - generic [ref=e768]: Entreprise
+        - paragraph [ref=e769]: Intégration continue et études personnalisées.
+        - list [ref=e770]:
+          - listitem [ref=e771]: ✓ Accès API / flux hebdomadaire
+          - listitem [ref=e772]: ✓ Tableaux de bord dédiés
+          - listitem [ref=e773]: ✓ Études marché & benchmarks artistes
+          - listitem [ref=e774]: ✓ Accompagnement analyste
+        - link "Nous contacter" [ref=e775] [cursor=pointer]:
+          - /url: "#contact"
+    - generic [ref=e776]:
+      - generic [ref=e777]:
+        - generic [ref=e778]: Étude thématique
+        - heading "Femmes & musique d'Outremer" [level=3] [ref=e779]
+        - paragraph [ref=e780]: "Le premier panorama chiffré de la place des artistes femmes ultramarines : part de voix, vues générées, styles, territoires et trajectoires. Idéal pour médias, institutions, programmes égalité H/F et marques engagées."
+        - list [ref=e781]:
+          - listitem [ref=e782]: ♀ Indicateurs de présence féminine par année
+          - listitem [ref=e783]: ♀ Classements & portraits d'artistes
+          - listitem [ref=e784]: ♀ Lecture par style & par territoire
+          - listitem [ref=e785]: ♀ Synthèse prête à publier + jeu de données
+      - generic [ref=e786]:
+        - generic [ref=e787]: Sur devis
+        - link "Demander l'étude" [ref=e788] [cursor=pointer]:
+          - /url: "#contact"
+    - generic [ref=e789]:
+      - generic [ref=e790]:
+        - generic [ref=e791]: 2 780+
+        - text: clips indexés
+      - generic [ref=e792]:
+        - generic [ref=e793]: 5 ans
+        - text: d'historique
+      - generic [ref=e794]:
+        - generic [ref=e795]: 3 863
+        - text: artistes en base
+      - generic [ref=e796]:
+        - generic [ref=e797]: 9 200
+        - text: clips référencés
+  - generic [ref=e799]:
+    - generic [ref=e800]:
+      - heading "Parlons de votre projet" [level=2] [ref=e801]
+      - paragraph [ref=e802]: Dites-nous qui vous êtes et ce que vous cherchez. Nous revenons vers vous sous 48h avec une proposition adaptée.
+      - list [ref=e803]:
+        - listitem [ref=e804]: 📊 Accès aux données & licences
+        - listitem [ref=e805]: 📈 Études et benchmarks sur-mesure
+        - listitem [ref=e806]: 🤝 Partenariats médias & institutions
+    - generic [ref=e807]:
+      - generic [ref=e808]:
+        - generic [ref=e809]:
+          - text: Nom complet*
+          - textbox "Nom complet*" [ref=e810]
+        - generic [ref=e811]:
+          - text: E-mail professionnel*
+          - textbox "E-mail professionnel*" [ref=e812]
+      - generic [ref=e813]:
+        - generic [ref=e814]:
+          - text: Organisation
+          - textbox "Organisation" [ref=e815]
+        - generic [ref=e816]:
+          - text: Vous êtes
+          - combobox "Vous êtes" [ref=e817]:
+            - option "Label / Maison de disques" [selected]
+            - option "Média / Presse"
+            - option "Plateforme / Distributeur"
+            - option "Institution / Collectivité"
+            - option "Marque / Annonceur"
+            - option "Artiste / Management"
+            - option "Autre"
+      - generic [ref=e818]:
+        - text: Offre qui vous intéresse
+        - combobox "Offre qui vous intéresse" [ref=e819]:
+          - option "Rapport annuel"
+          - option "Dataset & licence" [selected]
+          - option "API & sur-mesure"
+          - option "Étude Femmes & musique Outremer"
+          - option "Membre Pro (15€/mois)"
+          - option "Membre Business (50€/mois)"
+          - option "Je ne sais pas encore"
+      - generic [ref=e820]:
+        - text: Votre besoin
+        - textbox "Votre besoin" [ref=e821]:
+          - /placeholder: "Ex : nous cherchons les données 2024-2025 par style et origine pour une étude de marché."
+      - button "Envoyer ma demande" [ref=e822] [cursor=pointer]
+      - paragraph [ref=e823]
+  - contentinfo [ref=e824]:
+    - generic [ref=e825]:
+      - generic [ref=e826]:
+        - generic [ref=e827]: HL
+        - paragraph [ref=e828]:
+          - text: Baromètre Hit Lokal de la Musique d'Outremer.
+          - text: "Source : hit-lokal.com — la plus grande base de données sur les artistes ultramarins."
+      - paragraph [ref=e829]: © Hit Lokal 2021–2026. Toute reproduction des données et images est soumise à des droits d'auteur.
