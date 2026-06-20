@@ -1,0 +1,403 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "HL Baromètre Hit Lokal" [ref=e4] [cursor=pointer]:
+        - /url: "#accueil"
+        - generic [ref=e5]: HL
+        - generic [ref=e6]: Baromètre Hit Lokal
+      - navigation [ref=e7]:
+        - link "Accueil" [ref=e8] [cursor=pointer]:
+          - /url: "#accueil"
+        - link "Explorer" [ref=e9] [cursor=pointer]:
+          - /url: "#explorer"
+        - link "Comparer" [ref=e10] [cursor=pointer]:
+          - /url: "#comparer"
+        - link "AnalysesPro" [ref=e11] [cursor=pointer]:
+          - /url: "#analyses"
+        - link "Femmes" [ref=e12] [cursor=pointer]:
+          - /url: "#femmes"
+        - link "Recherche" [ref=e13] [cursor=pointer]:
+          - /url: "#recherche"
+        - link "Certification" [ref=e14] [cursor=pointer]:
+          - /url: "#certification"
+        - link "Offre data" [ref=e15] [cursor=pointer]:
+          - /url: "#offre"
+        - button "Connexion" [ref=e16] [cursor=pointer]
+  - generic [ref=e19]:
+    - generic [ref=e20]: Édition 2021 → 2025 · La référence data
+    - heading "La musique d'Outremer en chiffres." [level=1] [ref=e21]:
+      - text: La musique d'Outremer
+      - text: en chiffres.
+    - paragraph [ref=e22]: Depuis 2021, le Baromètre Hit Lokal recense et analyse chaque clip d'artiste ultramarin diffusé sur YouTube — vues, styles, origines, streams Spotify et certifications. La plus grande base de données sur la musique de Guadeloupe, Martinique, Guyane, Réunion et Mayotte.
+    - generic [ref=e23]:
+      - link "Explorer les données" [ref=e24] [cursor=pointer]:
+        - /url: "#explorer"
+      - link "Licences & API pro" [ref=e25] [cursor=pointer]:
+        - /url: "#offre"
+  - generic [ref=e28]:
+    - heading "5 ans de croissance" [level=2] [ref=e29]
+    - paragraph [ref=e30]: Vues cumulées et nombre de clips recensés par édition. En 2025, les clips ultramarins ont franchi les 413 millions de vues.
+  - generic [ref=e38]:
+    - heading "Explorer par année" [level=2] [ref=e39]
+    - paragraph [ref=e40]: Sélectionnez une édition pour visualiser la répartition par style, le rythme de sortie, la distribution des vues et le top des clips.
+  - generic [ref=e42]:
+    - generic [ref=e43]:
+      - heading "Comparer les éditions" [level=2] [ref=e44]
+      - paragraph [ref=e45]: "Mesurez l'évolution de la musique d'Outremer d'une année sur l'autre. Choisissez une donnée et une mesure : le graphique recompose les 5 éditions côte à côte."
+    - generic [ref=e46]:
+      - generic [ref=e47]:
+        - generic [ref=e48]: Donnée
+        - generic [ref=e49]:
+          - button "Styles" [ref=e50] [cursor=pointer]
+          - button "Origines" [ref=e51] [cursor=pointer]
+          - button "Genre" [ref=e52] [cursor=pointer]
+          - button "Paliers de vues" [ref=e53] [cursor=pointer]
+      - generic [ref=e54]:
+        - generic [ref=e55]: Mesure
+        - generic [ref=e56]:
+          - button "Nombre de clips" [ref=e57] [cursor=pointer]
+          - button "Vues" [ref=e58] [cursor=pointer]
+          - button "Part en %" [ref=e59] [cursor=pointer]
+    - generic [ref=e60]:
+      - generic [ref=e61]: Styles musicaux · nombre de clips par édition
+      - generic [ref=e62]: Cliquez la légende pour isoler une catégorie
+    - paragraph [ref=e65]
+  - generic [ref=e67]:
+    - generic [ref=e68]:
+      - generic [ref=e69]: Forfait Business · Données approfondies
+      - heading "Analyses avancées" [level=2] [ref=e70]
+      - paragraph [ref=e71]: "Croisez les performances en profondeur : moyenne de vues, médiane, volumes par style, par origine, par genre et par année. L'outil d'analyse réservé aux abonnés Business."
+    - generic [ref=e73]:
+      - generic [ref=e74]:
+        - generic [ref=e75]:
+          - generic [ref=e76]: Dimension
+          - generic [ref=e77]:
+            - button "Styles" [ref=e78] [cursor=pointer]
+            - button "Origines" [ref=e79] [cursor=pointer]
+            - button "Genre" [ref=e80] [cursor=pointer]
+        - generic [ref=e81]:
+          - generic [ref=e82]: Mesure
+          - generic [ref=e83]:
+            - button "Moyenne de vues" [ref=e84] [cursor=pointer]
+            - button "Médiane" [ref=e85] [cursor=pointer]
+            - button "Total vues" [ref=e86] [cursor=pointer]
+            - button "Nb de clips" [ref=e87] [cursor=pointer]
+        - generic [ref=e88]:
+          - generic [ref=e89]: Année
+          - generic [ref=e90]:
+            - button "Toutes" [ref=e91] [cursor=pointer]
+            - button "2021" [ref=e92] [cursor=pointer]
+            - button "2022" [ref=e93] [cursor=pointer]
+            - button "2023" [ref=e94] [cursor=pointer]
+            - button "2024" [ref=e95] [cursor=pointer]
+            - button "2025" [ref=e96] [cursor=pointer]
+      - generic [ref=e97]:
+        - generic [ref=e98]: Moyenne de vues par style
+        - generic [ref=e99]: Toutes éditions confondues (2021–2025)
+      - generic [ref=e102]:
+        - generic [ref=e103]: Tableau croisé · moyenne de vues par année
+        - generic [ref=e104]: Plus la cellule est intense, plus la valeur est élevée. Colonne « Toutes » = agrégat 2021–2025.
+        - generic:
+          - table
+        - paragraph
+  - generic [ref=e106]:
+    - generic [ref=e107]:
+      - generic [ref=e108]: Focus · Égalité
+      - heading "La place des femmes" [level=2] [ref=e109]
+      - paragraph [ref=e110]: Quelle visibilité pour les artistes femmes dans la musique d'Outremer ? Part des clips, vues générées et talents qui s'imposent — édition par édition.
+    - generic [ref=e112]:
+      - generic [ref=e113]:
+        - generic [ref=e114]: Répartition des clips par genre, année par année
+        - generic [ref=e115]: Part des clips portés par des femmes, des hommes ou en collaboration mixte
+      - generic [ref=e118]:
+        - generic [ref=e119]: Vues générées par genre
+        - generic [ref=e120]: Sur les éditions documentées (2024–2025)
+      - generic [ref=e123]:
+        - generic [ref=e124]: Top artistes femmes
+        - generic [ref=e125]: Femmes en lead (solo & duos 100% féminins), par vues cumulées
+    - generic [ref=e126]:
+      - paragraph [ref=e127]: Vous travaillez sur l'égalité, la place des femmes ou la diversité dans les musiques ultramarines ?
+      - link "Découvrir l'étude dédiée" [ref=e128] [cursor=pointer]:
+        - /url: "#offre"
+  - generic [ref=e130]:
+    - generic [ref=e131]:
+      - heading "Rechercher un clip ou un artiste" [level=2] [ref=e132]
+      - paragraph [ref=e133]: Plus de 2 780 clips indexés (2021-2025). Filtrez par artiste, titre, style, origine, année.
+    - generic [ref=e134]:
+      - 'searchbox "Artiste, titre… (ex : Kalash, Meryl, Shamballa)" [ref=e135]'
+      - combobox [ref=e136]:
+        - option "Toutes années" [selected]
+      - combobox [ref=e137]:
+        - option "Tous styles" [selected]
+      - combobox [ref=e138]:
+        - option "Toutes origines" [selected]
+      - combobox [ref=e139]:
+        - 'option "Trier : vues ↓" [selected]'
+        - 'option "Trier : date ↓"'
+        - 'option "Trier : artiste A→Z"'
+    - table [ref=e141]:
+      - rowgroup [ref=e142]:
+        - row "Année Artiste Titre Vues YouTube Style Origine Spotify Certif." [ref=e143]:
+          - columnheader "Année" [ref=e144]
+          - columnheader "Artiste" [ref=e145]
+          - columnheader "Titre" [ref=e146]
+          - columnheader "Vues YouTube" [ref=e147]
+          - columnheader "Style" [ref=e148]
+          - columnheader "Origine" [ref=e149]
+          - columnheader "Spotify" [ref=e150]
+          - columnheader "Certif." [ref=e151]
+      - rowgroup
+    - button "Voir plus de résultats" [ref=e152] [cursor=pointer]
+    - paragraph [ref=e153]:
+      - text: 🔒 Les vues exactes au-delà du top 50, les streams Spotify détaillés, labels et historiques complets sont réservés aux licences.
+      - link "Voir l'offre →" [ref=e154] [cursor=pointer]:
+        - /url: "#offre"
+  - generic [ref=e156]:
+    - generic [ref=e157]:
+      - generic [ref=e158]: Le label de référence
+      - heading "La Certification Hit Lokal" [level=2] [ref=e159]
+      - paragraph [ref=e160]: La première certification de performance dédiée à la musique d'Outremer. Un score unique qui combine l'audience YouTube et l'écoute Spotify pour distinguer les véritables hits ultramarins.
+    - generic [ref=e162]:
+      - generic [ref=e163]:
+        - text: 30%
+        - generic [ref=e164]: Vues YouTube
+      - generic [ref=e165]: +
+      - generic [ref=e166]:
+        - text: 70%
+        - generic [ref=e167]: Streams Spotify
+      - generic [ref=e168]: =
+      - generic [ref=e169]:
+        - text: Score HL
+        - generic [ref=e170]: Indice de performance
+    - generic [ref=e171]:
+      - generic [ref=e172]:
+        - generic [ref=e173]: 🥇
+        - heading "Or" [level=3] [ref=e174]
+        - generic [ref=e175]: Score ≥ 1 M
+      - generic [ref=e176]:
+        - generic [ref=e177]: 🏆
+        - heading "Platine" [level=3] [ref=e178]
+        - generic [ref=e179]: Score ≥ 3 M
+      - generic [ref=e180]:
+        - generic [ref=e181]: 💎
+        - heading "Diamant" [level=3] [ref=e182]
+        - generic [ref=e183]: Score ≥ 10 M
+    - paragraph
+    - generic [ref=e184]:
+      - generic [ref=e185]:
+        - heading "Calculez votre certification" [level=3] [ref=e186]
+        - paragraph [ref=e187]: Estimez le palier d'un clip à partir de ses chiffres.
+        - generic [ref=e188]:
+          - text: Vues YouTube
+          - spinbutton "Vues YouTube" [ref=e189]
+        - generic [ref=e190]:
+          - text: Streams Spotify
+          - spinbutton "Streams Spotify" [ref=e191]
+        - generic [ref=e192]:
+          - generic [ref=e193]:
+            - text: —
+            - generic [ref=e194]: Score Hit Lokal
+          - generic [ref=e195]: Entrez vos chiffres
+        - link "Faire certifier mon clip" [ref=e196] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e197]:
+        - heading "Derniers clips certifiés" [level=3] [ref=e198]
+        - paragraph [ref=e199]: Top des scores Hit Lokal (édition 2025).
+  - generic [ref=e201]:
+    - generic [ref=e202]:
+      - heading "Accédez aux données" [level=2] [ref=e203]
+      - paragraph [ref=e204]: Le détail des chiffres (vues exactes, streams Spotify, scores de certification, labels) est réservé aux membres. Créez un compte gratuit, montez en puissance quand vous voulez.
+    - generic [ref=e205]:
+      - generic [ref=e206]:
+        - generic [ref=e207]:
+          - heading "Découverte" [level=3] [ref=e208]
+          - generic [ref=e209]: Gratuit
+        - paragraph [ref=e210]: Pour explorer la donnée ultramarine.
+        - list [ref=e211]:
+          - listitem [ref=e212]: ✔ Vues YouTube exactes
+          - listitem [ref=e213]: ✔ Tops, styles, origines & comparateur
+          - listitem [ref=e214]: ✔ Recherche complète 2021–2025
+          - listitem [ref=e215]: ✖ Streams Spotify & scores
+          - listitem [ref=e216]: ✖ Export & API
+        - button "Créer mon compte gratuit" [ref=e217] [cursor=pointer]
+      - generic [ref=e218]:
+        - generic [ref=e219]: Le plus populaire
+        - generic [ref=e220]:
+          - heading "Pro" [level=3] [ref=e221]
+          - generic [ref=e222]: 15€/mois
+        - paragraph [ref=e223]: Pour les pros qui suivent le marché.
+        - list [ref=e224]:
+          - listitem [ref=e225]: "✔ Tout Découverte, plus :"
+          - listitem [ref=e226]: ✔ Streams Spotify détaillés
+          - listitem [ref=e227]: ✔ Scores & paliers de certification
+          - listitem [ref=e228]: ✔ Labels & certifications SNEP
+          - listitem [ref=e229]: ✖ Export massif & API
+        - button "Passer Pro · 15€" [ref=e230] [cursor=pointer]
+      - generic [ref=e231]:
+        - generic [ref=e232]:
+          - heading "Business" [level=3] [ref=e233]
+          - generic [ref=e234]: 50€/mois
+        - paragraph [ref=e235]: Pour les labels, médias & institutions.
+        - list [ref=e236]:
+          - listitem [ref=e237]: "✔ Tout Pro, plus :"
+          - listitem [ref=e238]: ✔ Export CSV / Excel complet
+          - listitem [ref=e239]: ✔ Accès API & flux hebdo
+          - listitem [ref=e240]: ✔ Données de certification brutes
+          - listitem [ref=e241]: ✔ Support analyste dédié
+        - button "Passer Business · 50€" [ref=e242] [cursor=pointer]
+    - paragraph [ref=e243]: 🔓 Inscription gratuite immédiate. Les niveaux Pro & Business sont activés en aperçu démo sur ce site (paiement réel à brancher en production).
+  - generic [ref=e246]:
+    - generic [ref=e247]:
+      - generic [ref=e248]: Gratuit · Édition fondatrice
+      - heading "Le Baromètre 2021 en PDF, offert" [level=2] [ref=e249]
+      - paragraph [ref=e250]: "Découvrez la toute première édition du Baromètre Hit Lokal : le panorama complet de la musique d'Outremer en 2021. Laissez votre e-mail, on vous l'envoie immédiatement."
+      - list [ref=e251]:
+        - listitem [ref=e252]: 📘 Rapport complet édition 2021
+        - listitem [ref=e253]: 📊 Tops clips, styles & origines
+        - listitem [ref=e254]: 🎁 100% gratuit, sans engagement
+    - generic [ref=e256]:
+      - generic [ref=e257]: PDF
+      - generic [ref=e258]:
+        - text: Votre e-mail
+        - textbox "Votre e-mail" [ref=e259]:
+          - /placeholder: vous@organisation.com
+      - generic [ref=e260]:
+        - text: Vous êtes
+        - combobox "Vous êtes" [ref=e261]:
+          - option "Label / Maison de disques" [selected]
+          - option "Média / Presse"
+          - option "Plateforme / Distributeur"
+          - option "Institution / Collectivité"
+          - option "Marque / Annonceur"
+          - option "Artiste / Management"
+          - option "Curieux / Public"
+          - option "Autre"
+      - generic [ref=e262]:
+        - checkbox "J'accepte de recevoir les prochaines éditions et actualités du Baromètre." [ref=e263]
+        - text: J'accepte de recevoir les prochaines éditions et actualités du Baromètre.
+      - button "⬇ Télécharger le PDF 2021" [ref=e264] [cursor=pointer]
+      - paragraph [ref=e265]
+  - generic [ref=e267]:
+    - generic [ref=e268]:
+      - heading "Exploitez la data Hit Lokal" [level=2] [ref=e269]
+      - paragraph [ref=e270]: "Labels, médias, plateformes, institutions, marques : accédez aux données brutes, aux analyses sur-mesure et à notre suivi hebdomadaire des clips ultramarins."
+    - generic [ref=e271]:
+      - generic [ref=e272]:
+        - generic [ref=e273]:
+          - heading "Rapport annuel" [level=3] [ref=e274]
+          - generic [ref=e275]: À partir de 290€
+        - paragraph [ref=e276]: Le baromètre complet d'une édition, prêt à présenter.
+        - list [ref=e277]:
+          - listitem [ref=e278]: ✓ PDF premium (40+ pages d'analyses)
+          - listitem [ref=e279]: ✓ Tops clips, artistes & origines
+          - listitem [ref=e280]: ✓ Graphiques haute définition
+          - listitem [ref=e281]: ✓ Licence d'usage interne / presse
+        - link "Commander" [ref=e282] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e283]:
+        - generic [ref=e284]: Le plus demandé
+        - generic [ref=e285]:
+          - heading "Dataset & licence" [level=3] [ref=e286]
+          - generic [ref=e287]: Sur devis
+        - paragraph [ref=e288]: Les données brutes exploitables (CSV / Excel / JSON).
+        - list [ref=e289]:
+          - listitem [ref=e290]: ✓ Tous les clips 2021→2025 (vues, dates, styles)
+          - listitem [ref=e291]: ✓ Origines, genre, langue, durée
+          - listitem [ref=e292]: ✓ Streams Spotify & certifications SNEP
+          - listitem [ref=e293]: ✓ Mises à jour & droits de rediffusion
+        - link "Demander un devis" [ref=e294] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e295]:
+        - generic [ref=e296]:
+          - heading "API & sur-mesure" [level=3] [ref=e297]
+          - generic [ref=e298]: Entreprise
+        - paragraph [ref=e299]: Intégration continue et études personnalisées.
+        - list [ref=e300]:
+          - listitem [ref=e301]: ✓ Accès API / flux hebdomadaire
+          - listitem [ref=e302]: ✓ Tableaux de bord dédiés
+          - listitem [ref=e303]: ✓ Études marché & benchmarks artistes
+          - listitem [ref=e304]: ✓ Accompagnement analyste
+        - link "Nous contacter" [ref=e305] [cursor=pointer]:
+          - /url: "#contact"
+    - generic [ref=e306]:
+      - generic [ref=e307]:
+        - generic [ref=e308]: Étude thématique
+        - heading "Femmes & musique d'Outremer" [level=3] [ref=e309]
+        - paragraph [ref=e310]: "Le premier panorama chiffré de la place des artistes femmes ultramarines : part de voix, vues générées, styles, territoires et trajectoires. Idéal pour médias, institutions, programmes égalité H/F et marques engagées."
+        - list [ref=e311]:
+          - listitem [ref=e312]: ♀ Indicateurs de présence féminine par année
+          - listitem [ref=e313]: ♀ Classements & portraits d'artistes
+          - listitem [ref=e314]: ♀ Lecture par style & par territoire
+          - listitem [ref=e315]: ♀ Synthèse prête à publier + jeu de données
+      - generic [ref=e316]:
+        - generic [ref=e317]: Sur devis
+        - link "Demander l'étude" [ref=e318] [cursor=pointer]:
+          - /url: "#contact"
+    - generic [ref=e319]:
+      - generic [ref=e320]:
+        - generic [ref=e321]: 2 780+
+        - text: clips indexés
+      - generic [ref=e322]:
+        - generic [ref=e323]: 5 ans
+        - text: d'historique
+      - generic [ref=e324]:
+        - generic [ref=e325]: 3 863
+        - text: artistes en base
+      - generic [ref=e326]:
+        - generic [ref=e327]: 9 200
+        - text: clips référencés
+  - generic [ref=e329]:
+    - generic [ref=e330]:
+      - heading "Parlons de votre projet" [level=2] [ref=e331]
+      - paragraph [ref=e332]: Dites-nous qui vous êtes et ce que vous cherchez. Nous revenons vers vous sous 48h avec une proposition adaptée.
+      - list [ref=e333]:
+        - listitem [ref=e334]: 📊 Accès aux données & licences
+        - listitem [ref=e335]: 📈 Études et benchmarks sur-mesure
+        - listitem [ref=e336]: 🤝 Partenariats médias & institutions
+    - generic [ref=e337]:
+      - generic [ref=e338]:
+        - generic [ref=e339]:
+          - text: Nom complet*
+          - textbox "Nom complet*" [ref=e340]
+        - generic [ref=e341]:
+          - text: E-mail professionnel*
+          - textbox "E-mail professionnel*" [ref=e342]
+      - generic [ref=e343]:
+        - generic [ref=e344]:
+          - text: Organisation
+          - textbox "Organisation" [ref=e345]
+        - generic [ref=e346]:
+          - text: Vous êtes
+          - combobox "Vous êtes" [ref=e347]:
+            - option "Label / Maison de disques" [selected]
+            - option "Média / Presse"
+            - option "Plateforme / Distributeur"
+            - option "Institution / Collectivité"
+            - option "Marque / Annonceur"
+            - option "Artiste / Management"
+            - option "Autre"
+      - generic [ref=e348]:
+        - text: Offre qui vous intéresse
+        - combobox "Offre qui vous intéresse" [ref=e349]:
+          - option "Rapport annuel"
+          - option "Dataset & licence" [selected]
+          - option "API & sur-mesure"
+          - option "Étude Femmes & musique Outremer"
+          - option "Certification Hit Lokal"
+          - option "Membre Pro (15€/mois)"
+          - option "Membre Business (50€/mois)"
+          - option "Je ne sais pas encore"
+      - generic [ref=e350]:
+        - text: Votre besoin
+        - textbox "Votre besoin" [ref=e351]:
+          - /placeholder: "Ex : nous cherchons les données 2024-2025 par style et origine pour une étude de marché."
+      - button "Envoyer ma demande" [ref=e352] [cursor=pointer]
+      - paragraph [ref=e353]
+  - contentinfo [ref=e354]:
+    - generic [ref=e355]:
+      - generic [ref=e356]:
+        - generic [ref=e357]: HL
+        - paragraph [ref=e358]:
+          - text: Baromètre Hit Lokal de la Musique d'Outremer.
+          - text: "Source : hit-lokal.com — la plus grande base de données sur les artistes ultramarins."
+      - paragraph [ref=e359]: © Hit Lokal 2021–2026. Toute reproduction des données et images est soumise à des droits d'auteur.
