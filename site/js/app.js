@@ -44,7 +44,6 @@ Promise.all([
   renderFemmes();
   initAuth();
   initAnalytics();
-  initSearch();
 }).catch(e=>{
   console.error(e);
   document.getElementById('heroKpis').innerHTML='<p style="color:var(--coral)">Erreur de chargement des données. Lancez le site via un serveur local (voir README).</p>';
@@ -605,7 +604,7 @@ let pendingTier=null;
 function getMember(){try{return JSON.parse(localStorage.getItem('hl_member')||'null')}catch(_){return null}}
 function curTier(){const m=getMember();return m?m.tier:'visiteur';}
 function rank(){return TIER_RANK[curTier()]||0;}
-function refreshGated(){if(filtered)paint();if(typeof renderAnalytics==='function')renderAnalytics();if(DASH&&document.getElementById('yearTabs'))buildYearTabs();if(typeof renderCompare==='function'&&DASH)renderCompare();}
+function refreshGated(){if(filtered&&document.getElementById('resultsBody'))paint();if(typeof renderAnalytics==='function')renderAnalytics();if(DASH&&document.getElementById('yearTabs'))buildYearTabs();if(typeof renderCompare==='function'&&DASH)renderCompare();}
 function saveMember(m){localStorage.setItem('hl_member',JSON.stringify(m));updateAuthUI();refreshGated();}
 function logoutMember(){localStorage.removeItem('hl_member');updateAuthUI();refreshGated();toast('Vous êtes déconnecté.');}
 function recordLead(extra){try{const L=JSON.parse(localStorage.getItem('hl_leads')||'[]');L.push({...extra,ts:new Date().toISOString()});localStorage.setItem('hl_leads',JSON.stringify(L));}catch(_){}}
@@ -635,7 +634,7 @@ function upgradeTier(tier){
   saveMember({...m,tier});
   recordLead({email:m.email,plan:'Membre '+TIER_NAME[tier],source:'adhesion-'+tier});
   toast(`Aperçu ${TIER_NAME[tier]} activé (démo) — données débloquées.`);
-  document.getElementById('recherche').scrollIntoView({behavior:'smooth'});
+  document.getElementById('explorer').scrollIntoView({behavior:'smooth'});
 }
 function join(tier){
   const m=getMember();
@@ -671,10 +670,11 @@ function initAuth(){
     closeAuth();
     if(pendingTier){const t=pendingTier;pendingTier=null;toast(`Bienvenue ! Aperçu ${TIER_NAME[t]} activé (démo).`);}
     else toast('Bienvenue ! Vos données sont débloquées.');
-    document.getElementById('recherche').scrollIntoView({behavior:'smooth'});
+    document.getElementById('explorer').scrollIntoView({behavior:'smooth'});
   });
-  // clic sur cellule verrouillée
-  byId('resultsBody').addEventListener('click',e=>{
+  // clic sur cellule verrouillée (tableau de recherche, si présent)
+  const rb=byId('resultsBody');
+  if(rb) rb.addEventListener('click',e=>{
     const cell=e.target.closest('.lock-cell'); if(!cell)return;
     if(cell.dataset.gate==='decouverte') openAuth('register');
     else document.getElementById('adhesion').scrollIntoView({behavior:'smooth'});

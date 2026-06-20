@@ -1,0 +1,673 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Hit Lokal Baromètre Hit Lokal" [ref=e4] [cursor=pointer]:
+        - /url: "#accueil"
+        - img "Hit Lokal" [ref=e5]
+        - generic [ref=e6]: Baromètre Hit Lokal
+      - navigation [ref=e7]:
+        - link "Accueil" [ref=e8] [cursor=pointer]:
+          - /url: "#accueil"
+        - link "Explorer" [ref=e9] [cursor=pointer]:
+          - /url: "#explorer"
+        - link "Comparer" [ref=e10] [cursor=pointer]:
+          - /url: "#comparer"
+        - link "AnalysesPro" [ref=e11] [cursor=pointer]:
+          - /url: "#analyses"
+        - link "Femmes" [ref=e12] [cursor=pointer]:
+          - /url: "#femmes"
+        - link "Offre data" [ref=e13] [cursor=pointer]:
+          - /url: "#offre"
+        - button "Connexion" [ref=e14] [cursor=pointer]
+  - generic [ref=e17]:
+    - generic [ref=e18]: Édition 2021 → 2025 · La référence data
+    - heading "La musique d'Outremer en chiffres." [level=1] [ref=e19]:
+      - text: La musique d'Outremer
+      - text: en chiffres.
+    - paragraph [ref=e20]: Depuis 2021, le Baromètre Hit Lokal recense et analyse chaque clip d'artiste ultramarin diffusé sur YouTube — vues, styles et origines. La plus grande base de données sur la musique de Guadeloupe, Martinique, Guyane, Réunion et Mayotte.
+    - link "Explorer les données" [ref=e22] [cursor=pointer]:
+      - /url: "#explorer"
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]: "-6 M"
+        - generic [ref=e26]: vues cumulées en 2025
+        - generic [ref=e27]: +61% vs 2024
+      - generic [ref=e28]:
+        - generic [ref=e29]: "-9"
+        - generic [ref=e30]: clips recensés en 2025
+      - generic [ref=e31]:
+        - generic [ref=e32]: "-45"
+        - generic [ref=e33]: clips suivis depuis 2021
+      - generic [ref=e34]:
+        - generic [ref=e35]: "0"
+        - generic [ref=e36]: éditions annuelles
+        - generic [ref=e37]: 2021 → 2025
+  - generic [ref=e40]:
+    - heading "5 ans de croissance" [level=2] [ref=e41]
+    - paragraph [ref=e42]: Vues cumulées et nombre de clips recensés par édition. En 2025, les clips ultramarins ont franchi les 413 millions de vues.
+  - generic [ref=e49]:
+    - generic [ref=e50]:
+      - heading "Explorer par année" [level=2] [ref=e51]
+      - paragraph [ref=e52]: Sélectionnez une édition pour visualiser la répartition par style, le rythme de sortie, la distribution des vues et le top des clips.
+    - generic [ref=e53]:
+      - button "2021" [ref=e54] [cursor=pointer]
+      - button "2022 🔒" [ref=e55] [cursor=pointer]
+      - button "2023 🔒" [ref=e56] [cursor=pointer]
+      - button "2024 🔒" [ref=e57] [cursor=pointer]
+      - button "2025 🔒" [ref=e58] [cursor=pointer]
+    - generic [ref=e59]:
+      - generic [ref=e60]:
+        - text: "🎁 Édition fondatrice : téléchargez gratuitement le rapport 2021 en PDF."
+        - link "Recevoir le PDF →" [ref=e61] [cursor=pointer]:
+          - /url: "#telecharger"
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - generic [ref=e64]: 216 M
+          - generic [ref=e65]: vues cumulées
+        - generic [ref=e66]:
+          - generic [ref=e67]: "625"
+          - generic [ref=e68]: clips recensés
+        - generic [ref=e69]:
+          - generic [ref=e70]: "46"
+          - generic [ref=e71]: clips > 1 M de vues
+        - generic [ref=e72]:
+          - generic [ref=e73]: Rap
+          - generic [ref=e74]: style n°1
+          - generic [ref=e75]: 367 clips
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - generic [ref=e78]: Vues par style musical
+          - generic [ref=e79]: Total des vues cumulées par genre
+        - generic [ref=e82]:
+          - generic [ref=e83]: Répartition des clips par style
+          - generic [ref=e84]: 625 clips au total
+        - generic [ref=e87]:
+          - generic [ref=e88]: Distribution des clips par paliers de vues
+          - generic [ref=e89]: De quelques milliers à plus de 10 millions
+        - generic [ref=e92]:
+          - generic [ref=e93]: Origine des artistes
+          - generic [ref=e94]: Répartition des clips par territoire
+        - generic [ref=e97]:
+          - generic [ref=e98]: Top 20 des clips 2021
+          - generic [ref=e99]: Classés par vues YouTube cumulées au 31/12
+          - generic [ref=e100]:
+            - generic [ref=e101]:
+              - generic [ref=e102]: "1"
+              - generic [ref=e103]:
+                - generic [ref=e104]: Kalash feat. Gazo — Tu le sais
+                - text: Rap/Hip-Hop · Martinique (972)
+              - generic [ref=e105]: 18 M
+            - generic [ref=e106]:
+              - generic [ref=e107]: "2"
+              - generic [ref=e108]:
+                - generic [ref=e109]: Kalipsxau — Corps à corps
+                - text: Zouk · Réunion (974)
+              - generic [ref=e110]: 11 M
+            - generic [ref=e111]:
+              - generic [ref=e112]: "3"
+              - generic [ref=e113]:
+                - generic [ref=e114]: Were-vana — Bombardé
+                - text: Dancehall · Guadeloupe (971)
+              - generic [ref=e115]: 7,0 M
+            - generic [ref=e116]:
+              - generic [ref=e117]: "4"
+              - generic [ref=e118]:
+                - generic [ref=e119]: Kalipsxau — Solo
+                - text: Zouk · Réunion (974)
+              - generic [ref=e120]: 6,5 M
+            - generic [ref=e121]:
+              - generic [ref=e122]: "5"
+              - generic [ref=e123]:
+                - generic [ref=e124]: Kalash — Donner
+                - text: Rap/Hip-Hop · Martinique (972)
+              - generic [ref=e125]: 5,2 M
+            - generic [ref=e126]:
+              - generic [ref=e127]: "6"
+              - generic [ref=e128]:
+                - generic [ref=e129]: "Admiral t — #dmts (dis-moi tes sentiments)"
+                - text: Pop · Guadeloupe (971)
+              - generic [ref=e130]: 4,6 M
+            - generic [ref=e131]:
+              - generic [ref=e132]: "7"
+              - generic [ref=e133]:
+                - generic [ref=e134]: Kalash — Oula
+                - text: Rap/Hip-Hop · Martinique (972)
+              - generic [ref=e135]: 4,2 M
+            - generic [ref=e136]:
+              - generic [ref=e137]: "8"
+              - generic [ref=e138]:
+                - generic [ref=e139]: Nesly feat Mikl — Prends moi la main
+                - text: Zouk
+              - generic [ref=e140]: 3,9 M
+            - generic [ref=e141]:
+              - generic [ref=e142]: "9"
+              - generic [ref=e143]:
+                - generic [ref=e144]: Guillaume h$Hoarau , Kaf Malbar , Wizdom , Dj Mimi — loko loko
+                - text: Pop · Réunion (974)
+              - generic [ref=e145]: 3,5 M
+            - generic [ref=e146]:
+              - generic [ref=e147]: "10"
+              - generic [ref=e148]:
+                - generic [ref=e149]: Azet x Larose — Aventador (prod. by lucry & suena)
+                - text: Rap/Hip-Hop · Guadeloupe (971)
+              - generic [ref=e150]: 3,5 M
+            - generic [ref=e151]:
+              - generic [ref=e152]: "11"
+              - generic [ref=e153]:
+                - generic [ref=e154]: Fanny j — l' amour et la passion ( feat dj fly )
+                - text: Zouk · Guyane (973)
+              - generic [ref=e155]: 3,4 M
+            - generic [ref=e156]:
+              - generic [ref=e157]: "12"
+              - generic [ref=e158]:
+                - generic [ref=e159]: Tiitof — bad boy
+                - text: Rap/Hip-Hop · Martinique (972)
+              - generic [ref=e160]: 3,3 M
+            - generic [ref=e161]:
+              - generic [ref=e162]: "13"
+              - generic [ref=e163]:
+                - generic [ref=e164]: Oswald — Ti doudou
+                - text: Compas
+              - generic [ref=e165]: 2,9 M
+            - generic [ref=e166]:
+              - generic [ref=e167]: "14"
+              - generic [ref=e168]:
+                - generic [ref=e169]: T Matt ft Franglish — La kaz
+                - text: Rap/Hip-Hop · Réunion (974)
+              - generic [ref=e170]: 2,9 M
+            - generic [ref=e171]:
+              - generic [ref=e172]: "15"
+              - generic [ref=e173]:
+                - generic [ref=e174]: Dj leska, Chily, Bamby & Jahyanai — Buddy
+                - text: Dancehall
+              - generic [ref=e175]: 2,8 M
+            - generic [ref=e176]:
+              - generic [ref=e177]: "16"
+              - generic [ref=e178]:
+                - generic [ref=e179]: Meiitod — Pansement
+                - text: POP
+              - generic [ref=e180]: 2,7 M
+            - generic [ref=e181]:
+              - generic [ref=e182]: "17"
+              - generic [ref=e183]:
+                - generic [ref=e184]: Kryssy feat. Shannon — Queens
+                - text: Dancehall · Martinique (972)
+              - generic [ref=e185]: 2,5 M
+            - generic [ref=e186]:
+              - generic [ref=e187]: "18"
+              - generic [ref=e188]:
+                - generic [ref=e189]: Dj Mimi Tatane Mikl — Donne moi
+                - text: Pop · Réunion (974)
+              - generic [ref=e190]: 2,4 M
+            - generic [ref=e191]:
+              - generic [ref=e192]: "19"
+              - generic [ref=e193]:
+                - generic [ref=e194]: Tiitof (ft. rk) — avec ou sans toi
+                - text: Rap/Hip-Hop · Martinique (972)
+              - generic [ref=e195]: 2,4 M
+            - generic [ref=e196]:
+              - generic [ref=e197]: "20"
+              - generic [ref=e198]:
+                - generic [ref=e199]: Pll, black t, junior, abdoul, dj sebb — donpb
+                - text: Dancehall · Réunion (974)
+              - generic [ref=e200]: 2,4 M
+  - generic [ref=e202]:
+    - generic [ref=e203]:
+      - heading "Comparer les éditions" [level=2] [ref=e204]
+      - paragraph [ref=e205]: "Mesurez l'évolution de la musique d'Outremer d'une année sur l'autre. Choisissez une donnée et une mesure : le graphique recompose les 5 éditions côte à côte."
+    - generic [ref=e206]:
+      - generic:
+        - generic:
+          - generic:
+            - generic: Donnée
+            - generic:
+              - button "Styles"
+              - button "Origines"
+              - button "Genre"
+              - button "Paliers de vues"
+          - generic:
+            - generic: Mesure
+            - generic:
+              - button "Nombre de clips"
+              - button "Vues"
+              - button "Part en %"
+        - generic:
+          - generic: Styles musicaux · nombre de clips par édition
+          - generic: Cliquez la légende pour isoler une catégorie.
+        - paragraph: "📈 Lecture : la part de Rap/Hip-Hop passe de 59% (2021) à 25% (2025) des clips — en recul."
+      - generic [ref=e208]:
+        - generic [ref=e209]: 🔒
+        - heading "Comparateur réservé au forfait Business" [level=3] [ref=e210]
+        - paragraph [ref=e211]: La comparaison des éditions (2021 → 2025 côte à côte) est incluse dans le forfait Business · 500€/an.
+        - generic [ref=e212]:
+          - button "Passer Business · 500€" [ref=e213] [cursor=pointer]
+          - button "J'ai déjà un compte" [ref=e214] [cursor=pointer]
+  - generic [ref=e216]:
+    - generic [ref=e217]:
+      - generic [ref=e218]: Forfait Business · Données approfondies
+      - heading "Analyses avancées" [level=2] [ref=e219]
+      - paragraph [ref=e220]: "Croisez les performances en profondeur : moyenne de vues, médiane, volumes par style, par origine, par genre et par année. L'outil d'analyse réservé aux abonnés Business."
+    - generic [ref=e221]:
+      - generic:
+        - generic:
+          - generic:
+            - generic: Dimension
+            - generic:
+              - button "Styles"
+              - button "Origines"
+              - button "Genre"
+          - generic:
+            - generic: Mesure
+            - generic:
+              - button "Moyenne de vues"
+              - button "Médiane"
+              - button "Total vues"
+              - button "Nb de clips"
+          - generic:
+            - generic: Année
+            - generic:
+              - button "Toutes"
+              - button "2021"
+              - button "2022"
+              - button "2023"
+              - button "2024"
+              - button "2025"
+        - generic:
+          - generic:
+            - generic: 473 k
+            - generic: vues / clip (moyenne)
+            - generic: toutes éditions
+          - generic:
+            - generic: 119 k
+            - generic: vues / clip (médiane)
+            - generic: toutes éditions
+          - generic:
+            - generic: Compas
+            - generic: style le + performant
+            - generic: toutes éditions · ≥ 5 clips
+          - generic:
+            - generic: 2 780
+            - generic: clips analysés
+            - generic: toutes éditions
+        - generic:
+          - generic: Moyenne de vues par style
+          - generic: Toutes éditions confondues (2021–2025)
+        - generic:
+          - generic: Tableau croisé · moyenne de vues par année
+          - generic: Plus la cellule est intense, plus la valeur est élevée. Colonne « Toutes » = agrégat 2021–2025.
+          - generic:
+            - table:
+              - rowgroup:
+                - row "Style 2021 2022 2023 2024 2025 Toutes":
+                  - columnheader "Style"
+                  - columnheader "2021"
+                  - columnheader "2022"
+                  - columnheader "2023"
+                  - columnheader "2024"
+                  - columnheader "2025"
+                  - columnheader "Toutes"
+              - rowgroup:
+                - row "Rap/Hip-Hop 376 k 444 k 292 k 270 k 306 k 351 k":
+                  - rowheader "Rap/Hip-Hop"
+                  - cell "376 k"
+                  - cell "444 k"
+                  - cell "292 k"
+                  - cell "270 k"
+                  - cell "306 k"
+                  - cell "351 k"
+                - row "Dancehall 187 k 382 k 381 k 418 k 856 k 488 k":
+                  - rowheader "Dancehall"
+                  - cell "187 k"
+                  - cell "382 k"
+                  - cell "381 k"
+                  - cell "418 k"
+                  - cell "856 k"
+                  - cell "488 k"
+                - row "Zouk 761 k 866 k 667 k 647 k 1,2 M 814 k":
+                  - rowheader "Zouk"
+                  - cell "761 k"
+                  - cell "866 k"
+                  - cell "667 k"
+                  - cell "647 k"
+                  - cell "1,2 M"
+                  - cell "814 k"
+                - row "Soca/Bouyon 73 k 264 k 212 k 539 k 1,0 M 537 k":
+                  - rowheader "Soca/Bouyon"
+                  - cell "73 k"
+                  - cell "264 k"
+                  - cell "212 k"
+                  - cell "539 k"
+                  - cell "1,0 M"
+                  - cell "537 k"
+                - row "Pop 432 k 676 k 310 k 675 k 1,0 M 624 k":
+                  - rowheader "Pop"
+                  - cell "432 k"
+                  - cell "676 k"
+                  - cell "310 k"
+                  - cell "675 k"
+                  - cell "1,0 M"
+                  - cell "624 k"
+                - row "Reggae 71 k 182 k 227 k 159 k 440 k 196 k":
+                  - rowheader "Reggae"
+                  - cell "71 k"
+                  - cell "182 k"
+                  - cell "227 k"
+                  - cell "159 k"
+                  - cell "440 k"
+                  - cell "196 k"
+                - row "Traditionnel 127 k 557 k 287 k 815 k 380 k 492 k":
+                  - rowheader "Traditionnel"
+                  - cell "127 k"
+                  - cell "557 k"
+                  - cell "287 k"
+                  - cell "815 k"
+                  - cell "380 k"
+                  - cell "492 k"
+                - row "Soul 2 k 4 k 402 k 42 k 89 k 118 k":
+                  - rowheader "Soul"
+                  - cell "2 k"
+                  - cell "4 k"
+                  - cell "402 k"
+                  - cell "42 k"
+                  - cell "89 k"
+                  - cell "118 k"
+                - row "Compas 1,5 M n/d 22 k 3,9 M 1,6 M 2,1 M":
+                  - rowheader "Compas"
+                  - cell "1,5 M"
+                  - cell "n/d"
+                  - cell "22 k"
+                  - cell "3,9 M"
+                  - cell "1,6 M"
+                  - cell "2,1 M"
+          - paragraph
+      - generic [ref=e223]:
+        - generic [ref=e224]: 🔒
+        - heading "Réservé au forfait Business" [level=3] [ref=e225]
+        - paragraph [ref=e226]: Les analyses croisées (moyennes, médianes, volumes par style / origine / genre / année) sont incluses dans l'abonnement Business · 500€/an.
+        - generic [ref=e227]:
+          - button "Passer Business · 500€" [ref=e228] [cursor=pointer]
+          - button "J'ai déjà un compte" [ref=e229] [cursor=pointer]
+  - generic [ref=e231]:
+    - generic [ref=e232]:
+      - generic [ref=e233]: Focus · Égalité
+      - heading "La place des femmes" [level=2] [ref=e234]
+      - paragraph [ref=e235]: Quelle visibilité pour les artistes femmes dans la musique d'Outremer ? Part des clips, vues générées et talents qui s'imposent — édition par édition.
+    - generic [ref=e236]: ℹ️ Indicateurs calculés sur les éditions documentées en genre (2021, 2022, 2023, 2024, 2025).
+    - generic [ref=e237]:
+      - generic [ref=e238]:
+        - generic [ref=e239]: 31%
+        - generic [ref=e240]: de présence féminine
+        - generic [ref=e241]: clips portés ou co-portés par des femmes
+      - generic [ref=e242]:
+        - generic [ref=e243]: 242 M
+        - generic [ref=e244]: vues générées
+        - generic [ref=e245]: femmes & collaborations (2024–2025)
+      - generic [ref=e246]:
+        - generic [ref=e247]: "83"
+        - generic [ref=e248]: artistes femmes
+        - generic [ref=e249]: en lead, identifiées en base
+      - generic [ref=e250]:
+        - generic [ref=e251]: Meryl
+        - generic [ref=e252]: clip féminin n°1
+        - generic [ref=e253]: 16 M vues
+    - generic [ref=e254]:
+      - generic [ref=e255]:
+        - generic [ref=e256]: Répartition des clips par genre, année par année
+        - generic [ref=e257]: Part des clips portés par des femmes, des hommes ou en collaboration mixte
+      - generic [ref=e260]:
+        - generic [ref=e261]: Vues générées par genre
+        - generic [ref=e262]: Sur les éditions documentées (2024–2025)
+      - generic [ref=e265]:
+        - generic [ref=e266]: Top artistes femmes
+        - generic [ref=e267]: Femmes en lead (solo & duos 100% féminins), par vues cumulées
+        - generic [ref=e268]:
+          - generic [ref=e269]:
+            - generic [ref=e270]: "1"
+            - generic [ref=e271]:
+              - generic [ref=e272]: Meryl
+              - text: 10 clip(s) avec présence féminine
+            - generic [ref=e273]: 41 M
+          - generic [ref=e274]:
+            - generic [ref=e275]: "2"
+            - generic [ref=e276]:
+              - generic [ref=e277]: Kalipsxau
+              - text: 9 clip(s) avec présence féminine
+            - generic [ref=e278]: 30 M
+          - generic [ref=e279]:
+            - generic [ref=e280]: "3"
+            - generic [ref=e281]:
+              - generic [ref=e282]: LycinaÏs Jean
+              - text: 2 clip(s) avec présence féminine
+            - generic [ref=e283]: 13 M
+          - generic [ref=e284]:
+            - generic [ref=e285]: "4"
+            - generic [ref=e286]:
+              - generic [ref=e287]: Dj Leska X Shannon
+              - text: 1 clip(s) avec présence féminine
+            - generic [ref=e288]: 8,6 M
+          - generic [ref=e289]:
+            - generic [ref=e290]: "5"
+            - generic [ref=e291]:
+              - generic [ref=e292]: Josey
+              - text: 1 clip(s) avec présence féminine
+            - generic [ref=e293]: 6,7 M
+          - generic [ref=e294]:
+            - generic [ref=e295]: "6"
+            - generic [ref=e296]:
+              - generic [ref=e297]: Kryssy
+              - text: 4 clip(s) avec présence féminine
+            - generic [ref=e298]: 6,1 M
+          - generic [ref=e299]:
+            - generic [ref=e300]: "7"
+            - generic [ref=e301]:
+              - generic [ref=e302]: Nesly
+              - text: 4 clip(s) avec présence féminine
+            - generic [ref=e303]: 6,1 M
+          - generic [ref=e304]:
+            - generic [ref=e305]: "8"
+            - generic [ref=e306]:
+              - generic [ref=e307]: Meryl & Dj Tutus
+              - text: 3 clip(s) avec présence féminine
+            - generic [ref=e308]: 5,8 M
+          - generic [ref=e309]:
+            - generic [ref=e310]: "9"
+            - generic [ref=e311]:
+              - generic [ref=e312]: Léa Churros X M
+              - text: 1 clip(s) avec présence féminine
+            - generic [ref=e313]: 5,3 M
+          - generic [ref=e314]:
+            - generic [ref=e315]: "10"
+            - generic [ref=e316]:
+              - generic [ref=e317]: Nesly x Fanny J
+              - text: 1 clip(s) avec présence féminine
+            - generic [ref=e318]: 5,1 M
+    - generic [ref=e319]:
+      - paragraph [ref=e320]: Vous travaillez sur l'égalité, la place des femmes ou la diversité dans les musiques ultramarines ?
+      - link "Découvrir l'étude dédiée" [ref=e321] [cursor=pointer]:
+        - /url: "#offre"
+  - generic [ref=e323]:
+    - generic [ref=e324]:
+      - heading "Accédez aux données" [level=2] [ref=e325]
+      - paragraph [ref=e326]: Le détail des chiffres (vues exactes, labels) est réservé aux membres. Créez un compte gratuit, montez en puissance quand vous voulez.
+    - generic [ref=e327]:
+      - generic [ref=e328]:
+        - generic [ref=e329]:
+          - heading "Découverte" [level=3] [ref=e330]
+          - generic [ref=e331]: Gratuit
+        - paragraph [ref=e332]: Pour découvrir la donnée ultramarine.
+        - list [ref=e333]:
+          - listitem [ref=e334]: ✔ Édition 2021 en accès libre
+          - listitem [ref=e335]: ✔ Vues YouTube exactes
+          - listitem [ref=e336]: ✔ Tops, styles & origines
+          - listitem [ref=e337]: ✖ Éditions 2022 → 2025
+          - listitem [ref=e338]: ✖ Comparateur d'éditions
+        - button "Créer mon compte gratuit" [ref=e339] [cursor=pointer]
+      - generic [ref=e340]:
+        - generic [ref=e341]: Le plus populaire
+        - generic [ref=e342]:
+          - heading "Pro" [level=3] [ref=e343]
+          - generic [ref=e344]: 200€/an
+        - paragraph [ref=e345]: Pour suivre l'édition en cours.
+        - list [ref=e346]:
+          - listitem [ref=e347]: "✔ Tout Découverte, plus :"
+          - listitem [ref=e348]: ✔ Édition en cours (2025) complète
+          - listitem [ref=e349]: ✖ Éditions 2022 → 2024
+          - listitem [ref=e350]: ✖ Comparateur d'éditions
+        - button "Passer Pro · 200€" [ref=e351] [cursor=pointer]
+      - generic [ref=e352]:
+        - generic [ref=e353]:
+          - heading "Business" [level=3] [ref=e354]
+          - generic [ref=e355]: 500€/an
+        - paragraph [ref=e356]: Pour les labels, médias & institutions.
+        - list [ref=e357]:
+          - listitem [ref=e358]: "✔ Tout Pro, plus :"
+          - listitem [ref=e359]: ✔ Toutes les éditions 2021 → 2025
+          - listitem [ref=e360]: ✔ Comparateur d'éditions
+        - button "Passer Business · 500€" [ref=e361] [cursor=pointer]
+    - paragraph [ref=e362]: 🔓 Inscription gratuite immédiate. Les niveaux Pro & Business sont activés en aperçu démo sur ce site (paiement réel à brancher en production).
+  - generic [ref=e365]:
+    - generic [ref=e366]:
+      - generic [ref=e367]: Gratuit · Édition fondatrice
+      - heading "Le Baromètre 2021 en PDF, offert" [level=2] [ref=e368]
+      - paragraph [ref=e369]: "Découvrez la toute première édition du Baromètre Hit Lokal : le panorama complet de la musique d'Outremer en 2021. Laissez votre e-mail, on vous l'envoie immédiatement."
+      - list [ref=e370]:
+        - listitem [ref=e371]: 📘 Rapport complet édition 2021
+        - listitem [ref=e372]: 📊 Tops clips, styles & origines
+        - listitem [ref=e373]: 🎁 100% gratuit, sans engagement
+    - generic [ref=e375]:
+      - generic [ref=e376]: PDF
+      - generic [ref=e377]:
+        - text: Votre e-mail
+        - textbox "Votre e-mail" [ref=e378]:
+          - /placeholder: vous@organisation.com
+      - generic [ref=e379]:
+        - text: Vous êtes
+        - combobox "Vous êtes" [ref=e380]:
+          - option "Label / Maison de disques" [selected]
+          - option "Média / Presse"
+          - option "Plateforme / Distributeur"
+          - option "Institution / Collectivité"
+          - option "Marque / Annonceur"
+          - option "Artiste / Management"
+          - option "Public"
+          - option "Autre"
+      - generic [ref=e381]:
+        - checkbox "J'accepte de recevoir les prochaines éditions et actualités du Baromètre." [ref=e382]
+        - text: J'accepte de recevoir les prochaines éditions et actualités du Baromètre.
+      - button "⬇ Télécharger le PDF 2021" [ref=e383] [cursor=pointer]
+      - paragraph [ref=e384]
+  - generic [ref=e386]:
+    - generic [ref=e387]:
+      - heading "Exploitez la data Hit Lokal" [level=2] [ref=e388]
+      - paragraph [ref=e389]: "Labels, médias, plateformes, institutions, marques : accédez aux données brutes, aux analyses sur-mesure et à notre suivi hebdomadaire des clips ultramarins."
+    - generic [ref=e390]:
+      - generic [ref=e391]:
+        - generic [ref=e392]:
+          - heading "Rapport annuel" [level=3] [ref=e393]
+          - generic [ref=e394]: À partir de 290€
+        - paragraph [ref=e395]: Le baromètre complet d'une édition, prêt à présenter.
+        - list [ref=e396]:
+          - listitem [ref=e397]: ✓ PDF premium (40+ pages d'analyses)
+          - listitem [ref=e398]: ✓ Tops clips, artistes & origines
+          - listitem [ref=e399]: ✓ Graphiques haute définition
+          - listitem [ref=e400]: ✓ Licence d'usage interne / presse
+        - link "Commander" [ref=e401] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e402]:
+        - generic [ref=e403]: À l'unité
+        - generic [ref=e404]:
+          - heading "Analyse d'une édition" [level=3] [ref=e405]
+          - generic [ref=e406]: 80€ / édition
+        - paragraph [ref=e407]: L'analyse détaillée d'une édition au choix, en option.
+        - list [ref=e408]:
+          - listitem [ref=e409]: "✓ Une édition complète : styles, rythme, distribution & top des clips"
+          - listitem [ref=e410]: ✓ L'édition de votre choix (2022, 2023 ou 2024)
+          - listitem [ref=e411]: ✓ Idéal si vous n'avez pas le forfait Business
+          - listitem [ref=e412]: ✓ Le forfait Business inclut déjà toutes les éditions
+        - link "Demander une analyse" [ref=e413] [cursor=pointer]:
+          - /url: "#contact"
+    - generic [ref=e414]:
+      - generic [ref=e415]:
+        - generic [ref=e416]: 2 780+
+        - text: clips indexés
+      - generic [ref=e417]:
+        - generic [ref=e418]: 5 ans
+        - text: d'historique
+      - generic [ref=e419]:
+        - generic [ref=e420]: 3 863
+        - text: artistes en base
+      - generic [ref=e421]:
+        - generic [ref=e422]: 9 200
+        - text: clips référencés
+  - generic [ref=e424]:
+    - generic [ref=e425]:
+      - heading "Parlons de votre projet" [level=2] [ref=e426]
+      - paragraph [ref=e427]: Dites-nous qui vous êtes et ce que vous cherchez. Nous revenons vers vous sous 48h avec une proposition adaptée.
+      - list [ref=e428]:
+        - listitem [ref=e429]: 📊 Accès aux données & licences
+        - listitem [ref=e430]: 📈 Études et benchmarks sur-mesure
+        - listitem [ref=e431]: 🤝 Partenariats médias & institutions
+    - generic [ref=e432]:
+      - generic [ref=e433]:
+        - generic [ref=e434]:
+          - text: Nom complet*
+          - textbox "Nom complet*" [ref=e435]
+        - generic [ref=e436]:
+          - text: E-mail professionnel*
+          - textbox "E-mail professionnel*" [ref=e437]
+      - generic [ref=e438]:
+        - generic [ref=e439]:
+          - text: Organisation
+          - textbox "Organisation" [ref=e440]
+        - generic [ref=e441]:
+          - text: Vous êtes
+          - combobox "Vous êtes" [ref=e442]:
+            - option "Label / Maison de disques" [selected]
+            - option "Média / Presse"
+            - option "Plateforme / Distributeur"
+            - option "Institution / Collectivité"
+            - option "Marque / Annonceur"
+            - option "Artiste / Management"
+            - option "Autre"
+      - generic [ref=e443]:
+        - text: Offre qui vous intéresse
+        - combobox "Offre qui vous intéresse" [ref=e444]:
+          - option "Rapport annuel" [selected]
+          - option "Analyse d'une édition (80€)"
+          - option "Étude Femmes & musique Outremer"
+          - option "Membre Pro (200€/an)"
+          - option "Membre Business (500€/an)"
+          - option "Je ne sais pas encore"
+      - generic [ref=e445]:
+        - text: Votre besoin
+        - textbox "Votre besoin" [ref=e446]:
+          - /placeholder: "Ex : nous cherchons les données 2024-2025 par style et origine pour une étude de marché."
+      - button "Envoyer ma demande" [ref=e447] [cursor=pointer]
+      - paragraph [ref=e448]
+  - contentinfo [ref=e449]:
+    - generic [ref=e450]:
+      - generic [ref=e451]:
+        - img "Hit Lokal" [ref=e452]
+        - paragraph [ref=e453]:
+          - text: Baromètre Hit Lokal de la Musique d'Outremer.
+          - text: "Source : hitlokal.com — la plus grande base de données sur les artistes ultramarins."
+        - generic [ref=e454]:
+          - link "Instagram" [ref=e455] [cursor=pointer]:
+            - /url: https://www.instagram.com/hitlokal/
+            - img [ref=e456]
+          - link "TikTok" [ref=e458] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@hitlokal
+            - img [ref=e459]
+          - link "YouTube" [ref=e461] [cursor=pointer]:
+            - /url: https://www.youtube.com/user/HITLOKAL
+            - img [ref=e462]
+          - link "X (Twitter)" [ref=e464] [cursor=pointer]:
+            - /url: https://x.com/HitLokal
+            - img [ref=e465]
+          - link "Facebook" [ref=e467] [cursor=pointer]:
+            - /url: https://www.facebook.com/hitlokalawards/
+            - img [ref=e468]
+          - link "E-mail" [ref=e470] [cursor=pointer]:
+            - /url: mailto:hitlokal@gmail.com
+            - img [ref=e471]
+      - paragraph [ref=e474]: © Hit Lokal 2021–2026. Toute reproduction des données et images est soumise à des droits d'auteur.
