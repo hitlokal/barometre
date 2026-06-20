@@ -1,0 +1,11 @@
+# === Produits payants & sources — NE JAMAIS publier ===
+*.pdf
+*.xlsx
+/*.png
+dataset/
+_extract/
+_backups/
+
+# === macOS ===
+.DS_Store
+**/.DS_Store

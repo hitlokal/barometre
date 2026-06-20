@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baromètre Hit Lokal — La data de la musique d'Outremer</title>
+<meta name="description" content="Le Baromètre Hit Lokal mesure depuis 2021 la performance des clips et artistes ultramarins sur YouTube : vues, styles, origines, streams Spotify et certifications. Données, analyses et licences pro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#accueil" class="brand">
+      <span class="brand-mark">HL</span>
+      <span class="brand-txt">Baromètre <b>Hit Lokal</b></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#accueil">Accueil</a>
+      <a href="#explorer">Explorer</a>
+      <a href="#comparer">Comparer</a>
+      <a href="#analyses">Analyses<span class="nav-pro">Pro</span></a>
+      <a href="#femmes">Femmes</a>
+      <a href="#recherche">Recherche</a>
+      <a href="#certification">Certification</a>
+      <a href="#offre">Offre data</a>
+      <span class="nav-member" id="navMember"></span>
+      <button class="nav-cta" id="navAuth">Connexion</button>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="accueil">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">Édition 2021 → 2025 · La référence data</span>
+    <h1>La musique d'Outremer<br><span class="grad">en chiffres.</span></h1>
+    <p class="lead">Depuis 2021, le Baromètre Hit Lokal recense et analyse chaque clip d'artiste ultramarin
+    diffusé sur YouTube — vues, styles, origines, streams Spotify et certifications. La plus grande base
+    de données sur la musique de Guadeloupe, Martinique, Guyane, Réunion et Mayotte.</p>
+    <div class="hero-cta">
+      <a href="#explorer" class="btn btn-primary">Explorer les données</a>
+      <a href="#offre" class="btn btn-ghost">Licences & API pro</a>
+    </div>
+    <div class="hero-kpis" id="heroKpis"></div>
+  </div>
+</section>
+
+<!-- TREND -->
+<section class="section trend-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>5 ans de croissance</h2>
+      <p>Vues cumulées et nombre de clips recensés par édition. En 2025, les clips ultramarins ont franchi les <b>413 millions de vues</b>.</p>
+    </div>
+    <div class="trend-grid">
+      <div class="card chart-card"><canvas id="trendViews"></canvas></div>
+      <div class="card chart-card"><canvas id="trendClips"></canvas></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORER -->
+<section class="section" id="explorer">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Explorer par année</h2>
+      <p>Sélectionnez une édition pour visualiser la répartition par style, le rythme de sortie, la distribution des vues et le top des clips.</p>
+    </div>
+    <div class="year-tabs" id="yearTabs"></div>
+    <div id="yearPanel" class="year-panel"></div>
+  </div>
+</section>
+
+<!-- COMPARER -->
+<section class="section compare-sec" id="comparer">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Comparer les éditions</h2>
+      <p>Mesurez l'évolution de la musique d'Outremer d'une année sur l'autre. Choisissez une donnée et une mesure : le graphique recompose les 5 éditions côte à côte.</p>
+    </div>
+    <div class="compare-controls">
+      <div class="cmp-field">
+        <span class="cmp-label">Donnée</span>
+        <div class="seg" id="cmpDim">
+          <button data-v="styles" class="active">Styles</button>
+          <button data-v="origins">Origines</button>
+          <button data-v="genre">Genre</button>
+          <button data-v="buckets">Paliers de vues</button>
+        </div>
+      </div>
+      <div class="cmp-field">
+        <span class="cmp-label">Mesure</span>
+        <div class="seg" id="cmpMeasure">
+          <button data-v="clips" class="active">Nombre de clips</button>
+          <button data-v="views">Vues</button>
+          <button data-v="pct">Part en %</button>
+        </div>
+      </div>
+    </div>
+    <div class="card chart-card full">
+      <div class="chart-title" id="cmpTitle">Styles musicaux · nombre de clips par édition</div>
+      <div class="chart-sub" id="cmpSub">Cliquez la légende pour isoler une catégorie</div>
+      <div style="height:430px"><canvas id="cCompare"></canvas></div>
+    </div>
+    <p class="compare-note" id="cmpNote"></p>
+  </div>
+</section>
+
+<!-- ANALYSES AVANCÉES (Business) -->
+<section class="section analyses-sec" id="analyses">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow eyebrow-pro">Forfait Business · Données approfondies</span>
+      <h2>Analyses avancées</h2>
+      <p>Croisez les performances en profondeur : moyenne de vues, médiane, volumes par style, par origine, par genre et par année. L'outil d'analyse réservé aux abonnés Business.</p>
+    </div>
+    <div class="analyses-stage">
+      <div id="analysesContent">
+        <div class="compare-controls">
+          <div class="cmp-field">
+            <span class="cmp-label">Dimension</span>
+            <div class="seg" id="anDim">
+              <button data-v="styles" class="active">Styles</button>
+              <button data-v="origins">Origines</button>
+              <button data-v="genre">Genre</button>
+            </div>
+          </div>
+          <div class="cmp-field">
+            <span class="cmp-label">Mesure</span>
+            <div class="seg" id="anMetric">
+              <button data-v="avg" class="active">Moyenne de vues</button>
+              <button data-v="median">Médiane</button>
+              <button data-v="total">Total vues</button>
+              <button data-v="count">Nb de clips</button>
+            </div>
+          </div>
+          <div class="cmp-field">
+            <span class="cmp-label">Année</span>
+            <div class="seg" id="anYear">
+              <button data-v="all" class="active">Toutes</button>
+              <button data-v="2021">2021</button>
+              <button data-v="2022">2022</button>
+              <button data-v="2023">2023</button>
+              <button data-v="2024">2024</button>
+              <button data-v="2025">2025</button>
+            </div>
+          </div>
+        </div>
+        <div class="an-kpis" id="anKpis"></div>
+        <div class="card chart-card full">
+          <div class="chart-title" id="anChartTitle">Moyenne de vues par style</div>
+          <div class="chart-sub" id="anChartSub">Toutes éditions confondues (2021–2025)</div>
+          <div style="height:360px"><canvas id="anChart"></canvas></div>
+        </div>
+        <div class="card chart-card full">
+          <div class="chart-title" id="anTableTitle">Tableau croisé · moyenne de vues par année</div>
+          <div class="chart-sub">Plus la cellule est intense, plus la valeur est élevée. Colonne « Toutes » = agrégat 2021–2025.</div>
+          <div class="an-table-wrap"><table class="an-table" id="anTable"></table></div>
+          <p class="an-foot" id="anFoot"></p>
+        </div>
+      </div>
+      <div class="analyses-lock" id="analysesLock" hidden>
+        <div class="lock-card">
+          <div class="lock-ic">🔒</div>
+          <h3>Réservé au forfait Business</h3>
+          <p>Les analyses croisées (moyennes, médianes, volumes par style / origine / genre / année) sont incluses dans l'abonnement <b>Business · 50€/mois</b>.</p>
+          <div class="lock-cta">
+            <button class="btn btn-primary" data-join="business">Passer Business · 50€</button>
+            <button class="btn btn-ghost" id="lockLogin">J'ai déjà un compte</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEMMES -->
+<section class="section femmes-sec" id="femmes">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow eyebrow-fem">Focus · Égalité</span>
+      <h2>La place des femmes</h2>
+      <p>Quelle visibilité pour les artistes femmes dans la musique d'Outremer ? Part des clips, vues générées et talents qui s'imposent — édition par édition.</p>
+    </div>
+    <div class="note-banner" id="femNote"></div>
+    <div class="yp-kpis" id="femKpis"></div>
+    <div class="yp-charts">
+      <div class="card chart-card full">
+        <div class="chart-title">Répartition des clips par genre, année par année</div>
+        <div class="chart-sub">Part des clips portés par des femmes, des hommes ou en collaboration mixte</div>
+        <div style="height:340px"><canvas id="cFemYears"></canvas></div>
+      </div>
+      <div class="card chart-card">
+        <div class="chart-title">Vues générées par genre</div>
+        <div class="chart-sub">Sur les éditions documentées (2024–2025)</div>
+        <div style="height:300px"><canvas id="cFemViews"></canvas></div>
+      </div>
+      <div class="card chart-card">
+        <div class="chart-title">Top artistes femmes</div>
+        <div class="chart-sub">Femmes en lead (solo & duos 100% féminins), par vues cumulées</div>
+        <div class="top-list" id="femTop"></div>
+      </div>
+    </div>
+    <div class="fem-cta">
+      <p>Vous travaillez sur l'égalité, la place des femmes ou la diversité dans les musiques ultramarines ?</p>
+      <a href="#offre" class="btn btn-primary" data-plan="Étude Femmes & musique Outremer">Découvrir l'étude dédiée</a>
+    </div>
+  </div>
+</section>
+
+<!-- RECHERCHE -->
+<section class="section search-sec" id="recherche">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Rechercher un clip ou un artiste</h2>
+      <p>Plus de <b>2 780 clips</b> indexés (2021-2025). Filtrez par artiste, titre, style, origine, année.</p>
+    </div>
+    <div class="search-controls">
+      <input type="search" id="q" placeholder="Artiste, titre… (ex : Kalash, Meryl, Shamballa)" autocomplete="off">
+      <select id="fYear"><option value="">Toutes années</option></select>
+      <select id="fStyle"><option value="">Tous styles</option></select>
+      <select id="fOrigin"><option value="">Toutes origines</option></select>
+      <select id="fSort">
+        <option value="views">Trier : vues ↓</option>
+        <option value="date">Trier : date ↓</option>
+        <option value="artist">Trier : artiste A→Z</option>
+      </select>
+    </div>
+    <div class="search-meta" id="searchMeta"></div>
+    <div class="table-wrap">
+      <table class="data-table" id="resultsTable">
+        <thead><tr>
+          <th>Année</th><th>Artiste</th><th>Titre</th><th class="num">Vues YouTube</th>
+          <th>Style</th><th>Origine</th><th class="num">Spotify</th><th>Certif.</th>
+        </tr></thead>
+        <tbody id="resultsBody"></tbody>
+      </table>
+    </div>
+    <button id="moreBtn" class="btn btn-ghost more-btn" hidden>Voir plus de résultats</button>
+    <p class="locknote">🔒 Les vues exactes au-delà du top 50, les streams Spotify détaillés, labels et historiques complets sont réservés aux licences. <a href="#offre">Voir l'offre →</a></p>
+  </div>
+</section>
+
+<!-- CERTIFICATION HIT LOKAL -->
+<section class="section cert-sec" id="certification">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow eyebrow-cert">Le label de référence</span>
+      <h2>La Certification Hit Lokal</h2>
+      <p>La première certification de performance dédiée à la musique d'Outremer. Un score unique qui combine l'audience YouTube et l'écoute Spotify pour distinguer les véritables hits ultramarins.</p>
+    </div>
+
+    <div class="cert-formula">
+      <div class="cert-formula-box">
+        <span class="cf-part cf-yt">30%<small>Vues YouTube</small></span>
+        <span class="cf-op">+</span>
+        <span class="cf-part cf-sp">70%<small>Streams Spotify</small></span>
+        <span class="cf-op">=</span>
+        <span class="cf-part cf-score">Score HL<small>Indice de performance</small></span>
+      </div>
+    </div>
+
+    <div class="cert-tiers">
+      <div class="cert-badge tier-or"><div class="medal">🥇</div><h3>Or</h3><div class="thr">Score ≥ 1 M</div></div>
+      <div class="cert-badge tier-pl"><div class="medal">🏆</div><h3>Platine</h3><div class="thr">Score ≥ 3 M</div></div>
+      <div class="cert-badge tier-di"><div class="medal">💎</div><h3>Diamant</h3><div class="thr">Score ≥ 10 M</div></div>
+    </div>
+    <p class="cert-live" id="certLive"></p>
+
+    <div class="cert-grid">
+      <div class="card cert-calc">
+        <h3>Calculez votre certification</h3>
+        <p class="plan-sub">Estimez le palier d'un clip à partir de ses chiffres.</p>
+        <label>Vues YouTube<input type="number" id="calcYt" min="0" placeholder="ex : 2 000 000"></label>
+        <label>Streams Spotify<input type="number" id="calcSp" min="0" placeholder="ex : 1 500 000"></label>
+        <div class="calc-result" id="calcResult">
+          <div class="calc-score"><span id="calcScore">—</span><small>Score Hit Lokal</small></div>
+          <div class="calc-badge" id="calcBadge">Entrez vos chiffres</div>
+        </div>
+        <a href="#contact" class="btn btn-primary btn-full" data-plan="Certification Hit Lokal">Faire certifier mon clip</a>
+      </div>
+      <div class="card cert-top">
+        <h3>Derniers clips certifiés</h3>
+        <p class="plan-sub">Top des scores Hit Lokal (édition 2025).</p>
+        <div class="top-list" id="certTop"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADHÉSION / MEMBRES -->
+<section class="section adhesion-sec" id="adhesion">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Accédez aux données</h2>
+      <p>Le détail des chiffres (vues exactes, streams Spotify, scores de certification, labels) est réservé aux membres. Créez un compte gratuit, montez en puissance quand vous voulez.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier-card" data-tier="decouverte">
+        <div class="tier-h"><h3>Découverte</h3><div class="tier-price">Gratuit</div></div>
+        <p class="plan-sub">Pour explorer la donnée ultramarine.</p>
+        <ul>
+          <li>✔ Vues YouTube <b>exactes</b></li>
+          <li>✔ Tops, styles, origines & comparateur</li>
+          <li>✔ Recherche complète 2021–2025</li>
+          <li class="off">✖ Streams Spotify & scores</li>
+          <li class="off">✖ Export & API</li>
+        </ul>
+        <button class="btn btn-ghost btn-full" data-join="decouverte">Créer mon compte gratuit</button>
+      </div>
+      <div class="tier-card tier-featured" data-tier="pro">
+        <div class="badge">Le plus populaire</div>
+        <div class="tier-h"><h3>Pro</h3><div class="tier-price">15€<span>/mois</span></div></div>
+        <p class="plan-sub">Pour les pros qui suivent le marché.</p>
+        <ul>
+          <li>✔ Tout Découverte, plus :</li>
+          <li>✔ <b>Streams Spotify</b> détaillés</li>
+          <li>✔ <b>Scores & paliers</b> de certification</li>
+          <li>✔ Labels & certifications SNEP</li>
+          <li class="off">✖ Export massif & API</li>
+        </ul>
+        <button class="btn btn-primary btn-full" data-join="pro">Passer Pro · 15€</button>
+      </div>
+      <div class="tier-card" data-tier="business">
+        <div class="tier-h"><h3>Business</h3><div class="tier-price">50€<span>/mois</span></div></div>
+        <p class="plan-sub">Pour les labels, médias & institutions.</p>
+        <ul>
+          <li>✔ Tout Pro, plus :</li>
+          <li>✔ <b>Export CSV / Excel</b> complet</li>
+          <li>✔ Accès <b>API</b> & flux hebdo</li>
+          <li>✔ Données de certification brutes</li>
+          <li>✔ Support analyste dédié</li>
+        </ul>
+        <button class="btn btn-ghost btn-full" data-join="business">Passer Business · 50€</button>
+      </div>
+    </div>
+    <p class="locknote">🔓 Inscription gratuite immédiate. Les niveaux Pro & Business sont activés en aperçu démo sur ce site (paiement réel à brancher en production).</p>
+  </div>
+</section>
+
+<!-- LEAD MAGNET / TÉLÉCHARGEMENT GRATUIT -->
+<section class="section magnet-sec" id="telecharger">
+  <div class="wrap">
+    <div class="magnet">
+      <div class="magnet-copy">
+        <span class="eyebrow eyebrow-mag">Gratuit · Édition fondatrice</span>
+        <h2>Le Baromètre 2021 en PDF, offert</h2>
+        <p>Découvrez la toute première édition du Baromètre Hit Lokal : le panorama complet de la musique d'Outremer en 2021. Laissez votre e-mail, on vous l'envoie immédiatement.</p>
+        <ul class="magnet-list">
+          <li>📘 Rapport complet édition 2021</li>
+          <li>📊 Tops clips, styles & origines</li>
+          <li>🎁 100% gratuit, sans engagement</li>
+        </ul>
+      </div>
+      <form class="magnet-form" id="dlForm">
+        <div class="magnet-card">
+          <div class="magnet-doc">PDF</div>
+          <label>Votre e-mail<input type="email" name="email" placeholder="vous@organisation.com" required></label>
+          <label class="magnet-inline">Vous êtes
+            <select name="profile">
+              <option>Label / Maison de disques</option>
+              <option>Média / Presse</option>
+              <option>Plateforme / Distributeur</option>
+              <option>Institution / Collectivité</option>
+              <option>Marque / Annonceur</option>
+              <option>Artiste / Management</option>
+              <option>Curieux / Public</option>
+              <option>Autre</option>
+            </select>
+          </label>
+          <label class="magnet-check"><input type="checkbox" name="optin"> J'accepte de recevoir les prochaines éditions et actualités du Baromètre.</label>
+          <button type="submit" class="btn btn-primary btn-full">⬇ Télécharger le PDF 2021</button>
+          <p class="form-note" id="dlNote"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- OFFRE / BUSINESS -->
+<section class="section offre-sec" id="offre">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Exploitez la data Hit Lokal</h2>
+      <p>Labels, médias, plateformes, institutions, marques : accédez aux données brutes, aux analyses sur-mesure et à notre suivi hebdomadaire des clips ultramarins.</p>
+    </div>
+    <div class="pricing">
+      <div class="plan">
+        <div class="plan-h"><h3>Rapport annuel</h3><div class="price">À partir de 290€</div></div>
+        <p class="plan-sub">Le baromètre complet d'une édition, prêt à présenter.</p>
+        <ul>
+          <li>PDF premium (40+ pages d'analyses)</li>
+          <li>Tops clips, artistes & origines</li>
+          <li>Graphiques haute définition</li>
+          <li>Licence d'usage interne / presse</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" data-plan="Rapport annuel">Commander</a>
+      </div>
+      <div class="plan plan-featured">
+        <div class="badge">Le plus demandé</div>
+        <div class="plan-h"><h3>Dataset & licence</h3><div class="price">Sur devis</div></div>
+        <p class="plan-sub">Les données brutes exploitables (CSV / Excel / JSON).</p>
+        <ul>
+          <li>Tous les clips 2021→2025 (vues, dates, styles)</li>
+          <li>Origines, genre, langue, durée</li>
+          <li>Streams Spotify & certifications SNEP</li>
+          <li>Mises à jour & droits de rediffusion</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" data-plan="Dataset & licence">Demander un devis</a>
+      </div>
+      <div class="plan">
+        <div class="plan-h"><h3>API & sur-mesure</h3><div class="price">Entreprise</div></div>
+        <p class="plan-sub">Intégration continue et études personnalisées.</p>
+        <ul>
+          <li>Accès API / flux hebdomadaire</li>
+          <li>Tableaux de bord dédiés</li>
+          <li>Études marché & benchmarks artistes</li>
+          <li>Accompagnement analyste</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" data-plan="API & sur-mesure">Nous contacter</a>
+      </div>
+    </div>
+    <div class="plan plan-fem">
+      <div class="plan-fem-txt">
+        <span class="badge badge-fem">Étude thématique</span>
+        <h3>Femmes &amp; musique d'Outremer</h3>
+        <p class="plan-sub">Le premier panorama chiffré de la place des artistes femmes ultramarines : part de voix, vues générées, styles, territoires et trajectoires. Idéal pour médias, institutions, programmes égalité H/F et marques engagées.</p>
+        <ul class="fem-feats">
+          <li>Indicateurs de présence féminine par année</li>
+          <li>Classements & portraits d'artistes</li>
+          <li>Lecture par style & par territoire</li>
+          <li>Synthèse prête à publier + jeu de données</li>
+        </ul>
+      </div>
+      <div class="plan-fem-cta">
+        <div class="price">Sur devis</div>
+        <a href="#contact" class="btn btn-primary" data-plan="Étude Femmes & musique Outremer">Demander l'étude</a>
+      </div>
+    </div>
+    <div class="trust">
+      <div><b>2 780+</b><span>clips indexés</span></div>
+      <div><b>5 ans</b><span>d'historique</span></div>
+      <div><b>3 863</b><span>artistes en base</span></div>
+      <div><b>9 200</b><span>clips référencés</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / LEAD -->
+<section class="section contact-sec" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-copy">
+      <h2>Parlons de votre projet</h2>
+      <p>Dites-nous qui vous êtes et ce que vous cherchez. Nous revenons vers vous sous 48h avec une proposition adaptée.</p>
+      <ul class="contact-list">
+        <li>📊 Accès aux données & licences</li>
+        <li>📈 Études et benchmarks sur-mesure</li>
+        <li>🤝 Partenariats médias & institutions</li>
+      </ul>
+    </div>
+    <form class="lead-form" id="leadForm">
+      <div class="row">
+        <label>Nom complet*<input name="name" required></label>
+        <label>E-mail professionnel*<input type="email" name="email" required></label>
+      </div>
+      <div class="row">
+        <label>Organisation<input name="org"></label>
+        <label>Vous êtes
+          <select name="profile">
+            <option>Label / Maison de disques</option>
+            <option>Média / Presse</option>
+            <option>Plateforme / Distributeur</option>
+            <option>Institution / Collectivité</option>
+            <option>Marque / Annonceur</option>
+            <option>Artiste / Management</option>
+            <option>Autre</option>
+          </select>
+        </label>
+      </div>
+      <label>Offre qui vous intéresse
+        <select name="plan" id="planSelect">
+          <option>Rapport annuel</option>
+          <option selected>Dataset & licence</option>
+          <option>API & sur-mesure</option>
+          <option>Étude Femmes & musique Outremer</option>
+          <option>Certification Hit Lokal</option>
+          <option>Membre Pro (15€/mois)</option>
+          <option>Membre Business (50€/mois)</option>
+          <option>Je ne sais pas encore</option>
+        </select>
+      </label>
+      <label>Votre besoin<textarea name="message" rows="3" placeholder="Ex : nous cherchons les données 2024-2025 par style et origine pour une étude de marché."></textarea></label>
+      <button type="submit" class="btn btn-primary btn-full">Envoyer ma demande</button>
+      <p class="form-note" id="formNote"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <span class="brand-mark">HL</span>
+      <p>Baromètre <b>Hit Lokal</b> de la Musique d'Outremer.<br>Source : hit-lokal.com — la plus grande base de données sur les artistes ultramarins.</p>
+    </div>
+    <p class="copyright">© Hit Lokal 2021–2026. Toute reproduction des données et images est soumise à des droits d'auteur.</p>
+  </div>
+</footer>
+
+<!-- AUTH MODAL -->
+<div class="modal-overlay" id="authModal" hidden>
+  <div class="modal">
+    <button class="modal-close" id="authClose" aria-label="Fermer">✕</button>
+    <div class="modal-tabs">
+      <button class="mtab active" data-mode="register">Inscription</button>
+      <button class="mtab" data-mode="login">Connexion</button>
+    </div>
+    <div class="modal-body">
+      <h3 id="authTitle">Créez votre compte gratuit</h3>
+      <p class="auth-sub" id="authSub">Accédez aux vues exactes et à toute la base 2021–2025.</p>
+      <form id="authForm">
+        <label class="reg-only">Nom complet<input name="name" autocomplete="name"></label>
+        <label>E-mail<input type="email" name="email" required autocomplete="email"></label>
+        <label>Mot de passe<input type="password" name="password" required autocomplete="current-password"></label>
+        <label class="reg-only">Vous êtes
+          <select name="profile">
+            <option>Label / Maison de disques</option>
+            <option>Média / Presse</option>
+            <option>Plateforme / Distributeur</option>
+            <option>Institution / Collectivité</option>
+            <option>Marque / Annonceur</option>
+            <option>Artiste / Management</option>
+            <option>Curieux / Public</option>
+            <option>Autre</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn-primary btn-full" id="authSubmit">Créer mon compte gratuit</button>
+        <p class="form-note" id="authNote"></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast" hidden></div>
+
+<script src="js/app.js?v=12"></script>
+</body>
+</html>
