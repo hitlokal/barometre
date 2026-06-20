@@ -73,6 +73,13 @@ b{color:#fff;font-weight:700}
 .year-tab{padding:11px 22px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--muted);font-weight:700;font-family:'Sora';cursor:pointer;transition:.2s}
 .year-tab:hover{color:#fff}
 .year-tab.active{background:var(--grad);color:#0a0e1a;border-color:transparent}
+.year-tab.locked{opacity:.45}
+.year-tab.locked:hover{opacity:.7;color:var(--muted)}
+.year-tab .yt-lock{font-size:.78em;margin-left:3px}
+.year-lock{text-align:center;background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:48px 30px}
+.year-lock .lock-ic{font-size:2.4rem}
+.year-lock h3{font-family:'Sora';font-size:1.5rem;margin:10px 0 10px}
+.year-lock p{color:var(--muted);max-width:560px;margin:0 auto 22px}
 .year-panel{display:grid;gap:22px}
 .yp-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .yp-charts{display:grid;grid-template-columns:1fr 1fr;gap:22px}

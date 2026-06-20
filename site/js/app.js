@@ -109,12 +109,29 @@ function chartOpts(title,{y={},tooltip=null}={}){
 
 /* ---------- YEAR EXPLORER ---------- */
 const charts={};
+const FREE_YEAR='2021';
+function yearUnlocked(y){ return y===FREE_YEAR || rank()>=2; }   // 2021 libre, le reste = abonnés payants
 function buildYearTabs(){
   const years=Object.keys(DASH.years).sort();
   const tabs=document.getElementById('yearTabs');
-  tabs.innerHTML=years.map(y=>`<button class="year-tab" data-y="${y}">${y}</button>`).join('');
+  tabs.innerHTML=years.map(y=>{
+    const locked=!yearUnlocked(y);
+    return `<button class="year-tab${locked?' locked':''}" data-y="${y}">${y}${locked?' <span class="yt-lock">🔒</span>':''}</button>`;
+  }).join('');
   tabs.querySelectorAll('.year-tab').forEach(b=>b.onclick=()=>selectYear(b.dataset.y));
-  selectYear('2025');
+  selectYear(FREE_YEAR);
+}
+function renderLockedYear(panel,y){
+  panel.innerHTML=`<div class="year-lock">
+    <div class="lock-ic">🔒</div>
+    <h3>Édition ${y} réservée aux abonnés</h3>
+    <p>L'exploration détaillée des éditions 2022 à 2025 — styles, rythme de sortie, distribution des vues et top des clips — est incluse dans les forfaits payants. L'édition <b>2021</b> reste en accès libre.</p>
+    <div class="lock-cta">
+      <button class="btn btn-primary" data-join="pro">Débloquer · Passer Pro</button>
+      <button class="btn btn-ghost" id="yearLockLogin">J'ai déjà un compte</button>
+    </div></div>`;
+  const lg=byId('yearLockLogin'); if(lg) lg.onclick=()=>openAuth('login');
+  panel.querySelectorAll('[data-join]').forEach(b=>b.onclick=()=>join(b.dataset.join));
 }
 
 function selectYear(y){
@@ -122,6 +139,7 @@ function selectYear(y){
   Object.values(charts).forEach(c=>c.destroy()); for(const k in charts)delete charts[k];
   const d=DASH.years[y];
   const panel=document.getElementById('yearPanel');
+  if(!yearUnlocked(y)){ renderLockedYear(panel,y); return; }
   if(d.report_only){ renderReportYear(panel,d); return; }
 
   const overMillion = d.buckets.filter(b=>/M$/.test(b.label)).reduce((a,b)=>a+b.count,0);
@@ -571,7 +589,7 @@ let pendingTier=null;
 function getMember(){try{return JSON.parse(localStorage.getItem('hl_member')||'null')}catch(_){return null}}
 function curTier(){const m=getMember();return m?m.tier:'visiteur';}
 function rank(){return TIER_RANK[curTier()]||0;}
-function refreshGated(){if(filtered)paint();if(typeof renderAnalytics==='function')renderAnalytics();}
+function refreshGated(){if(filtered)paint();if(typeof renderAnalytics==='function')renderAnalytics();if(DASH&&document.getElementById('yearTabs'))buildYearTabs();}
 function saveMember(m){localStorage.setItem('hl_member',JSON.stringify(m));updateAuthUI();refreshGated();}
 function logoutMember(){localStorage.removeItem('hl_member');updateAuthUI();refreshGated();toast('Vous êtes déconnecté.');}
 function recordLead(extra){try{const L=JSON.parse(localStorage.getItem('hl_leads')||'[]');L.push({...extra,ts:new Date().toISOString()});localStorage.setItem('hl_leads',JSON.stringify(L));}catch(_){}}
