@@ -6,9 +6,11 @@ dataset/
 _extract/
 _backups/
 
-# === Secrets serveur (clé API Brevo) — ne jamais committer ===
+# === Secrets serveur — ne jamais committer ===
 subscribe.php
 **/subscribe.php
+api/config.php
+**/config.php
 
 # === macOS ===
 .DS_Store
