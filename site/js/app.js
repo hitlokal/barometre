@@ -34,7 +34,7 @@ function addToBrevo(fields){
 
 Promise.all([
   fetch('data/dashboard.json',{cache:'no-store'}).then(r=>r.json()),
-  fetch('data/clips.json').then(r=>r.json())
+  fetch('data/clips.json',{cache:'no-store'}).then(r=>r.json())
 ]).then(([dash,clips])=>{
   DASH=dash; CLIPS=clips;
   renderHero();
