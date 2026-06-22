@@ -717,10 +717,28 @@ function upgradeTier(tier){
   toast(`Aperçu ${TIER_NAME[tier]} activé (démo) — données débloquées.`);
   document.getElementById('explorer').scrollIntoView({behavior:'smooth'});
 }
+/* ---------- PAIEMENT (HelloAsso + RIB par virement) ---------- */
+const HELLOASSO_URL='https://www.helloasso.com/associations/hit-lokal/boutiques/barometre-2026';
+const PAY_INFO={
+  decouverte:{name:'Découverte', price:'20 €',     desc:"accès aux chiffres-clés de l'édition 2025."},
+  pro:       {name:'Pro',        price:'200 €/an', desc:'toutes les éditions 2021 → 2025.'},
+  business:  {name:'Business',   price:'500 €/an', desc:'toutes les éditions + comparateur & analyses.'}
+};
+let payTier=null;
+function openPay(tier){
+  const info=PAY_INFO[tier]; if(!info) return;
+  payTier=tier;
+  byId('payTier').textContent=info.name;
+  byId('payPrice').textContent=info.price+' · '+info.desc;
+  const ha=byId('payHA'); ha.href=HELLOASSO_URL; ha.textContent='Payer '+info.price+' sur HelloAsso →';
+  const note=byId('ribNote'); if(note){note.textContent='';note.className='form-note';}
+  byId('payModal').hidden=false;
+}
+function closePay(){ const m=byId('payModal'); if(m) m.hidden=true; }
+
 function join(tier){
-  const m=getMember();
   if(tier==='gratuit'){ pendingTier=null; openAuth('register'); return; }   // inscription gratuite → 2021 complet
-  if(!m){ pendingTier=tier; openAuth('register'); } else { upgradeTier(tier); }
+  openPay(tier);                                                            // forfaits payants → HelloAsso / virement
 }
 
 function initAuth(){
@@ -729,7 +747,22 @@ function initAuth(){
   btn.onclick=()=>{ if(btn.dataset.act==='logout') logoutMember(); else openAuth('register'); };
   byId('authClose').onclick=closeAuth;
   byId('authModal').addEventListener('click',e=>{ if(e.target.id==='authModal') closeAuth(); });
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeAuth(); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeAuth(); closePay(); } });
+  // Modal de paiement (HelloAsso / RIB)
+  const pc=byId('payClose'); if(pc) pc.onclick=closePay;
+  const pm=byId('payModal'); if(pm) pm.addEventListener('click',e=>{ if(e.target.id==='payModal') closePay(); });
+  const rf=byId('ribForm'); if(rf) rf.addEventListener('submit',e=>{
+    e.preventDefault();
+    const note=byId('ribNote');
+    const email=((new FormData(rf).get('email'))||'').toString().trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ note.className='form-note err'; note.textContent='Merci d\'indiquer un e-mail valide.'; return; }
+    const info=PAY_INFO[payTier]||{name:payTier||'—',price:''};
+    sendMail({subject:'Demande de RIB — forfait '+info.name,from_name:'Demande RIB Baromètre',
+      type:'Demande de RIB (virement)',email:email,formule:info.name+(info.price?' ('+info.price+')':'')}).catch(()=>{});
+    recordLead({email,plan:'RIB '+info.name,source:'demande-rib'});
+    note.className='form-note ok'; note.textContent='Demande envoyée ! On vous envoie le RIB par e-mail au plus vite.';
+    rf.reset();
+  });
   document.querySelectorAll('.mtab').forEach(t=>t.onclick=()=>setAuthMode(t.dataset.mode));
   document.querySelectorAll('[data-join]').forEach(b=>b.onclick=()=>join(b.dataset.join));
   byId('authForm').addEventListener('submit',e=>{

@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=18">
+<link rel="stylesheet" href="css/style.css?v=19">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
@@ -122,7 +122,7 @@
         <button class="btn btn-primary btn-full" data-join="business">Passer Business · 500€</button>
       </div>
     </div>
-    <p class="locknote">🔓 L'aperçu 2021 est libre, le compte gratuit ouvre 2021 en entier. Les forfaits payants sont activés en aperçu démo sur ce site (paiement réel à brancher).</p>
+    <p class="locknote">🔓 Aperçu 2021 libre · compte gratuit pour l'édition 2021 complète. Forfaits payants : <b>paiement sécurisé par HelloAsso</b> ou par virement — accès activé sous 24&nbsp;h après réception.</p>
   </div>
 </section>
 
@@ -419,6 +419,26 @@
   </div>
 </div>
 
+<!-- PAY MODAL (souscription : HelloAsso ou virement) -->
+<div class="modal-overlay" id="payModal" hidden>
+  <div class="modal">
+    <button class="modal-close" id="payClose" aria-label="Fermer">✕</button>
+    <div class="modal-body">
+      <h3>Souscrire au forfait <span id="payTier">Découverte</span></h3>
+      <p class="auth-sub" id="payPrice">20 € · accès aux chiffres 2025.</p>
+      <a id="payHA" class="btn btn-primary btn-full" href="#" target="_blank" rel="noopener">Payer sur HelloAsso →</a>
+      <p class="pay-hint">Paiement sécurisé via <b>HelloAsso</b> (association à but non lucratif). Ton accès est activé sous 24&nbsp;h après réception.</p>
+      <div class="pay-or"><span>ou par virement</span></div>
+      <form id="ribForm">
+        <p class="auth-sub">Reçois notre RIB par e-mail et règle par virement.</p>
+        <label>Ton e-mail<input type="email" name="email" required autocomplete="email"></label>
+        <button type="submit" class="btn btn-ghost btn-full">Recevoir le RIB par e-mail</button>
+        <p class="form-note" id="ribNote"></p>
+      </form>
+    </div>
+  </div>
+</div>
+
 <!-- VIDEO MODAL (lightbox Hit Lokal) -->
 <div class="video-modal" id="videoModal" hidden>
   <div class="video-box">
@@ -431,7 +451,7 @@
 <!-- TOAST -->
 <div class="toast" id="toast" hidden></div>
 
-<script src="js/app.js?v=34"></script>
+<script src="js/app.js?v=35"></script>
 <script src="js/anim.js?v=1"></script>
 </body>
 </html>
