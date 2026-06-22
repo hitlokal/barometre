@@ -103,7 +103,7 @@ b{color:#fff;font-weight:700}
 /* TOP CLIPS — grille compacte avec vignette + lecture */
 .top-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media(max-width:760px){.top-grid{grid-template-columns:1fr}}
-.clip-card{display:flex;align-items:center;gap:12px;width:100%;text-align:left;cursor:pointer;
+.clip-card{display:flex;align-items:center;gap:12px;width:100%;min-width:0;text-align:left;cursor:pointer;
   background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:8px;color:inherit;font:inherit;
   transition:border-color .15s,transform .15s}
 .clip-card:hover{border-color:var(--violet);transform:translateY(-2px)}
