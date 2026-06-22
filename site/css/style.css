@@ -83,6 +83,14 @@ b{color:#fff;font-weight:700}
 .year-panel{display:grid;gap:22px}
 .yp-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .yp-charts{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.yp-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:760px){.yp-highlights{grid-template-columns:1fr}}
+.hl-box{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px}
+.hl-box .hl-ic{font-size:1.6rem}
+.hl-box h4{font-family:'Sora';font-weight:700;font-size:1.05rem;margin:8px 0 12px}
+.hl-box .hl-stat{font-family:'Sora';font-weight:800;font-size:2rem;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hl-box .hl-statl{color:var(--muted);font-size:.82rem;margin:5px 0 12px}
+.hl-box .hl-desc{color:var(--muted);font-size:.88rem;line-height:1.5}
 .yp-charts .full{grid-column:1/-1}
 .chart-title{font-family:'Sora';font-weight:700;font-size:1.05rem;margin-bottom:4px}
 .chart-sub{color:var(--faint);font-size:.85rem;margin-bottom:16px}

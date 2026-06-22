@@ -165,6 +165,7 @@ function selectYear(y){
       ${kpiCard(fmt(overMillion),'clips > 1 M de vues')}
       ${kpiCard(d.styles[0].style.split(',')[0],'style n°1',fmt(d.styles[0].count)+' clips')}
     </div>
+    ${Array.isArray(d.highlights)&&d.highlights.length?`<div class="yp-highlights">${d.highlights.map(highlightCard).join('')}</div>`:''}
     <div class="yp-charts">
       <div class="card chart-card"><div class="chart-title">Vues par style musical</div><div class="chart-sub">Total des vues cumulées par genre</div><div style="height:300px"><canvas id="cStyleViews"></canvas></div></div>
       <div class="card chart-card"><div class="chart-title">Répartition des clips par style</div><div class="chart-sub">${fmt(d.total_clips)} clips au total</div><div style="height:300px"><canvas id="cStyleCount"></canvas></div></div>
@@ -271,6 +272,15 @@ function ytId(u){
   if(/^[\w-]{11}$/.test(s)) return s;                         // déjà un ID
   const m=s.match(/(?:v=|youtu\.be\/|embed\/|shorts\/|live\/)([\w-]{11})/);
   return m?m[1]:'';
+}
+function highlightCard(h){
+  return `<div class="hl-box">
+    <div class="hl-ic">${h.icon||'★'}</div>
+    <h4>${esc(h.title||'')}</h4>
+    <div class="hl-stat">${esc(h.stat||'')}</div>
+    <div class="hl-statl">${esc(h.statlabel||'')}</div>
+    <div class="hl-desc">${esc(h.desc||'')}</div>
+  </div>`;
 }
 function topCard(t,i){
   const id=ytId(t.youtube), cap=(t.artist||'—')+' — '+(t.title||'');
