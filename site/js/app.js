@@ -681,13 +681,22 @@ function rowHtml(c){
 /* ---------- MEMBRES / AUTH (preview, simulé côté navigateur) ---------- */
 const TIER_RANK={visiteur:0,gratuit:1,decouverte:2,pro:3,business:4};
 const TIER_NAME={gratuit:'Compte gratuit',decouverte:'Découverte',pro:'Pro',business:'Business'};
-let pendingTier=null;
-function getMember(){try{return JSON.parse(localStorage.getItem('hl_member')||'null')}catch(_){return null}}
-function curTier(){const m=getMember();return m?m.tier:'visiteur';}
+const API='/api';                       // backend PHP (même domaine que le site)
+let CURRENT=null;                       // membre connecté {email,name,tier} ou null
+function getMember(){return CURRENT;}
+function curTier(){return CURRENT?CURRENT.tier:'visiteur';}
 function rank(){return TIER_RANK[curTier()]||0;}
 function refreshGated(){if(filtered&&document.getElementById('resultsBody'))paint();if(typeof renderAnalytics==='function')renderAnalytics();if(DASH&&document.getElementById('yearTabs'))buildYearTabs();if(typeof renderCompare==='function'&&DASH)renderCompare();}
-function saveMember(m){localStorage.setItem('hl_member',JSON.stringify(m));updateAuthUI();refreshGated();}
-function logoutMember(){localStorage.removeItem('hl_member');updateAuthUI();refreshGated();toast('Vous êtes déconnecté.');}
+async function loadMe(){
+  try{ const r=await fetch(API+'/me.php',{cache:'no-store',credentials:'same-origin'});
+       const j=await r.json(); CURRENT=(j&&j.auth)?{email:j.email,name:j.name||'',tier:j.tier}:null; }
+  catch(_){ CURRENT=null; }
+  updateAuthUI(); refreshGated();
+}
+async function logoutMember(){
+  try{ await fetch(API+'/logout.php',{method:'POST',credentials:'same-origin'}); }catch(_){}
+  CURRENT=null; updateAuthUI(); refreshGated(); toast('Vous êtes déconnecté.');
+}
 function recordLead(extra){try{const L=JSON.parse(localStorage.getItem('hl_leads')||'[]');L.push({...extra,ts:new Date().toISOString()});localStorage.setItem('hl_leads',JSON.stringify(L));}catch(_){}}
 
 function updateAuthUI(){
@@ -710,13 +719,6 @@ function setAuthMode(mode){
   byId('authForm').dataset.mode=mode;
 }
 
-function upgradeTier(tier){
-  const m=getMember()||{email:'invité',tier:'decouverte'};
-  saveMember({...m,tier});
-  recordLead({email:m.email,plan:'Membre '+TIER_NAME[tier],source:'adhesion-'+tier});
-  toast(`Aperçu ${TIER_NAME[tier]} activé (démo) — données débloquées.`);
-  document.getElementById('explorer').scrollIntoView({behavior:'smooth'});
-}
 /* ---------- PAIEMENT (HelloAsso + RIB par virement) ---------- */
 const HELLOASSO_URL='https://www.helloasso.com/associations/hit-lokal/boutiques/barometre-2026';
 const PAY_INFO={
@@ -737,12 +739,12 @@ function openPay(tier){
 function closePay(){ const m=byId('payModal'); if(m) m.hidden=true; }
 
 function join(tier){
-  if(tier==='gratuit'){ pendingTier=null; openAuth('register'); return; }   // inscription gratuite → 2021 complet
+  if(tier==='gratuit'){ openAuth('register'); return; }                    // inscription gratuite → 2021 complet
   openPay(tier);                                                            // forfaits payants → HelloAsso / virement
 }
 
 function initAuth(){
-  updateAuthUI();
+  loadMe();                      // restaure la session serveur (me.php) → met à jour l'UI et le gating
   const btn=byId('navAuth');
   btn.onclick=()=>{ if(btn.dataset.act==='logout') logoutMember(); else openAuth('register'); };
   byId('authClose').onclick=closeAuth;
@@ -765,26 +767,42 @@ function initAuth(){
   });
   document.querySelectorAll('.mtab').forEach(t=>t.onclick=()=>setAuthMode(t.dataset.mode));
   document.querySelectorAll('[data-join]').forEach(b=>b.onclick=()=>join(b.dataset.join));
-  byId('authForm').addEventListener('submit',e=>{
+  byId('authForm').addEventListener('submit',async e=>{
     e.preventDefault();
     const f=e.target, note=byId('authNote');
     const data=Object.fromEntries(new FormData(f).entries());
-    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test((data.email||'').trim())||!data.password){
+    const email=(data.email||'').trim();
+    const mode=f.dataset.mode||'register';
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)||!data.password){
       note.className='form-note err';note.textContent='E-mail et mot de passe requis.';return;}
-    const tier = pendingTier || 'gratuit';
-    saveMember({email:data.email.trim(),name:data.name||'',tier});
-    recordLead({email:data.email.trim(),name:data.name||'',profile:data.profile||'',
-      plan:tier==='gratuit'?'Compte gratuit (2021)':'Membre '+TIER_NAME[tier],source:'inscription'});
-    if((f.dataset.mode||'register')==='register'){
-      sendMail({subject:'Nouvelle inscription — Baromètre Hit Lokal',from_name:'Baromètre Hit Lokal',
-        type:'Inscription',name:data.name||'(non renseigné)',email:data.email.trim(),
-        profil:data.profile||'',formule:tier==='gratuit'?'Compte gratuit (2021)':'Membre '+TIER_NAME[tier]}).catch(()=>{});
-      addToBrevo({email:data.email.trim(),name:data.name||'',profile:data.profile||'',source:'inscription'});
+    if(mode==='register' && data.password.length<6){
+      note.className='form-note err';note.textContent='Mot de passe : 6 caractères minimum.';return;}
+    note.className='form-note';note.textContent='Un instant…';
+    try{
+      const r=await fetch(API+'/'+(mode==='register'?'register.php':'login.php'),{
+        method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({email,password:data.password,name:data.name||'',profile:data.profile||''})});
+      const j=await r.json().catch(()=>({}));
+      if(!r.ok || !j.ok){
+        const M={exists:'Un compte existe déjà avec cet e-mail. Connectez-vous.',
+          bad:'E-mail ou mot de passe incorrect.',
+          pending:"Compte en attente d'activation (paiement en cours de validation).",
+          invalid:'E-mail invalide ou mot de passe trop court (6 caractères min).'};
+        note.className='form-note err';note.textContent=M[j.error]||'Une erreur est survenue, réessayez.';return;
+      }
+      CURRENT={email:j.email||email,name:j.name||data.name||'',tier:j.tier||'gratuit'};
+      if(mode==='register'){
+        recordLead({email,name:data.name||'',profile:data.profile||'',plan:'Compte gratuit (2021)',source:'inscription'});
+        sendMail({subject:'Nouvelle inscription — Baromètre Hit Lokal',from_name:'Baromètre Hit Lokal',
+          type:'Inscription',name:data.name||'(non renseigné)',email,profil:data.profile||'',formule:'Compte gratuit (2021)'}).catch(()=>{});
+        addToBrevo({email,name:data.name||'',profile:data.profile||'',source:'inscription'});
+      }
+      updateAuthUI(); refreshGated(); closeAuth();
+      toast(mode==='register'?'Bienvenue ! L\'édition 2021 complète est débloquée.':'Content de vous revoir !');
+      document.getElementById('explorer').scrollIntoView({behavior:'smooth'});
+    }catch(_){
+      note.className='form-note err';note.textContent='Connexion au serveur impossible. Réessayez.';
     }
-    closeAuth();
-    if(pendingTier){const t=pendingTier;pendingTier=null;toast(`Bienvenue ! Aperçu ${TIER_NAME[t]} activé (démo).`);}
-    else toast('Bienvenue ! L\'édition 2021 complète est débloquée.');
-    document.getElementById('explorer').scrollIntoView({behavior:'smooth'});
   });
   // clic sur cellule verrouillée (tableau de recherche, si présent)
   const rb=byId('resultsBody');
