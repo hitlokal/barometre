@@ -275,11 +275,15 @@ function ytId(u){
 function topCard(t,i){
   const id=ytId(t.youtube), cap=(t.artist||'—')+' — '+(t.title||'');
   const thumb=id?`background-image:url('https://img.youtube.com/vi/${id}/mqdefault.jpg')`:'';
-  return `<button type="button" class="clip-card${id?'':' no-yt'}" data-yt="${id}" data-hl="${esc(t.hl||'')}" data-cap="${esc(cap)}" data-q="${esc(cap)}">
+  const name=`${esc(t.artist||'—')} — ${esc(t.title||'')}`;
+  const nameEl=id
+    ? `<a class="clip-name" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">${name}</a>`
+    : `<b>${name}</b>`;
+  return `<div class="clip-card${id?'':' no-yt'}" role="button" tabindex="0" data-yt="${id}" data-hl="${esc(t.hl||'')}" data-cap="${esc(cap)}" data-q="${esc(cap)}">
     <span class="clip-thumb" style="${thumb}"><span class="clip-rank ${i<3?'gold':''}">${i+1}</span><span class="clip-play">▶</span></span>
-    <span class="clip-info"><b>${esc(t.artist||'—')} — ${esc(t.title||'')}</b><span class="clip-meta">${shortStyle(t.style)}${t.origin?' · '+esc(t.origin):''}</span></span>
+    <span class="clip-info">${nameEl}<span class="clip-meta">${shortStyle(t.style)}${t.origin?' · '+esc(t.origin):''}</span></span>
     <span class="clip-views">${fmtShort(t.views)}</span>
-  </button>`;
+  </div>`;
 }
 function openVideo(id,caption,hl){
   const m=byId('videoModal'); if(!m||!id) return;
@@ -295,6 +299,7 @@ function closeVideo(){
 document.addEventListener('click',e=>{
   const card=e.target.closest('.clip-card');
   if(card){
+    if(e.target.closest('.clip-name')) return;   // clic sur le nom → ouvre la vidéo YouTube (lien direct)
     const id=card.dataset.yt, hl=card.dataset.hl;
     if(id) openVideo(id,card.dataset.cap||'',hl);
     else if(hl) window.open(hl,'_blank','noopener');

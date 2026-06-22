@@ -115,6 +115,8 @@ b{color:#fff;font-weight:700}
 .clip-card.no-yt .clip-thumb{background:linear-gradient(135deg,#1b2440,#0f1525)}
 .clip-info{flex:1;min-width:0}
 .clip-info b{display:block;font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.clip-info .clip-name{display:block;font-size:.9rem;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}
+.clip-info .clip-name:hover{color:var(--gold);text-decoration:underline}
 .clip-meta{color:var(--faint);font-size:.78rem}
 .clip-views{font-family:'Sora';font-weight:700;font-size:.92rem;white-space:nowrap;color:var(--ink)}
 
