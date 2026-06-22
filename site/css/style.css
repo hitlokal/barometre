@@ -325,7 +325,7 @@ b{color:#fff;font-weight:700}
 .cert-top .top-views small{display:block;color:var(--faint);font-size:.68rem;font-weight:500}
 
 /* ADHÉSION */
-.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
 .tier-card{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;position:relative;display:flex;flex-direction:column}
 .tier-featured{border-color:rgba(255,93,115,.5);box-shadow:0 24px 60px -24px var(--coral);transform:translateY(-8px)}
 .tier-h h3{font-family:'Sora';font-size:1.3rem}

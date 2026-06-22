@@ -113,7 +113,7 @@ function currentYear(){ return Object.keys(DASH.years).sort().slice(-1)[0]; }  /
 function yearUnlocked(y){
   if(y===FREE_YEAR) return true;            // 2021 : accès libre
   if(y===currentYear()) return rank()>=1;   // chiffres 2025 : forfait Découverte (20€)
-  return rank()>=3;                          // éditions intermédiaires : édition Intégrale
+  return rank()>=2;                          // éditions intermédiaires 2022-2024 : forfait Pro
 }
 function buildYearTabs(){
   const years=Object.keys(DASH.years).sort();
@@ -127,12 +127,12 @@ function buildYearTabs(){
 }
 function renderLockedYear(panel,y){
   const cur=currentYear(), isCur=(y===cur);
-  const planBtn=isCur?'decouverte':'business';
-  const planLabel=isCur?'Débloquer 2025 · 20€':'Débloquer · Intégrale';
-  const tierTxt=isCur?'Découverte 2025':'l\'édition Intégrale';
+  const planBtn=isCur?'decouverte':'pro';
+  const planLabel=isCur?'Débloquer 2025 · 20€':'Passer Pro · 200€';
+  const tierTxt=isCur?'Découverte 2025':'Pro';
   const msg=isCur
-    ? `Les chiffres-clés de l'édition <b>${y}</b> sont inclus dans <b>Découverte 2025 · 20€</b>. L'<b>édition Intégrale</b> ouvre toutes les éditions et le comparateur.`
-    : `Les éditions intermédiaires (entre 2021 et ${cur}) sont réservées à l'<b>édition Intégrale</b>, qui ouvre toutes les éditions et le comparateur.`;
+    ? `Les chiffres-clés de l'édition <b>${y}</b> sont inclus dans <b>Découverte 2025 · 20€</b>. Le forfait <b>Pro</b> ouvre toutes les éditions, le <b>Business</b> ajoute comparateur et analyses.`
+    : `Les éditions intermédiaires (entre 2021 et ${cur}) sont incluses dans le forfait <b>Pro · 200€/an</b> (toutes les éditions). Le <b>Business</b> ajoute le comparateur et les analyses.`;
   panel.innerHTML=`<div class="year-lock">
     <div class="lock-ic">🔒</div>
     <h3>Édition ${y} réservée aux abonnés ${tierTxt}</h3>
@@ -415,7 +415,7 @@ function renderCompare(){
   // note / appel à l'action
   const docYears=years.filter(y=>tagged[y]>0);
   if(!isBusiness){
-    byId('cmpNote').innerHTML=`🔒 La comparaison des <b>5 éditions</b> est réservée à l'<b>édition Intégrale</b>. <a href="#tarifs" style="color:var(--gold);font-weight:600">Voir les tarifs →</a>`;
+    byId('cmpNote').innerHTML=`🔒 La comparaison des <b>5 éditions</b> est réservée au forfait <b>Business · 500€/an</b>. <a href="#tarifs" style="color:var(--gold);font-weight:600">Voir les tarifs →</a>`;
   } else if(docYears.length>=2 && cats.length){
     const y0=docYears[0],y1=docYears[docYears.length-1];
     const share=(y,cat)=>tagged[y]?(per[y][cat]?.clips||0)/tagged[y]*100:0;
