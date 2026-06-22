@@ -776,7 +776,7 @@ document.querySelectorAll('[data-plan]').forEach(b=>b.addEventListener('click',(
 }));
 
 /* ---------- LEAD MAGNET : téléchargement PDF 2021 ---------- */
-const DL_2021_URL='https://tr.ee/ZfEKC8fwpl';
+const DL_2021_URL='/barometre-hitlokal-2021.pdf';   // PDF local (même origine) → téléchargement direct
 const dlForm=document.getElementById('dlForm');
 if(dlForm){
   dlForm.addEventListener('submit',e=>{
@@ -795,8 +795,10 @@ if(dlForm){
     sendMail({subject:'Téléchargement PDF 2021 — Baromètre Hit Lokal',from_name:'Lead PDF 2021',
       type:'Téléchargement PDF 2021',email:email,profil:data.profile||'',optin:data.optin?'oui':'non'}).catch(()=>{});
     note.className='form-note ok';
-    note.textContent='Merci ! Votre téléchargement va démarrer dans un nouvel onglet.';
-    window.open(DL_2021_URL,'_blank','noopener');
+    note.textContent='Merci ! Le téléchargement du PDF démarre…';
+    const a=document.createElement('a');
+    a.href=DL_2021_URL; a.download='Barometre-Hit-Lokal-2021.pdf';
+    document.body.appendChild(a); a.click(); a.remove();
     dlForm.reset();
   });
 }
