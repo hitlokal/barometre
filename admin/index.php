@@ -24,7 +24,7 @@ if ($isAdmin && $_SERVER['REQUEST_METHOD'] === 'POST' && in_array($action, ['sav
       db()->prepare("DELETE FROM hl_members WHERE id = ?")->execute([$id]);
       $msg = 'Compte supprimé.';
     } else {
-      $tier   = in_array($_POST['tier'] ?? '', ['decouverte', 'pro', 'business'], true) ? $_POST['tier'] : 'decouverte';
+      $tier   = in_array($_POST['tier'] ?? '', ['gratuit', 'decouverte', 'pro', 'business'], true) ? $_POST['tier'] : 'gratuit';
       $active = isset($_POST['active']) ? 1 : 0;
       db()->prepare("UPDATE hl_members SET tier = ?, active = ? WHERE id = ?")->execute([$tier, $active, $id]);
       $msg = 'Compte mis à jour.';
@@ -34,7 +34,7 @@ if ($isAdmin && $_SERVER['REQUEST_METHOD'] === 'POST' && in_array($action, ['sav
 
 $members = $isAdmin ? db()->query("SELECT * FROM hl_members ORDER BY created_at DESC")->fetchAll() : [];
 function h($s) { return htmlspecialchars((string)$s, ENT_QUOTES); }
-$TIERS = ['decouverte' => 'Découverte', 'pro' => 'Pro', 'business' => 'Business'];
+$TIERS = ['gratuit' => 'Gratuit', 'decouverte' => 'Découverte', 'pro' => 'Pro', 'business' => 'Business'];
 ?>
 <!DOCTYPE html>
 <html lang="fr">

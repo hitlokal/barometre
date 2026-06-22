@@ -15,7 +15,7 @@ function db() {
       pass_hash VARCHAR(255) NOT NULL,
       name VARCHAR(120) NOT NULL DEFAULT '',
       profile VARCHAR(80) NOT NULL DEFAULT '',
-      tier ENUM('decouverte','pro','business') NOT NULL DEFAULT 'decouverte',
+      tier ENUM('gratuit','decouverte','pro','business') NOT NULL DEFAULT 'gratuit',
       active TINYINT(1) NOT NULL DEFAULT 0,
       created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
     ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
