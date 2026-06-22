@@ -24,9 +24,10 @@
     </a>
     <nav class="nav-links">
       <a href="#accueil">Accueil</a>
+      <a href="#tarifs">Tarifs</a>
       <a href="#explorer">Explorer</a>
       <a href="#comparer">Comparer</a>
-      <a href="#analyses">Analyses<span class="nav-pro">Pro</span></a>
+      <a href="#analyses">Analyses</a>
       <a href="#femmes">Femmes</a>
       <span class="nav-member" id="navMember"></span>
       <button class="nav-cta" id="navAuth">Connexion</button>
@@ -62,6 +63,55 @@
       <div class="card chart-card"><canvas id="trendViews"></canvas></div>
       <div class="card chart-card"><canvas id="trendClips"></canvas></div>
     </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section class="section adhesion-sec" id="tarifs">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Nos tarifs</h2>
+      <p>L'édition 2021 est en accès libre. Débloquez les chiffres-clés 2025, ou accédez à l'édition intégrale.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier-card" data-tier="gratuit">
+        <div class="tier-h"><h3>Gratuit</h3><div class="tier-price">0€</div></div>
+        <p class="plan-sub">Pour découvrir la donnée ultramarine.</p>
+        <ul>
+          <li>✔ <b>Édition 2021</b> en accès libre</li>
+          <li>✔ Vues exactes · tops · styles · origines</li>
+          <li>✔ Top 20 des clips avec vidéos</li>
+          <li class="off">✖ Chiffres 2025</li>
+          <li class="off">✖ Comparateur & analyses</li>
+        </ul>
+        <a href="#explorer" class="btn btn-ghost btn-full">Explorer 2021</a>
+      </div>
+      <div class="tier-card tier-featured" data-tier="decouverte">
+        <div class="badge">Nouveau · 2025</div>
+        <div class="tier-h"><h3>Découverte 2025</h3><div class="tier-price">20€</div></div>
+        <p class="plan-sub">Les chiffres-clés de l'année 2025.</p>
+        <ul>
+          <li>✔ Tout le Gratuit, plus :</li>
+          <li>✔ <b>Synthèse 2025</b> : 410 M vues, 546 clips</li>
+          <li>✔ <b>Top 5</b> des clips & styles dominants</li>
+          <li>✔ Artiste de l'année & « Reines du stream »</li>
+          <li class="off">✖ Éditions 2022 → 2024</li>
+        </ul>
+        <button class="btn btn-primary btn-full" data-join="decouverte">Débloquer 2025 · 20€</button>
+      </div>
+      <div class="tier-card" data-tier="business">
+        <div class="tier-h"><h3>Intégrale</h3><div class="tier-price">26 pages</div></div>
+        <p class="plan-sub">L'édition complète, tous les classements & analyses.</p>
+        <ul>
+          <li>✔ <b>Toutes les éditions 2021 → 2025</b></li>
+          <li>✔ <b>Comparateur</b> & <b>analyses croisées</b></li>
+          <li>✔ Rendement, featurings, territoires, langues</li>
+          <li>✔ 26 pages d'analyse détaillée</li>
+        </ul>
+        <a href="https://hit-lokal.com" target="_blank" rel="noopener" class="btn btn-ghost btn-full">Voir sur Hit Lokal</a>
+      </div>
+    </div>
+    <p class="locknote">🔓 L'édition 2021 reste gratuite. « Découverte 2025 » et « Intégrale » sont activées en aperçu démo sur ce site (paiement réel à brancher).</p>
   </div>
 </section>
 
@@ -115,10 +165,10 @@
       <div class="analyses-lock" id="compareLock" hidden>
         <div class="lock-card">
           <div class="lock-ic">🔒</div>
-          <h3>Comparateur réservé au forfait Business</h3>
-          <p>La comparaison des éditions (2021 → 2025 côte à côte) est incluse dans le forfait <b>Business · 500€/an</b>.</p>
+          <h3>Comparateur réservé à l'édition Intégrale</h3>
+          <p>La comparaison des éditions (2021 → 2025 côte à côte) est incluse dans l'<b>édition Intégrale</b>.</p>
           <div class="lock-cta">
-            <button class="btn btn-primary" data-join="business">Passer Business · 500€</button>
+            <button class="btn btn-primary" data-join="business">Débloquer · Intégrale</button>
             <button class="btn btn-ghost" id="compareLockLogin">J'ai déjà un compte</button>
           </div>
         </div>
@@ -183,10 +233,10 @@
       <div class="analyses-lock" id="analysesLock" hidden>
         <div class="lock-card">
           <div class="lock-ic">🔒</div>
-          <h3>Réservé au forfait Business</h3>
-          <p>Les analyses croisées (moyennes, médianes, volumes par style / origine / genre / année) sont incluses dans l'abonnement <b>Business · 500€/an</b>.</p>
+          <h3>Réservé à l'édition Intégrale</h3>
+          <p>Les analyses croisées (moyennes, médianes, volumes par style / origine / genre / année) sont incluses dans l'<b>édition Intégrale</b>.</p>
           <div class="lock-cta">
-            <button class="btn btn-primary" data-join="business">Passer Business · 500€</button>
+            <button class="btn btn-primary" data-join="business">Débloquer · Intégrale</button>
             <button class="btn btn-ghost" id="lockLogin">J'ai déjà un compte</button>
           </div>
         </div>
@@ -220,52 +270,6 @@
   </div>
 </section>
 
-<!-- ADHÉSION / MEMBRES -->
-<section class="section adhesion-sec" id="adhesion">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>Accédez aux données</h2>
-      <p>Le détail des chiffres (vues exactes, labels) est réservé aux membres. Créez un compte gratuit, montez en puissance quand vous voulez.</p>
-    </div>
-    <div class="tiers">
-      <div class="tier-card" data-tier="decouverte">
-        <div class="tier-h"><h3>Découverte</h3><div class="tier-price">Gratuit</div></div>
-        <p class="plan-sub">Pour découvrir la donnée ultramarine.</p>
-        <ul>
-          <li>✔ <b>Édition 2021</b> en accès libre</li>
-          <li>✔ Vues YouTube <b>exactes</b></li>
-          <li>✔ Tops, styles & origines</li>
-          <li class="off">✖ Éditions 2022 → 2025</li>
-          <li class="off">✖ Comparateur d'éditions</li>
-        </ul>
-        <button class="btn btn-ghost btn-full" data-join="decouverte">Créer mon compte gratuit</button>
-      </div>
-      <div class="tier-card tier-featured" data-tier="pro">
-        <div class="badge">Le plus populaire</div>
-        <div class="tier-h"><h3>Pro</h3><div class="tier-price">200€<span>/an</span></div></div>
-        <p class="plan-sub">Pour suivre l'édition en cours.</p>
-        <ul>
-          <li>✔ Tout Découverte, plus :</li>
-          <li>✔ <b>Édition en cours (2025)</b> complète</li>
-          <li class="off">✖ Éditions 2022 → 2024</li>
-          <li class="off">✖ Comparateur d'éditions</li>
-        </ul>
-        <button class="btn btn-primary btn-full" data-join="pro">Passer Pro · 200€</button>
-      </div>
-      <div class="tier-card" data-tier="business">
-        <div class="tier-h"><h3>Business</h3><div class="tier-price">500€<span>/an</span></div></div>
-        <p class="plan-sub">Pour les labels, médias & institutions.</p>
-        <ul>
-          <li>✔ Tout Pro, plus :</li>
-          <li>✔ <b>Toutes les éditions 2021 → 2025</b></li>
-          <li>✔ <b>Comparateur d'éditions</b></li>
-        </ul>
-        <button class="btn btn-ghost btn-full" data-join="business">Passer Business · 500€</button>
-      </div>
-    </div>
-    <p class="locknote">🔓 Inscription gratuite immédiate. Les niveaux Pro & Business sont activés en aperçu démo sur ce site (paiement réel à brancher en production).</p>
-  </div>
-</section>
 
 <!-- LEAD MAGNET / TÉLÉCHARGEMENT GRATUIT -->
 <section class="section magnet-sec" id="telecharger">
@@ -339,9 +343,8 @@
       </div>
       <label>Offre qui vous intéresse
         <select name="plan" id="planSelect">
-          <option selected>Analyse d'une édition (80€)</option>
-          <option>Membre Pro (200€/an)</option>
-          <option>Membre Business (500€/an)</option>
+          <option selected>Découverte 2025 (20€)</option>
+          <option>Édition intégrale</option>
           <option>Je ne sais pas encore</option>
         </select>
       </label>
@@ -416,7 +419,7 @@
 <!-- TOAST -->
 <div class="toast" id="toast" hidden></div>
 
-<script src="js/app.js?v=26"></script>
+<script src="js/app.js?v=27"></script>
 <script src="js/anim.js?v=1"></script>
 </body>
 </html>
