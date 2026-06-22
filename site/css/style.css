@@ -80,6 +80,10 @@ b{color:#fff;font-weight:700}
 .year-lock .lock-ic{font-size:2.4rem}
 .year-lock h3{font-family:'Sora';font-size:1.5rem;margin:10px 0 10px}
 .year-lock p{color:var(--muted);max-width:560px;margin:0 auto 22px}
+.free-teaser{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px}
+.free-teaser .lock-ic{font-size:2rem}
+.free-teaser h3{font-family:'Sora';font-size:1.15rem;margin:4px 0}
+.free-teaser p{color:var(--muted);max-width:340px;font-size:.92rem}
 .year-panel{display:grid;gap:22px}
 .yp-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .yp-charts{display:grid;grid-template-columns:1fr 1fr;gap:22px}

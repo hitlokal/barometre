@@ -110,16 +110,16 @@ function chartOpts(title,{y={},tooltip=null}={}){
 const charts={};
 const FREE_YEAR='2021';
 function currentYear(){ return Object.keys(DASH.years).sort().slice(-1)[0]; }  // dernière édition (ex: 2025)
-function yearUnlocked(y){
-  if(y===FREE_YEAR) return true;            // 2021 : accès libre
-  if(y===currentYear()) return rank()>=1;   // 2025 : forfait Découverte (20€)
-  return rank()>=2;                          // 2022-2024 : forfait Pro (200€)
+function yearUnlocked(y){                    // accès COMPLET à l'édition
+  if(y===FREE_YEAR) return rank()>=1;       // 2021 complet : compte gratuit
+  if(y===currentYear()) return rank()>=2;   // 2025 : forfait Découverte (20€)
+  return rank()>=3;                          // 2022-2024 : forfait Pro (200€)
 }
 function buildYearTabs(){
   const years=Object.keys(DASH.years).sort();
   const tabs=document.getElementById('yearTabs');
   tabs.innerHTML=years.map(y=>{
-    const locked=!yearUnlocked(y);
+    const locked=!yearUnlocked(y) && y!==FREE_YEAR;   // 2021 jamais grisé (aperçu libre)
     return `<button class="year-tab${locked?' locked':''}" data-y="${y}">${y}${locked?' <span class="yt-lock">🔒</span>':''}</button>`;
   }).join('');
   tabs.querySelectorAll('.year-tab').forEach(b=>b.onclick=()=>selectYear(b.dataset.y));
@@ -136,11 +136,45 @@ function renderLockedYear(panel,y){
   panel.innerHTML=`<div class="year-lock">
     <div class="lock-ic">🔒</div>
     <h3>Édition ${y} réservée aux abonnés ${tierTxt}</h3>
-    <p>${msg} L'édition <b>2021</b> reste en accès libre.</p>
+    <p>${msg} L'édition <b>2021</b> reste accessible (aperçu libre, complète avec un compte gratuit).</p>
     <div class="lock-cta">
       <button class="btn btn-primary" data-join="${planBtn}">${planLabel}</button>
       <button class="btn btn-ghost" id="yearLockLogin">J'ai déjà un compte</button>
     </div></div>`;
+  const lg=byId('yearLockLogin'); if(lg) lg.onclick=()=>openAuth('login');
+  panel.querySelectorAll('[data-join]').forEach(b=>b.onclick=()=>join(b.dataset.join));
+}
+
+// Aperçu gratuit de 2021 pour les visiteurs sans compte
+function renderPartial2021(panel,d){
+  const overMillion=d.buckets.filter(b=>/M$/.test(b.label)).reduce((a,b)=>a+b.count,0);
+  const st=d.styles;
+  panel.innerHTML=`
+    <div class="note-banner" style="margin-bottom:18px">👀 <b>Aperçu libre de l'édition 2021.</b> Créez un compte <b>gratuit</b> pour le détail complet et le Top 20 des clips.</div>
+    <div class="yp-kpis">
+      ${kpiCard(fmtShort(d.total_views),'vues cumulées')}
+      ${kpiCard(fmt(d.total_clips),'clips recensés')}
+      ${kpiCard(fmt(overMillion),'clips > 1 M de vues')}
+      ${kpiCard(d.styles[0].style.split(',')[0],'style n°1',fmt(d.styles[0].count)+' clips')}
+    </div>
+    <div class="yp-charts">
+      <div class="card chart-card"><div class="chart-title">Répartition des clips par style</div><div class="chart-sub">${fmt(d.total_clips)} clips au total · aperçu</div><div style="height:300px"><canvas id="cStyleCount"></canvas></div></div>
+      <div class="card chart-card free-teaser">
+        <div class="lock-ic">🎁</div>
+        <h3>Compte gratuit — l'édition 2021 en entier</h3>
+        <p>Vues par style, distribution des vues, origines des artistes et le <b>Top 20 des clips avec vidéos</b>. C'est gratuit, en 30 secondes.</p>
+        <div class="lock-cta">
+          <button class="btn btn-primary" data-join="gratuit">Créer mon compte gratuit</button>
+          <button class="btn btn-ghost" id="yearLockLogin">J'ai déjà un compte</button>
+        </div>
+      </div>
+    </div>`;
+  charts.sc=new Chart(byId('cStyleCount'),{type:'doughnut',
+    data:{labels:st.map(s=>shortStyle(s.style)),datasets:[{data:st.map(s=>s.count),
+      backgroundColor:PALETTE,borderColor:'#0f1525',borderWidth:2}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'58%',
+      plugins:{legend:{position:'right',labels:{boxWidth:12,padding:10,font:{size:11}}},
+        tooltip:{callbacks:{label:c=>` ${c.label}: ${fmt(c.raw)} clips`}}}}});
   const lg=byId('yearLockLogin'); if(lg) lg.onclick=()=>openAuth('login');
   panel.querySelectorAll('[data-join]').forEach(b=>b.onclick=()=>join(b.dataset.join));
 }
@@ -150,7 +184,10 @@ function selectYear(y){
   Object.values(charts).forEach(c=>c.destroy()); for(const k in charts)delete charts[k];
   const d=DASH.years[y];
   const panel=document.getElementById('yearPanel');
-  if(!yearUnlocked(y)){ renderLockedYear(panel,y); return; }
+  if(!yearUnlocked(y)){
+    if(y===FREE_YEAR){ renderPartial2021(panel,d); return; }   // visiteur sans compte : aperçu
+    renderLockedYear(panel,y); return;                          // 2025 / 2022-2024 : forfait
+  }
   if(d.report_only){ renderReportYear(panel,d); return; }
 
   const overMillion = d.buckets.filter(b=>/M$/.test(b.label)).reduce((a,b)=>a+b.count,0);
@@ -359,7 +396,7 @@ function initCompare(){
 }
 
 function renderCompare(){
-  const isBusiness = rank()>=3;               // comparaison des 5 éditions = forfait Business
+  const isBusiness = rank()>=4;               // comparaison des 5 éditions = forfait Business
   const lockEl=byId('compareLock'); if(lockEl) lockEl.hidden=true;
   const contentEl=byId('compareContent'); if(contentEl) contentEl.classList.remove('an-blurred');
   let years=Object.keys(DASH.years).sort();
@@ -453,7 +490,7 @@ function initAnalytics(){
 }
 
 function renderAnalytics(){
-  const locked = rank()<3;            // forfait Business requis
+  const locked = rank()<4;            // forfait Business requis
   byId('analysesLock').hidden = !locked;
   byId('analysesContent').classList.toggle('an-blurred',locked);
   const years=Object.keys(DASH.years).sort();
@@ -642,8 +679,8 @@ function rowHtml(c){
 }
 
 /* ---------- MEMBRES / AUTH (preview, simulé côté navigateur) ---------- */
-const TIER_RANK={visiteur:0,decouverte:1,pro:2,business:3};
-const TIER_NAME={decouverte:'Découverte',pro:'Pro',business:'Business'};
+const TIER_RANK={visiteur:0,gratuit:1,decouverte:2,pro:3,business:4};
+const TIER_NAME={gratuit:'Compte gratuit',decouverte:'Découverte',pro:'Pro',business:'Business'};
 let pendingTier=null;
 function getMember(){try{return JSON.parse(localStorage.getItem('hl_member')||'null')}catch(_){return null}}
 function curTier(){const m=getMember();return m?m.tier:'visiteur';}
@@ -668,7 +705,7 @@ function setAuthMode(mode){
   const reg=mode==='register';
   document.querySelectorAll('.reg-only').forEach(e=>e.style.display=reg?'':'none');
   byId('authTitle').textContent=reg?'Créez votre compte gratuit':'Connexion à votre espace';
-  byId('authSub').textContent=reg?'Accédez aux vues exactes et à toute la base 2021–2025.':'Heureux de vous revoir.';
+  byId('authSub').textContent=reg?'Gratuit : débloquez l\'édition 2021 complète (Top 20, graphiques, origines).':'Heureux de vous revoir.';
   byId('authSubmit').textContent=reg?'Créer mon compte gratuit':'Se connecter';
   byId('authForm').dataset.mode=mode;
 }
@@ -682,7 +719,7 @@ function upgradeTier(tier){
 }
 function join(tier){
   const m=getMember();
-  if(tier==='decouverte'){ openAuth('register'); return; }
+  if(tier==='gratuit'){ pendingTier=null; openAuth('register'); return; }   // inscription gratuite → 2021 complet
   if(!m){ pendingTier=tier; openAuth('register'); } else { upgradeTier(tier); }
 }
 
@@ -701,19 +738,19 @@ function initAuth(){
     const data=Object.fromEntries(new FormData(f).entries());
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test((data.email||'').trim())||!data.password){
       note.className='form-note err';note.textContent='E-mail et mot de passe requis.';return;}
-    const tier = pendingTier || 'decouverte';
+    const tier = pendingTier || 'gratuit';
     saveMember({email:data.email.trim(),name:data.name||'',tier});
     recordLead({email:data.email.trim(),name:data.name||'',profile:data.profile||'',
-      plan:tier==='decouverte'?'Membre Découverte (gratuit)':'Membre '+TIER_NAME[tier],source:'inscription'});
+      plan:tier==='gratuit'?'Compte gratuit (2021)':'Membre '+TIER_NAME[tier],source:'inscription'});
     if((f.dataset.mode||'register')==='register'){
       sendMail({subject:'Nouvelle inscription — Baromètre Hit Lokal',from_name:'Baromètre Hit Lokal',
         type:'Inscription',name:data.name||'(non renseigné)',email:data.email.trim(),
-        profil:data.profile||'',formule:tier==='decouverte'?'Découverte (gratuit)':'Membre '+TIER_NAME[tier]}).catch(()=>{});
+        profil:data.profile||'',formule:tier==='gratuit'?'Compte gratuit (2021)':'Membre '+TIER_NAME[tier]}).catch(()=>{});
       addToBrevo({email:data.email.trim(),name:data.name||'',profile:data.profile||'',source:'inscription'});
     }
     closeAuth();
     if(pendingTier){const t=pendingTier;pendingTier=null;toast(`Bienvenue ! Aperçu ${TIER_NAME[t]} activé (démo).`);}
-    else toast('Bienvenue ! Vos données sont débloquées.');
+    else toast('Bienvenue ! L\'édition 2021 complète est débloquée.');
     document.getElementById('explorer').scrollIntoView({behavior:'smooth'});
   });
   // clic sur cellule verrouillée (tableau de recherche, si présent)

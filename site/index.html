@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=17">
+<link rel="stylesheet" href="css/style.css?v=18">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
@@ -71,9 +71,21 @@
   <div class="wrap">
     <div class="sec-head">
       <h2>Nos tarifs</h2>
-      <p>L'édition 2021 est en accès libre. Débloquez les chiffres-clés 2025, ou passez à un forfait pour toutes les éditions.</p>
+      <p>Un aperçu de 2021 sans rien payer. Un compte gratuit ouvre l'édition 2021 complète. Les forfaits débloquent 2025 et toutes les éditions.</p>
     </div>
     <div class="tiers">
+      <div class="tier-card" data-tier="gratuit">
+        <div class="tier-h"><h3>Gratuit</h3><div class="tier-price">0€</div></div>
+        <p class="plan-sub">Un compte, sans carte bancaire.</p>
+        <ul>
+          <li>✔ Aperçu de 2021 <b>sans compte</b></li>
+          <li>✔ <b>Édition 2021 complète</b> avec un compte gratuit</li>
+          <li>✔ <b>Top 20</b> des clips avec vidéos</li>
+          <li class="off">✖ Chiffres-clés 2025</li>
+          <li class="off">✖ Éditions 2022 → 2024</li>
+        </ul>
+        <button class="btn btn-ghost btn-full" data-join="gratuit">Créer mon compte gratuit</button>
+      </div>
       <div class="tier-card tier-featured" data-tier="decouverte">
         <div class="badge">Nouveau · 2025</div>
         <div class="tier-h"><h3>Découverte</h3><div class="tier-price">20€</div></div>
@@ -110,7 +122,7 @@
         <button class="btn btn-primary btn-full" data-join="business">Passer Business · 500€</button>
       </div>
     </div>
-    <p class="locknote">🔓 L'édition 2021 reste gratuite. Les forfaits payants sont activés en aperçu démo sur ce site (paiement réel à brancher).</p>
+    <p class="locknote">🔓 L'aperçu 2021 est libre, le compte gratuit ouvre 2021 en entier. Les forfaits payants sont activés en aperçu démo sur ce site (paiement réel à brancher).</p>
   </div>
 </section>
 
@@ -119,7 +131,7 @@
   <div class="wrap">
     <div class="sec-head">
       <h2>Explorer par année</h2>
-      <p>L'édition 2021 est en accès libre. Sélectionnez une année pour visualiser la répartition par style, la distribution des vues et le top des clips.</p>
+      <p>L'édition 2021 est en aperçu libre (complète avec un compte gratuit). Sélectionnez une année pour visualiser la répartition par style, la distribution des vues et le top des clips.</p>
     </div>
     <div class="year-tabs" id="yearTabs"></div>
     <div id="yearPanel" class="year-panel"></div>
@@ -419,7 +431,7 @@
 <!-- TOAST -->
 <div class="toast" id="toast" hidden></div>
 
-<script src="js/app.js?v=31"></script>
+<script src="js/app.js?v=32"></script>
 <script src="js/anim.js?v=1"></script>
 </body>
 </html>
