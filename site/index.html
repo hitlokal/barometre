@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=16">
+<link rel="stylesheet" href="css/style.css?v=17">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
@@ -74,29 +74,40 @@
       <p>L'édition 2021 est en accès libre. Débloquez les chiffres-clés 2025, ou passez à un forfait pour toutes les éditions.</p>
     </div>
     <div class="tiers">
-      <div class="tier-card" data-tier="gratuit">
-        <div class="tier-h"><h3>Gratuit</h3><div class="tier-price">0€</div></div>
-        <p class="plan-sub">Pour découvrir la donnée ultramarine.</p>
+      <div class="tier-card tier-featured" data-tier="decouverte">
+        <div class="badge">Nouveau · 2025</div>
+        <div class="tier-h"><h3>Découverte</h3><div class="tier-price">20€</div></div>
+        <p class="plan-sub">Les chiffres-clés de l'année 2025.</p>
         <ul>
-          <li>✔ <b>Édition 2021</b> en accès libre</li>
-          <li>✔ Vues exactes · tops · styles · origines</li>
-          <li>✔ Top 20 des clips avec vidéos</li>
-          <li class="off">✖ Chiffres 2025</li>
+          <li>✔ <b>Synthèse 2025</b> : 410 M vues, 546 clips</li>
+          <li>✔ <b>Top 5</b> des clips & styles dominants</li>
+          <li>✔ Club du million · Artiste de l'année · Reines du stream</li>
+          <li class="off">✖ Éditions 2022 → 2024</li>
           <li class="off">✖ Comparateur & analyses</li>
         </ul>
-        <a href="#explorer" class="btn btn-ghost btn-full">Explorer 2021</a>
+        <button class="btn btn-primary btn-full" data-join="decouverte">Débloquer 2025 · 20€</button>
       </div>
-      <div class="tier-card tier-featured" data-tier="decouverte">
-        <div class="badge">Accès complet</div>
-        <div class="tier-h"><h3>Découverte</h3><div class="tier-price">20€</div></div>
-        <p class="plan-sub">Toutes les données du Baromètre, 2021 → 2025.</p>
+      <div class="tier-card" data-tier="pro">
+        <div class="tier-h"><h3>Pro</h3><div class="tier-price">200€<span>/an</span></div></div>
+        <p class="plan-sub">Toutes les éditions, en continu.</p>
         <ul>
-          <li>✔ Tout le Gratuit, plus :</li>
-          <li>✔ <b>Chiffres-clés 2025</b> : Top 5, club du million, artiste de l'année</li>
-          <li>✔ <b>Toutes les éditions 2022 → 2025</b></li>
-          <li>✔ Comparateur & analyses croisées</li>
+          <li>✔ Tout Découverte, plus :</li>
+          <li>✔ <b>Toutes les éditions 2021 → 2025</b></li>
+          <li>✔ Détail par style, origine & genre</li>
+          <li class="off">✖ Comparateur & analyses croisées</li>
         </ul>
-        <button class="btn btn-primary btn-full" data-join="decouverte">Débloquer · 20€</button>
+        <button class="btn btn-ghost btn-full" data-join="pro">Passer Pro · 200€</button>
+      </div>
+      <div class="tier-card" data-tier="business">
+        <div class="tier-h"><h3>Business</h3><div class="tier-price">500€<span>/an</span></div></div>
+        <p class="plan-sub">Pour les labels, médias & institutions.</p>
+        <ul>
+          <li>✔ Tout Pro, plus :</li>
+          <li>✔ <b>Comparateur d'éditions</b></li>
+          <li>✔ <b>Analyses croisées</b> approfondies</li>
+          <li>✔ Support analyste dédié</li>
+        </ul>
+        <button class="btn btn-primary btn-full" data-join="business">Passer Business · 500€</button>
       </div>
     </div>
     <p class="locknote">🔓 L'édition 2021 reste gratuite. Les forfaits payants sont activés en aperçu démo sur ce site (paiement réel à brancher).</p>
@@ -153,10 +164,10 @@
       <div class="analyses-lock" id="compareLock" hidden>
         <div class="lock-card">
           <div class="lock-ic">🔒</div>
-          <h3>Comparateur inclus dans Découverte</h3>
-          <p>La comparaison des éditions (2021 → 2025 côte à côte) est incluse dans le forfait <b>Découverte · 20€</b>.</p>
+          <h3>Comparateur réservé au forfait Business</h3>
+          <p>La comparaison des éditions (2021 → 2025 côte à côte) est incluse dans le forfait <b>Business · 500€/an</b>.</p>
           <div class="lock-cta">
-            <button class="btn btn-primary" data-join="decouverte">Débloquer · 20€</button>
+            <button class="btn btn-primary" data-join="business">Passer Business · 500€</button>
             <button class="btn btn-ghost" id="compareLockLogin">J'ai déjà un compte</button>
           </div>
         </div>
@@ -169,9 +180,9 @@
 <section class="section analyses-sec" id="analyses">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow eyebrow-pro">Forfait Découverte · Données approfondies</span>
+      <span class="eyebrow eyebrow-pro">Forfait Business · Données approfondies</span>
       <h2>Analyses avancées</h2>
-      <p>Croisez les performances en profondeur : moyenne de vues, médiane, volumes par style, par origine, par genre et par année. L'outil d'analyse inclus dans le forfait Découverte.</p>
+      <p>Croisez les performances en profondeur : moyenne de vues, médiane, volumes par style, par origine, par genre et par année. L'outil d'analyse réservé aux abonnés Business.</p>
     </div>
     <div class="analyses-stage">
       <div id="analysesContent">
@@ -221,10 +232,10 @@
       <div class="analyses-lock" id="analysesLock" hidden>
         <div class="lock-card">
           <div class="lock-ic">🔒</div>
-          <h3>Inclus dans Découverte</h3>
-          <p>Les analyses croisées (moyennes, médianes, volumes par style / origine / genre / année) sont incluses dans le forfait <b>Découverte · 20€</b>.</p>
+          <h3>Réservé au forfait Business</h3>
+          <p>Les analyses croisées (moyennes, médianes, volumes par style / origine / genre / année) sont incluses dans le forfait <b>Business · 500€/an</b>.</p>
           <div class="lock-cta">
-            <button class="btn btn-primary" data-join="decouverte">Débloquer · 20€</button>
+            <button class="btn btn-primary" data-join="business">Passer Business · 500€</button>
             <button class="btn btn-ghost" id="lockLogin">J'ai déjà un compte</button>
           </div>
         </div>
@@ -331,7 +342,9 @@
       </div>
       <label>Offre qui vous intéresse
         <select name="plan" id="planSelect">
-          <option selected>Découverte (20€)</option>
+          <option selected>Découverte 2025 (20€)</option>
+          <option>Membre Pro (200€/an)</option>
+          <option>Membre Business (500€/an)</option>
           <option>Je ne sais pas encore</option>
         </select>
       </label>
@@ -406,7 +419,7 @@
 <!-- TOAST -->
 <div class="toast" id="toast" hidden></div>
 
-<script src="js/app.js?v=30"></script>
+<script src="js/app.js?v=31"></script>
 <script src="js/anim.js?v=1"></script>
 </body>
 </html>

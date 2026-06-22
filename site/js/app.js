@@ -111,8 +111,9 @@ const charts={};
 const FREE_YEAR='2021';
 function currentYear(){ return Object.keys(DASH.years).sort().slice(-1)[0]; }  // dernière édition (ex: 2025)
 function yearUnlocked(y){
-  if(y===FREE_YEAR) return true;   // 2021 : accès libre
-  return rank()>=1;                // toutes les autres éditions : forfait Découverte (20€)
+  if(y===FREE_YEAR) return true;            // 2021 : accès libre
+  if(y===currentYear()) return rank()>=1;   // 2025 : forfait Découverte (20€)
+  return rank()>=2;                          // 2022-2024 : forfait Pro (200€)
 }
 function buildYearTabs(){
   const years=Object.keys(DASH.years).sort();
@@ -125,10 +126,13 @@ function buildYearTabs(){
   selectYear(FREE_YEAR);
 }
 function renderLockedYear(panel,y){
-  const planBtn='decouverte';
-  const planLabel='Débloquer · 20€';
-  const tierTxt='Découverte';
-  const msg=`L'édition <b>${y}</b> est incluse dans le forfait <b>Découverte · 20€</b> — qui ouvre toutes les éditions 2022→${currentYear()}, le comparateur et les analyses. L'édition <b>2021</b> reste en accès libre.`;
+  const cur=currentYear(), isCur=(y===cur);
+  const planBtn=isCur?'decouverte':'pro';
+  const planLabel=isCur?'Débloquer 2025 · 20€':'Passer Pro · 200€';
+  const tierTxt=isCur?'Découverte':'Pro';
+  const msg=isCur
+    ? `Les chiffres-clés de l'édition <b>${y}</b> sont inclus dans <b>Découverte · 20€</b>. Le forfait <b>Pro</b> ouvre toutes les éditions, le <b>Business</b> ajoute comparateur et analyses.`
+    : `Les éditions intermédiaires (entre 2021 et ${cur}) sont incluses dans le forfait <b>Pro · 200€/an</b> (toutes les éditions). Le <b>Business</b> ajoute le comparateur et les analyses.`;
   panel.innerHTML=`<div class="year-lock">
     <div class="lock-ic">🔒</div>
     <h3>Édition ${y} réservée aux abonnés ${tierTxt}</h3>
@@ -355,7 +359,7 @@ function initCompare(){
 }
 
 function renderCompare(){
-  const isBusiness = rank()>=1;               // comparaison des 5 éditions = forfait Découverte
+  const isBusiness = rank()>=3;               // comparaison des 5 éditions = forfait Business
   const lockEl=byId('compareLock'); if(lockEl) lockEl.hidden=true;
   const contentEl=byId('compareContent'); if(contentEl) contentEl.classList.remove('an-blurred');
   let years=Object.keys(DASH.years).sort();
@@ -391,7 +395,7 @@ function renderCompare(){
   byId('cmpTitle').textContent=`${def.label} · ${measLabel} par édition`;
   const partial=(cmpState.dim==='genre'||cmpState.dim==='origins');
   byId('cmpSub').textContent = !isBusiness
-    ? 'Édition 2021 — débloquez Découverte (20€) pour comparer les 5 éditions côte à côte.'
+    ? 'Édition 2021 — passez Business (500€/an) pour comparer les 5 éditions côte à côte.'
     : (partial&&measure!=='pct'
         ? 'Donnée renseignée partiellement avant 2024 — privilégiez « Part en % » pour comparer.'
         : 'Cliquez la légende pour isoler une catégorie.');
@@ -411,7 +415,7 @@ function renderCompare(){
   // note / appel à l'action
   const docYears=years.filter(y=>tagged[y]>0);
   if(!isBusiness){
-    byId('cmpNote').innerHTML=`🔒 La comparaison des <b>5 éditions</b> est incluse dans le forfait <b>Découverte · 20€</b>. <a href="#tarifs" style="color:var(--gold);font-weight:600">Voir les tarifs →</a>`;
+    byId('cmpNote').innerHTML=`🔒 La comparaison des <b>5 éditions</b> est réservée au forfait <b>Business · 500€/an</b>. <a href="#tarifs" style="color:var(--gold);font-weight:600">Voir les tarifs →</a>`;
   } else if(docYears.length>=2 && cats.length){
     const y0=docYears[0],y1=docYears[docYears.length-1];
     const share=(y,cat)=>tagged[y]?(per[y][cat]?.clips||0)/tagged[y]*100:0;
@@ -449,7 +453,7 @@ function initAnalytics(){
 }
 
 function renderAnalytics(){
-  const locked = rank()<1;            // forfait Découverte requis
+  const locked = rank()<3;            // forfait Business requis
   byId('analysesLock').hidden = !locked;
   byId('analysesContent').classList.toggle('an-blurred',locked);
   const years=Object.keys(DASH.years).sort();
